@@ -1,4 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$font-text: 'Montserrat', sans-serif;
+$font-title: 'Poppins', sans-serif;
+$primary : #FFBC40;
+$button-text: #FC505C;
+$background: linear-gradient(193.45deg, #FFC92B 8.47%, #FD804A 43.27%, #FC505C 88.01%);
+$color-text:#FFFFFF;
+
+// Para importar solo ponen @use '../../../styles.scss' as * ;
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
