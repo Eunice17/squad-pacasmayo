@@ -16,6 +16,7 @@ import { ConfirmationMessageDriverComponent } from './view/main-driver/component
 import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -37,7 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
     NewTruckComponent,
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmationRegisterTruckComponent
   ],
   imports: [
     BrowserModule,
