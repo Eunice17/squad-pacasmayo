@@ -1,12 +1,4 @@
-  <section class="body-sucess">
-    <div class="content-exit">
-        <img src="../../../../../assets/img/doc-register.png" alt="">
-        <h1>¡Documentos registrados exitosamente!</h1>
-        <h3>Recuerda que tus documentos siempre deben estar actualizados.</h3>
-        <button mat-button>Ir a inicio</button>
-    </div> 
-</section> 
-
+<app-nav-bar></app-nav-bar>
 <section class="body-reg">
   <div class="content-reg">
     <h1>Hola Paulo,</h1>
@@ -41,7 +33,7 @@
           <input matInput />
         </mat-form-field>
       </div>
-      <button mat-button>Confirmar</button>
+      <button mat-button [routerLink]="['/confirtruck']">Confirmar</button>
     </form>
   </div>    
 </section>
