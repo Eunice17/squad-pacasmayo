@@ -1,14 +1,22 @@
-<form  class="" > <!-- [formGroup]="formGroup" --><!-- (ngSubmit)="login()" -->
-    <div class="">
-        <label for="email"></label>
-      <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
-    </div>
-    <div class="">
-        <label for="password"></label>
-      <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
-    </div>
-    <div class="">
-      <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
-    </div>
-    <button type="submit" class="">Continuar</button>
-</form>
+<section class="container-main">
+  <section class="container-header">
+    <img src="../../../assets/truck-image.svg" alt="truck-image">
+    <h1>DAKAR</h1>
+    <h2>Inicia sesión</h2>
+  </section>
+
+  <section class="container-form">
+    <form  class="" (ngSubmit)="login()"> <!-- [formGroup]="loginForm" --><!-- (ngSubmit)="login()" -->
+
+          <label for="email"></label>
+          <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
+
+          <label for="password"></label>
+          <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
+
+          <a routerLink="/**">¿Olvidaste contraseña?</a>
+
+          <button type="submit" class="" >Continuar</button> <!-- [disabled]="loginForm.invalid" -->
+    </form>
+  </section>
+</section>
