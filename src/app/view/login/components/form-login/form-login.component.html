@@ -1,1 +1,14 @@
-<p>form-login works!</p>
+<form  class="" > <!-- [formGroup]="formGroup" --><!-- (ngSubmit)="login()" -->
+    <div class="">
+        <label for="email"></label>
+      <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
+    </div>
+    <div class="">
+        <label for="password"></label>
+      <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
+    </div>
+    <div class="">
+      <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
+    </div>
+    <button type="submit" class="">Continuar</button>
+</form>
