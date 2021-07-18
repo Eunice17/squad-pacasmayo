@@ -14,6 +14,8 @@ import { NewTruckComponent } from './view/main-driver/components/new-truck/new-t
 import { HomeComponent } from './view/home/home.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -49,7 +51,8 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
