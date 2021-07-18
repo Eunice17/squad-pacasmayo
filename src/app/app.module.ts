@@ -11,6 +11,12 @@ import { NewTruckComponent } from './view/main-driver/components/new-truck/new-t
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
 
+//Material
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +31,11 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,14 @@
+@use '../../../styles.scss' as * ;
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.nav-bar{
+    font-family:$font-title;
+    letter-spacing: 5px;
+    font-weight: 700;
+    background-color: $primary;
+}
+.mat-toolbar {
+    color: $button-text;
+}
