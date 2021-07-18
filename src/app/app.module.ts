@@ -15,6 +15,8 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { HomeComponent } from './view/home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -27,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     MainClientComponent,
     NewTruckComponent,
     ConfirmationMessageDriverComponent,
-    NewRequirementComponent
+    NewRequirementComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
