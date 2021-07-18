@@ -1,8 +1,8 @@
-<h1>Kat</h1>
+<app-nav-bar></app-nav-bar>
 
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+ <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button>
+  </button> 
   <mat-stepper [linear]="isLinear" #stepper>
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
@@ -16,6 +16,7 @@
         </div>
       </form>
     </mat-step>
+    
     <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
       <form [formGroup]="secondFormGroup">
         <mat-form-field appearance="fill">
@@ -29,6 +30,7 @@
         </div>
       </form>
     </mat-step>
+    
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>
@@ -37,4 +39,4 @@
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
-  </mat-stepper> -->
+  </mat-stepper> 
