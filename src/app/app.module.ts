@@ -28,6 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
     HomeComponent,
-    ConfirmationRegisterTruckComponent
+    ConfirmationRegisterTruckComponent,
+    WaitingDriverComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSelectModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
