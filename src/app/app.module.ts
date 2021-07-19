@@ -14,6 +14,9 @@ import { NewTruckComponent } from './view/main-driver/components/new-truck/new-t
 import { HomeComponent } from './view/home/home.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -23,6 +26,11 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatListModule} from '@angular/material/list';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +43,9 @@ import { MatSelectModule } from '@angular/material/select';
     NewTruckComponent,
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
-    HomeComponent
+    HomeComponent,
+    ConfirmationRegisterTruckComponent,
+    WaitingDriverComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +59,11 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatListModule,
+    MatProgressSpinnerModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

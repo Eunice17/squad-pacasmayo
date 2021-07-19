@@ -1,28 +1,38 @@
-  <section class="body-sucess">
-    <div class="content-exit">
-        <img src="../../../../../assets/img/doc-register.png" alt="">
-        <h1>¡Documentos registrados exitosamente!</h1>
-        <h3>Recuerda que tus documentos siempre deben estar actualizados.</h3>
-        <button mat-button>Ir a inicio</button>
-    </div> 
-</section> 
-
+<app-nav-bar>
 <section class="body-reg">
   <div class="content-reg">
     <h1>Hola Paulo,</h1>
     <h3>Ingresa tus documentos para utilizar Dakar.</h3>
     <form action="form" class="example-form">
-      <mat-form-field class="form" appearance="fill">
-        <mat-label >Tarjeta de Propiedad</mat-label>
-        <input matInput autocomplete="off" />
+      <mat-form-field appearance="fill" class="form">
+        <mat-label></mat-label>
+        <div class="prueba">
+        <input matInput disabled value="Tarjeta de Propiedad"/>
+          <input type="file" name="file-6" id="file-6" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+          <label for="file-6">
+          <img src="../../../../../assets/img/upload.png" alt="">
+          </label>
+        </div>
       </mat-form-field>
-      <mat-form-field class="form" appearance="fill">
-        <mat-label>SOAT</mat-label>
-        <input matInput autocomplete="off" />
+      <mat-form-field appearance="fill" class="form">
+        <mat-label></mat-label>
+        <div class="prueba">
+        <input matInput disabled value="SOAT"/>
+          <input type="file" name="file-6" id="file-6" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+          <label for="file-6">
+          <img src="../../../../../assets/img/upload.png" alt="">
+          </label>
+        </div>
       </mat-form-field>
-      <mat-form-field class="form" appearance="fill">
-        <mat-label>Licencia de conducir del chofer</mat-label>
-        <input matInput autocomplete="off" />
+      <mat-form-field appearance="fill" class="form">
+        <mat-label></mat-label>
+        <div class="prueba">
+        <input matInput disabled value="Licencia de conducir del chofer"/>
+          <input type="file" name="file-6" id="file-6" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+          <label for="file-6">
+          <img src="../../../../../assets/img/upload.png" alt="">
+          </label>
+        </div>
       </mat-form-field>
       <mat-form-field class="form" appearance="fill">
         <mat-label>Nombre del chofer</mat-label>
@@ -38,13 +48,13 @@
         </mat-form-field>
         <mat-form-field class="input" appearance="fill">
           <mat-label>Documento de Identidad</mat-label>
-          <input matInput />
+          <input matInput/>
         </mat-form-field>
       </div>
-      <button mat-button>Confirmar</button>
+      <button mat-button [routerLink]="['/confirtruck']">Confirmar</button>
     </form>
   </div>    
 </section>
-
+</app-nav-bar>
 
 

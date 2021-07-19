@@ -8,9 +8,9 @@ import {MatStepperModule} from '@angular/material/stepper';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  // isLinear = false;
-  // public firstFormGroup!: FormGroup;
-  // public secondFormGroup!: FormGroup;
+  isLinear = false;
+  public firstFormGroup!: FormGroup;
+  public secondFormGroup!: FormGroup;
 
   // this.firstFormGroup= new FormGroup({
   //   firstCtrl: new FormControl('')
@@ -19,19 +19,19 @@ export class RegisterComponent implements OnInit {
   //   secondCtrl: new FormControl ('')
   // })
 
-  constructor() { 
-    // private _formBuilder: FormBuilder
+  constructor(private _formBuilder: FormBuilder) { 
+    // 
    
   }
    
   
   ngOnInit() {
-    // this.firstFormGroup = this._formBuilder.group({
-    //   firstCtrl: ['', Validators.required]
-    // });
-    // this.secondFormGroup = this._formBuilder.group({
-    //   secondCtrl: ['', Validators.required]
-    // });
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
   }
 
 }

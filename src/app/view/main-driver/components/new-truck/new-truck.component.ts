@@ -12,5 +12,5 @@ export class NewTruckComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+ 
 }

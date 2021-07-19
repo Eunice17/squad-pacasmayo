@@ -26,14 +26,6 @@
       h3 {
         font-family: $font-text;
       }
-      .content-flex{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-content: center;
-          align-items: center;
-          row-gap: 15px;
-      }
     }
   }
   
@@ -42,6 +34,6 @@ button {
   font-family: $font-text;
   font-weight: 600;
   font-size: 20px;
-  width: 70%;
+  width: 50%;
   height: 47px;
 }
