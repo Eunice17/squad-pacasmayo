@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
@@ -33,6 +33,7 @@ export class FormLoginComponent implements OnInit {
   } 
   constructor(
     public formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -52,5 +53,8 @@ export class FormLoginComponent implements OnInit {
     //     alert('Verifica el email y password, por favor.')
     //   })
     // }
+  }
+  goFormRegister(){
+    this.router.navigate(['register'])
   }
 }

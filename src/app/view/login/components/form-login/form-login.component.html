@@ -1,22 +1,24 @@
 <section class="container-main">
-  <section class="container-header">
-    <img src="../../../assets/truck-image.svg" alt="truck-image">
-    <h1>DAKAR</h1>
-    <h2>Inicia sesión</h2>
-  </section>
+  <div class="content-log">
+    <div class="div-img">
+      <img src="../../../assets/img/truck-img.png" alt="truck-image"/>
+    </div>
+    <div class="div-text">
+      <h1>DAKAR</h1>
+      <h2>Inicia sesión</h2>
+    
+      <form  (ngSubmit)="login()"><!-- [formGroup]="loginForm" --><!-- (ngSubmit)="login()" -->
 
-  <section class="container-form">
-    <form  class="" (ngSubmit)="login()"> <!-- [formGroup]="loginForm" --><!-- (ngSubmit)="login()" -->
-
-          <label for="email"></label>
-          <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
-
-          <label for="password"></label>
-          <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
-
-          <a routerLink="/**">¿Olvidaste contraseña?</a>
-
-          <button type="submit" class="" >Continuar</button> <!-- [disabled]="loginForm.invalid" -->
-    </form>
-  </section>
+           <label for="email"></label>
+            <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
+  
+            <label for="password"></label>
+            <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
+            <br>
+            <a routerLink="/**">¿Olvidaste contraseña?</a>
+  
+            <button mat-button type="submit" (click)="goFormRegister()">Continuar</button>    <!-- [disabled]="loginForm.invalid" -->   
+          </form>
+    </div>
+  </div>  
 </section>
