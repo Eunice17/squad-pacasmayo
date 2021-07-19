@@ -6,6 +6,7 @@ import { FormLoginComponent } from './view/login/components/form-login/form-logi
 import { RegisterComponent } from './view/login/components/register/register.component';
 import { LoginComponent } from './view/login/login.component';
 import { NewTruckComponent } from './view/main-driver/components/new-truck/new-truck.component';
+import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
 import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
 import { MainClientComponent } from './view/main-client/main-client.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
@@ -19,13 +20,14 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'formlogin', component: FormLoginComponent },
   { path: 'driver', component: MainDriverComponent },
+  { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
   { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
   { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
-  { path: '**', pathMatch: 'full', redirectTo: 'login' },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
 @NgModule({
