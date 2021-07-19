@@ -8,26 +8,40 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class FormLoginComponent implements OnInit {
 
-  formGroup= new FormGroup({
-    email:new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-  })
+  // loginForm= new FormGroup({
+  //   email: new FormControl('', [Validators.required]),
+  //   password: new FormControl('', [Validators.required]),
+  // })
+  // minPassLength: number = 6;
+  loginForm!: FormGroup;
+  // this.loginForm = this.formBuilder.group({
+  //   email: ['', [Validators.required, Validators.email]],
+  //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
+  // })
 
-  constructor(
-    private formBuilder: FormBuilder,
-  ) { }
-
-  ngOnInit(): void {
-    this.buildForm();
-  }
+  
+  // loginForm = this.formBuilder.group({
+  //   email: ['', [Validators.required, Validators.email]],
+  //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
+  // })
   public buildForm(){
     const minPassLength = 6;
-    this.formGroup=this.formBuilder.group({
+    this.loginForm=this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
     });
   } 
+  constructor(
+    public formBuilder: FormBuilder,
+  ) { }
+
+  ngOnInit(): void {
+    // this.buildForm();
+  }
+  
   login(){
+    console.log('hace login');
+    // console.warn(this.loginForm.value);
     // if (this.formGroup.valid) {
     //   const value = this.formGroup.value;
     //   this.authService.login(value.email, value.password)

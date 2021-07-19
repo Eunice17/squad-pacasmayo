@@ -1,0 +1,76 @@
+@use '../../../../../styles.scss'as *;
+
+.container-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary;
+    color: $color-text;
+}
+
+h1{
+    display: flex;
+    align-self: center;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 0.3em;
+    text-shadow: 0px 4px 4px rgba(136, 136, 136, 0.25);
+}
+h2{
+    display: flex;
+    align-self: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+}
+.container.header{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    font-family: $font-text;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    img{
+        margin-left: 0;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 256px;
+    padding: 0.5rem;
+    row-gap: 8px;
+}
+input{
+    width: 256px;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: solid 0.5px #D2D2D2;
+}
+button{
+    background: $button-text;
+    color: $color-text;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px rgba(133, 121, 121, 0.25);
+    padding: 0.5rem;
+    width: 156px;
+    text-shadow: 0px 4px 4px rgba(132, 131, 131, 0.25);
+    font-family: $font-text;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 1rem;
+    &:hover{
+        /*  background-color: white; */
+    }
+}
