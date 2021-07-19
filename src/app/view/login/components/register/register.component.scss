@@ -1,13 +1,59 @@
 @use '../../../../../styles.scss'as *;
-button {
-    background-color: $button-text;
-    font-family: $font-text;
-    font-weight: 600;
-    font-size: 20px;
-    width: 50%;
-    height: 47px;
-  }
 
-.back{
-    background-color: #ffff;
+.body-reg{
+    width: 100%;
+    height: 100vh;
+    background-color: $primary;
+    justify-content: center;
+
+    .content-reg{
+        background-color: $primary;
+    
+
+    h2{
+        font-family: $font-title;
+        color: #ffff;
+        align-self: center;
+        font-size: 24px;
+        margin: auto;
+    }
+
+    .stepper{
+        background-color: $primary;
+        justify-content: center;
+    }
+
+    .firstForm, .secondForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        button{
+            background-color: $button-text;
+            font-family: $font-text;
+            font-weight: 600;
+            font-size: 20px;
+            width: 50%;
+            height: 47px;
+            color: #ffff;
+            
+        }
+    }
+
+    .secondForm{
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .back{
+            background-color: #ffff;
+            width: 18px;
+            padding: 0;
+            background-color: $primary;
+            
+        }
+    }
+
+}
 }

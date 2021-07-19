@@ -17,16 +17,23 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
+import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component'; 
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatListModule} from '@angular/material/list';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+
 
 @NgModule({
   declarations: [
@@ -40,7 +47,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
     HomeComponent,
-    ConfirmationRegisterTruckComponent
+    ConfirmationRegisterTruckComponent,
+    WaitingDriverComponent,
+    ConfirmationRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -53,9 +62,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     ReactiveFormsModule,
     MatStepperModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatCheckboxModule,
+    MatSidenavModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],

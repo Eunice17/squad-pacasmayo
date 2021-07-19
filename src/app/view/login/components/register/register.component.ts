@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -28,8 +29,10 @@ export class RegisterComponent implements OnInit {
     { name: 'Cow'; sound: 'Moo!'; },
     { name: 'Fox'; sound: 'Wa-pa-pa-pa-pa-pa-pow!'; }
   ];
+ 
 
-  constructor(private _formBuilder: FormBuilder) { 
+  constructor(private _formBuilder: FormBuilder,
+    private router: Router,) { 
     // 
    
   }
@@ -56,7 +59,7 @@ export class RegisterComponent implements OnInit {
   }
 
   goToConfirmationR(){
-    console.log('mostrar pag de confimacion con el check')
+    this.router.navigate(['/confirregister']);
   }
 
   goToMenuDriver(){
