@@ -14,6 +14,10 @@ export class FormLoginComponent implements OnInit {
   // })
   // minPassLength: number = 6;
   loginForm!: FormGroup;
+  minPassLength = 6;
+  constructor(
+    public formBuilder: FormBuilder,
+  ) { }
   // this.loginForm = this.formBuilder.group({
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
@@ -24,19 +28,15 @@ export class FormLoginComponent implements OnInit {
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
   // })
-  public buildForm(){
-    const minPassLength = 6;
-    this.loginForm=this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(minPassLength)]],
-    });
+  public buildForm(){    
   } 
-  constructor(
-    public formBuilder: FormBuilder,
-  ) { }
+  
 
   ngOnInit(): void {
-    // this.buildForm();
+    this.loginForm=this.formBuilder.group({
+      email: new FormControl ('', Validators.compose([Validators.required, Validators.email])),
+      password: new FormControl ('', Validators.compose([Validators.required, Validators.minLength(this.minPassLength)])),
+    });
   }
   
   login(){
