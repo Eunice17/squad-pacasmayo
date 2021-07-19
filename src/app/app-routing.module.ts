@@ -6,6 +6,7 @@ import { FormLoginComponent } from './view/login/components/form-login/form-logi
 import { RegisterComponent } from './view/login/components/register/register.component';
 import { LoginComponent } from './view/login/login.component';
 import { NewTruckComponent } from './view/main-driver/components/new-truck/new-truck.component';
+import { NewRequirementComponent } from './view/main-client/components/new-requirement/new-requirement.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'formlogin', component: FormLoginComponent },
   { path: 'driver', component: MainDriverComponent },
   { path: 'newtruck', component: NewTruckComponent },
+  { path: 'newreq', component: NewRequirementComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 

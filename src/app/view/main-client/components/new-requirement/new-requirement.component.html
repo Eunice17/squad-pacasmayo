@@ -1,1 +1,36 @@
-<p>new-requirement works!</p>
+<app-nav-bar></app-nav-bar>
+
+<mat-form-field appearance="fill">
+    <mat-label>Tipo de carga</mat-label>
+    <mat-select [formControl]="tipoCarga" multiple>
+      <mat-option *ngFor="let carga of tipoCargaLista" [value]="carga">{{carga}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Detalle de carga</mat-label>
+    <mat-select [formControl]="detalleCarga" multiple>
+      <mat-option *ngFor="let detalle of detalleCargaLista" [value]="detalle">{{detalle}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Cantidades</mat-label>
+    <mat-select [formControl]="cantidades" multiple>
+      <mat-option *ngFor="let cantidad of cantidadesLista" [value]="cantidad">{{cantidad}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Datos de recojo</mat-label>
+    <mat-select [formControl]="datosRecojo" multiple>
+      <mat-option *ngFor="let recojo of datosRecojoLista" [value]="recojo">{{recojo}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Datos de destino</mat-label>
+    <mat-select [formControl]="datosDestino" multiple>
+      <mat-option *ngFor="let destino of datosDestinoLista" [value]="destino">{{destino}}</mat-option>
+    </mat-select>
+</mat-form-field>

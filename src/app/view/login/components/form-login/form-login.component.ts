@@ -13,7 +13,7 @@ export class FormLoginComponent implements OnInit {
   //   password: new FormControl('', [Validators.required]),
   // })
   // minPassLength: number = 6;
-  public loginForm!: FormGroup;
+  loginForm!: FormGroup;
   // this.loginForm = this.formBuilder.group({
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
@@ -24,14 +24,6 @@ export class FormLoginComponent implements OnInit {
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
   // })
-
-  constructor(
-    public formBuilder: FormBuilder,
-  ) { }
-
-  ngOnInit(): void {
-    this.buildForm();
-  }
   public buildForm(){
     const minPassLength = 6;
     this.loginForm=this.formBuilder.group({
@@ -39,6 +31,14 @@ export class FormLoginComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(minPassLength)]],
     });
   } 
+  constructor(
+    public formBuilder: FormBuilder,
+  ) { }
+
+  ngOnInit(): void {
+    // this.buildForm();
+  }
+  
   login(){
     console.log('hace login');
     // console.warn(this.loginForm.value);
