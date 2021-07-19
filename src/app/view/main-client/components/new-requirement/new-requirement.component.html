@@ -1,38 +1,34 @@
 <app-nav-bar>
 
-<!-- <select  (change)="onSelect($event)">
-  <option *ngFor="let origin of origins">{{origin.name}}</option>
-</select> -->
-
-<form [formGroup]="form">
+<form [formGroup]="requirementForm">
 
   <mat-form-field appearance="fill">
     <mat-label>Tipo de carga</mat-label>
-    <mat-select [formControl]="tipoCarga" multiple>
+    <mat-select [formControl]="typeBulkControl" multiple>
       <mat-option>None</mat-option>
-      <mat-option *ngFor="let carga of tipoCargaLista" [value]="carga">{{carga}}</mat-option>
+      <mat-option *ngFor="let bulk of typeBulkList" [value]="bulk">{{bulk}}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Detalle de carga</mat-label>
-    <mat-select [formControl]="detalleCarga" multiple>
+    <mat-select [formControl]="detailBulkControl" multiple>
       <mat-option>None</mat-option>
-      <mat-option *ngFor="let detalle of detalleCargaLista" [value]="detalle">{{detalle}}</mat-option>
+      <mat-option *ngFor="let detail of detailBulkList" [value]="detail">{{detail}}</mat-option>
     </mat-select>
   </mat-form-field>
   
   <mat-form-field appearance="fill">
     <mat-label>Cantidades</mat-label>
-    <mat-select [formControl]="cantidades" multiple>
+    <mat-select [formControl]="quantityControl" multiple>
       <mat-option>None</mat-option>
-      <mat-option *ngFor="let cantidad of cantidadesLista" [value]="cantidad">{{cantidad}}</mat-option>
+      <mat-option *ngFor="let quantity of quantityList" [value]="quantity">{{quantity}}</mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Datos de recojo</mat-label>
-    <mat-select [formControl]="dataOrigin" name="origin" (selectionChange)="onSelect($event.value)">
+    <mat-select [formControl]="dataOriginControl" name="origin" (selectionChange)="onSelect($event.value)">
       <mat-option>None</mat-option>
       <mat-option *ngFor="let origin of origins" [value]="origin.id">
         {{origin.name}}
@@ -42,7 +38,7 @@
   
   <mat-form-field appearance="fill">
     <mat-label>Datos de destino</mat-label>
-    <select matNativeControl [formControl]="dataDestination" name="destination">
+    <select matNativeControl [formControl]="dataDestinationControl" name="destination">
       <option value="">None</option>
       <option *ngFor="let destination of destinations" [value]="destination.id">
         {{destination.name}}
@@ -50,9 +46,6 @@
     </select>
   </mat-form-field>
 
-
 </form>
-
-
 
 </app-nav-bar>
