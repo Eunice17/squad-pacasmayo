@@ -1,5 +1,7 @@
 <app-nav-bar>
+  <section class="content-req"> 
 
+    <div class="div-req">
 <form [formGroup]="requirementForm">
 
   <mat-form-field appearance="fill">
@@ -38,14 +40,15 @@
   
   <mat-form-field appearance="fill">
     <mat-label>Datos de destino</mat-label>
-    <select matNativeControl [formControl]="dataDestinationControl" name="destination">
-      <option value="">None</option>
-      <option *ngFor="let destination of destinations" [value]="destination.id">
+    <mat-select [formControl]="dataDestinationControl" name="destination">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let destination of destinations" [value]="destination.id">
         {{destination.name}}
-      </option>
-    </select>
+      </mat-option>
+    </mat-select>
   </mat-form-field>
 
 </form>
-
+</div>
+</section>
 </app-nav-bar>

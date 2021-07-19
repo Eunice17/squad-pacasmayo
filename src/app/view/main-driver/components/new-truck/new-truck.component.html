@@ -51,6 +51,19 @@
           <input matInput/>
         </mat-form-field>
       </div>
+      <div class="flex-input form">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Tolva</mat-label>
+        <mat-select>
+          <mat-option>Abierta</mat-option>
+          <mat-option>Cerrada</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>TM</mat-label>
+        <input matInput autocomplete="off" />
+      </mat-form-field>
+    </div>
       <button mat-button [routerLink]="['/confirtruck']">Confirmar</button>
     </form>
   </div>    
