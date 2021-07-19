@@ -1,12 +1,16 @@
-<div class="container-main">
-
-    <section class="header">
-        <img src="../../../assets/truck-image.svg" alt="truck-image">
+<section class="container-main">
+    <div class="content-log">
+      <div class="div-img">
+        <img src="../../../assets/img/truck-img.png" alt="truck-image" />
+      </div> 
+      <div class="div-text">
         <h1>DAKAR</h1>
+        <br />
         <h3>Bienvenido a tu nuevo socio de transporte</h3>
-    </section>
-    <section>
-        <button value="driver" (click)="goLoginView()">Transportista</button>
-        <button value="client" (click)="goLoginView()">Generador de carga</button>
-    </section>
-</div>
+      </div>
+        <div class="div-button">
+            <button mat-button value="driver" (click)="goLoginView()">Transportista</button>
+            <button mat-button value="client" (click)="goLoginView()">Generador de carga</button>
+        </div>
+    </div>
+  </section>
