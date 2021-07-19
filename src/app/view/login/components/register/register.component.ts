@@ -7,17 +7,27 @@ import {MatStepperModule} from '@angular/material/stepper';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
+
+
+// interface Animal {
+//   name: string;
+//   sound: string;
+// }
+
 export class RegisterComponent implements OnInit {
   isLinear = false;
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
+ 
+  // animals=[]
 
-  // this.firstFormGroup= new FormGroup({
-  //   firstCtrl: new FormControl('')
-  // });
-  // this.secondFormGroup= new FormGroup({
-  //   secondCtrl: new FormControl ('')
-  // })
+  // animals=[]
+  animals!: [
+    { name: 'Dog'; sound: 'Woof!'; },
+    { name: 'Cat'; sound: 'Meow!'; },
+    { name: 'Cow'; sound: 'Moo!'; },
+    { name: 'Fox'; sound: 'Wa-pa-pa-pa-pa-pa-pow!'; }
+  ];
 
   constructor(private _formBuilder: FormBuilder) { 
     // 
@@ -27,11 +37,31 @@ export class RegisterComponent implements OnInit {
   
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      nameCtrl: ['', Validators.required],
+      lastnameCtrl: ['', Validators.required],
+      animalControl: ['', Validators.required],
+      // animalControl: new FormControl('', Validators.required),
+      documentCtrl: ['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
+      emailCtrl: ['', Validators.required, Validators.email],
+      phoneCtrl: ['', Validators.required],
+      rucCtrl: ['', Validators.required, Validators.maxLength(10)],
+      departmentCtrl: ['', Validators.required],
+      provinceCtrl: ['', Validators.required],
+      districtCtrl: ['', Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      passwordCtrl: ['', Validators.required, Validators.minLength(8)],
+      password1Ctrl: ['', Validators.required, Validators.minLength(8)]
     });
+  }
+
+  goToConfirmationR(){
+    console.log('mostrar pag de confimacion con el check')
+  }
+
+  goToMenuDriver(){
+    console.log('click en ahora no');
+    
   }
 
 }
