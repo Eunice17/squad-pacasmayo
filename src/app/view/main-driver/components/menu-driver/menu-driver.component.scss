@@ -1,0 +1,59 @@
+@use '../../../../../styles.scss' as *;
+.header{
+    margin: 50px 0;
+    margin-bottom: 25px;
+    color: $color-text;
+    font-size: 14px;
+    font-family: $font-text;
+    span{
+        font-family: $font-title;
+        font-size: 20px;
+    }
+    p{
+        margin-top: 6px;
+    }
+}
+.body{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 135px;
+        height: 121px;
+        border: none;
+        border-radius: 10px;
+        background-color: $button-text;
+        img{
+            width: 80px;
+            height: 64px;
+        }
+        p{
+            font-family: $font-text;
+            font-weight: 500;
+            color: $color-text;
+            margin-top: 8px;
+        }
+      }
+}
+@media screen and (min-width: 1500px){
+    .header{
+        font-size: 1.3em;
+        span{
+            font-size: 1.6em;
+        }
+    }
+    .body{
+        button{
+            width: 160px;
+            height: 140px;
+        }
+        p{
+            font-size: 1.3em;
+        }
+    }
+}
