@@ -12,4 +12,8 @@ export class ShipmentDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goBack(){
+    console.log('back to select shipment')
+  }
+
 }

@@ -1,0 +1,44 @@
+@use '../../../../../styles.scss'as *;
+
+.body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: $primary;
+    align-items: center;
+    padding: 15px;
+    margin: auto;
+
+    h2{
+        font-family: $font-title;
+        font-weight: bold;
+        font-size: 16px;
+        color: $color-text;
+        letter-spacing: 0.06em;
+    }
+    hr{
+        width: 320px;
+        left: 342px;
+        border: 0.5px solid #BB7D08;
+        transform: rotate(180deg);
+    }
+
+    
+
+    button {
+        background-color: $button-text;
+        font-family: $font-text;
+        font-weight: 600;
+        font-size: 20px;
+        width: 70%;
+        height: 47px;
+        color: #fff;
+        border: none;
+      }
+
+    img{
+        width: 30px;
+        height: 30px;
+    }
+}
