@@ -11,15 +11,11 @@ import { ConfirmationRegisterTruckComponent } from './view/main-driver/component
 import { MainClientComponent } from './view/main-client/main-client.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
-<<<<<<< HEAD
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
-=======
-import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component'; 
+import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
-
->>>>>>> e4f7e0e4e2bbbfa3737e75466ac9feca3c8a2f4c
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,8 +36,8 @@ const routes: Routes = [
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
   { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
-  { path: 'confirregister', component: ConfirmationRegisterComponent},
-  { path: 'select', component: SelectTruckComponent},  
+  { path: 'confirregister', component: ConfirmationRegisterComponent },
+  { path: 'select', component: SelectTruckComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
