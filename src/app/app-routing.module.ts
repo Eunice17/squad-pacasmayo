@@ -16,6 +16,7 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
+import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,9 +36,10 @@ const routes: Routes = [
   { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
-  { path: 'confirregister', component: ConfirmationRegisterComponent },
-  { path: 'select', component: SelectTruckComponent },
+  { path: 'confirdriver', component: ConfirmationMessageDriverComponent }
+  { path: 'confirregister', component: ConfirmationRegisterComponent},
+  { path: 'select', component: SelectTruckComponent},  
+  { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

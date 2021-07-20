@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
 import { Router } from '@angular/router';
+import { UsersService } from '../../../../services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -9,57 +10,72 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 
-
-// interface Animal {
-//   name: string;
-//   sound: string;
-// }
-
 export class RegisterComponent implements OnInit {
   isLinear = false;
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
- 
-  // animals=[]
-
-  // animals=[]
-  animals!: [
-    { name: 'Dog'; sound: 'Woof!'; },
-    { name: 'Cat'; sound: 'Meow!'; },
-    { name: 'Cow'; sound: 'Moo!'; },
-    { name: 'Fox'; sound: 'Wa-pa-pa-pa-pa-pa-pow!'; }
-  ];
- 
 
   constructor(private _formBuilder: FormBuilder,
-    private router: Router,) { 
-    // 
-   
+    private router: Router, private userService: UsersService) { 
+      this.firstFormGroup = this._formBuilder.group({
+        nameCtrl: ['', Validators.required],
+        lastnameCtrl: ['', Validators.required],
+        documentCtrl: ['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
+        emailCtrl: ['', Validators.required, Validators.email],
+        phoneCtrl: ['', Validators.required],
+        rucCtrl: ['', Validators.required, Validators.maxLength(10)],
+        direccionCtrl: ['', Validators.required],
+        departmentCtrl: ['', Validators.required],
+        provinceCtrl: ['', Validators.required],
+        districtCtrl: ['', Validators.required]
+      });
+      this.secondFormGroup = this._formBuilder.group({
+        passwordCtrl: ['', Validators.required],
+        password1Ctrl: ['', Validators.required]
+      });
   }
    
   
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      nameCtrl: ['', Validators.required],
-      lastnameCtrl: ['', Validators.required],
-      animalControl: ['', Validators.required],
-      // animalControl: new FormControl('', Validators.required),
-      documentCtrl: ['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
-      emailCtrl: ['', Validators.required, Validators.email],
-      phoneCtrl: ['', Validators.required],
-      rucCtrl: ['', Validators.required, Validators.maxLength(10)],
-      departmentCtrl: ['', Validators.required],
-      provinceCtrl: ['', Validators.required],
-      districtCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      passwordCtrl: ['', Validators.required, Validators.minLength(8)],
-      password1Ctrl: ['', Validators.required, Validators.minLength(8)]
-    });
+   
+    
   }
 
-  goToConfirmationR(){
-    this.router.navigate(['/confirregister']);
+  getInputUserF1(){
+    // console.log(this.firstFormGroup.value)
+  }
+
+  sendUser(){ //enviar todos los datos de registro a friebase
+    const firstForm= this.firstFormGroup.value;
+    const secondForm= this.secondFormGroup.value;
+    const newObject = {
+      name: firstForm.nameCtrl,
+      lastname: firstForm.lastnameCtrl,
+      document: firstForm.documentCtrl,
+      email: firstForm.emailCtrl,
+      phone: firstForm.phoneCtrl,
+      ruc: firstForm.rucCtrl,
+      direccion: firstForm.direccionCtrl,
+      department: firstForm.departmentCtrl,
+      province: firstForm.provinceCtrl,
+      district: firstForm.districtCtrl,
+      password: secondForm.passwordCtrl,
+      rol: localStorage.getItem('rol')
+    }
+    
+    console.log(newObject)
+    this.createUser(newObject);
+    //this.router.navigate(['/confirregister']);
+    
+  }
+
+  //llamada al servicio
+  createUser(obj: any){
+    console.log('dentro de createUser',obj);
+    
+    this.userService.createUser(obj).then(()=>{
+      this.router.navigate(['/confirregister']);
+    })
   }
 
   goToMenuDriver(){
