@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
@@ -14,6 +14,8 @@ export class FormLoginComponent implements OnInit {
   // })
   // minPassLength: number = 6;
   loginForm!: FormGroup;
+  minPassLength = 6;
+  
   // this.loginForm = this.formBuilder.group({
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
@@ -24,19 +26,20 @@ export class FormLoginComponent implements OnInit {
   //   email: ['', [Validators.required, Validators.email]],
   //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
   // })
-  public buildForm(){
-    const minPassLength = 6;
-    this.loginForm=this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(minPassLength)]],
-    });
+  public buildForm(){    
   } 
+
   constructor(
     public formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
+
   ngOnInit(): void {
-    // this.buildForm();
+    this.loginForm=this.formBuilder.group({
+      email: new FormControl ('', Validators.compose([Validators.required, Validators.email])),
+      password: new FormControl ('', Validators.compose([Validators.required, Validators.minLength(this.minPassLength)])),
+    });
   }
   
   login(){
@@ -52,5 +55,8 @@ export class FormLoginComponent implements OnInit {
     //     alert('Verifica el email y password, por favor.')
     //   })
     // }
+  }
+  goFormRegister(){
+    this.router.navigate(['register'])
   }
 }

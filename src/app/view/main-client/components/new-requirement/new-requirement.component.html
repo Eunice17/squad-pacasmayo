@@ -1,36 +1,64 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar>
+  <section class="content-req"> 
 
-<mat-form-field appearance="fill">
+    <div class="div-req">
+<form [formGroup]="requirementForm">
+
+  <mat-form-field appearance="fill">
     <mat-label>Tipo de carga</mat-label>
-    <mat-select [formControl]="tipoCarga" multiple>
-      <mat-option *ngFor="let carga of tipoCargaLista" [value]="carga">{{carga}}</mat-option>
+    <mat-select [formControl]="typeBulkControl" multiple>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let bulk of typeBulkList" [value]="bulk">{{bulk}}</mat-option>
     </mat-select>
-</mat-form-field>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Detalle de carga</mat-label>
-    <mat-select [formControl]="detalleCarga" multiple>
-      <mat-option *ngFor="let detalle of detalleCargaLista" [value]="detalle">{{detalle}}</mat-option>
-    </mat-select>
-</mat-form-field>
+    <mat-select [formControl]="detailBulkControl" multiple>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let detail of detailBulks" [value]="detail">{{detail.name}}</mat-option>
+      
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>{{}}</mat-label>
+        <input matInput>
+      </mat-form-field> -->
 
-<mat-form-field appearance="fill">
+    </mat-select>
+  </mat-form-field>
+  
+  <!-- en vez de mat select  -->
+
+  <mat-form-field appearance="fill">
     <mat-label>Cantidades</mat-label>
-    <mat-select [formControl]="cantidades" multiple>
-      <mat-option *ngFor="let cantidad of cantidadesLista" [value]="cantidad">{{cantidad}}</mat-option>
+    <mat-select [formControl]="quantityControl" multiple>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let quantity of quantityList" [value]="quantity">{{quantity}}</mat-option>
     </mat-select>
-</mat-form-field>
+  </mat-form-field>
 
-<mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Datos de recojo</mat-label>
-    <mat-select [formControl]="datosRecojo" multiple>
-      <mat-option *ngFor="let recojo of datosRecojoLista" [value]="recojo">{{recojo}}</mat-option>
+    <mat-select [formControl]="dataOriginControl" name="origin" >
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let origin of origins" [value]="origin.id">
+        {{origin.name}}
+      </mat-option>
     </mat-select>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill">
     <mat-label>Datos de destino</mat-label>
-    <mat-select [formControl]="datosDestino" multiple>
-      <mat-option *ngFor="let destino of datosDestinoLista" [value]="destino">{{destino}}</mat-option>
+    <mat-select [formControl]="dataDestinationControl" name="destination">
+      <mat-option value="">None</mat-option>
+      <mat-option *ngFor="let destination of destinations" [value]="destination.id">
+        {{destination.name}}
+      </mat-option>
     </mat-select>
-</mat-form-field>
+  </mat-form-field>
+
+</form>
+
+<button (click)="publish()" [disabled]="requirementForm.invalid">Publicar</button>
+</div>
+</section>
+</app-nav-bar>

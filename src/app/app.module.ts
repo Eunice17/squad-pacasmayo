@@ -17,23 +17,25 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
+import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
+import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
+import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
-
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
     MenuDriverComponent,
-    SelectShipmentComponent
+    SelectShipmentComponent,
+    ConfirmationRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -64,11 +67,13 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     FormsModule,
     ReactiveFormsModule,
     MatStepperModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
     MatSidenavModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
