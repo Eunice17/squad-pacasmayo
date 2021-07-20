@@ -32,6 +32,7 @@ import { WaitingDriverComponent } from './view/main-client/components/waiting-dr
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
+import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MenuDriverComponent } from './view/main-driver/components/menu-driver/m
     SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
-    MenuDriverComponent
+    MenuDriverComponent,
+    SelectShipmentComponent
   ],
   imports: [
     BrowserModule,
