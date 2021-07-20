@@ -1,0 +1,81 @@
+@use '../../../../../styles.scss'as *;
+
+.body {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary;
+    align-items: center;
+    padding: 15px;
+    margin: auto;
+    
+    h2{
+        font-family: $font-title;
+        font-weight: bold;
+        font-size: 16px;
+        color: $color-text;
+        letter-spacing: 0.06em;
+    }
+    hr{
+        width: 320px;
+        left: 342px;
+        border: 0.5px solid #BB7D08;
+        transform: rotate(180deg);
+    }
+  .radios-content{
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    .prueba{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        row-gap: 20px;
+        button {
+            background-color: $button-text;
+            font-family: $font-text;
+            font-weight: 600;
+            font-size: 20px;
+            width: 70%;
+            height: 47px;
+          }
+        .div-imput{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 8px;
+            row-gap: 20px;
+            box-shadow: 0px 4px 4px rgba(133, 121, 121, 0.25);
+            padding: 10px;
+            margin: auto;
+            .content{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                     h3{
+                        font-family: $font-text;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                    h4{
+                        font-family: $font-text;
+                        font-weight: 500;
+                        font-size: 11px;
+                        line-height: 13px;
+                    }
+                }
+            }
+        }
+       
+           
+        
+       
+    }
+}

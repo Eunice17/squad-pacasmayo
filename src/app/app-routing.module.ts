@@ -12,6 +12,7 @@ import { MainClientComponent } from './view/main-client/main-client.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component'; 
+import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
   { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
+  { path: 'select', component: SelectTruckComponent},  
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 
