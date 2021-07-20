@@ -10,6 +10,6 @@ export class TruckService {
   constructor(private firestore: AngularFirestore) { }
 
   public createTruck(data: Truck){
-    return this.firestore.collection('truckprueba').add(data);
+    return this.firestore.collection('truck').add(data);
   }
 }
