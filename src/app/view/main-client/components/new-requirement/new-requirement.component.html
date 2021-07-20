@@ -16,10 +16,18 @@
     <mat-label>Detalle de carga</mat-label>
     <mat-select [formControl]="detailBulkControl" multiple>
       <mat-option>None</mat-option>
-      <mat-option *ngFor="let detail of detailBulkList" [value]="detail">{{detail}}</mat-option>
+      <mat-option *ngFor="let detail of detailBulks" [value]="detail">{{detail.name}}</mat-option>
+      
+      <!-- <mat-form-field appearance="fill">
+        <mat-label>{{}}</mat-label>
+        <input matInput>
+      </mat-form-field> -->
+
     </mat-select>
   </mat-form-field>
   
+  <!-- en vez de mat select  -->
+
   <mat-form-field appearance="fill">
     <mat-label>Cantidades</mat-label>
     <mat-select [formControl]="quantityControl" multiple>
@@ -30,7 +38,7 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Datos de recojo</mat-label>
-    <mat-select [formControl]="dataOriginControl" name="origin" (selectionChange)="onSelect($event.value)">
+    <mat-select [formControl]="dataOriginControl" name="origin" >
       <mat-option>None</mat-option>
       <mat-option *ngFor="let origin of origins" [value]="origin.id">
         {{origin.name}}
@@ -49,6 +57,8 @@
   </mat-form-field>
 
 </form>
+
+<button (click)="publish()" [disabled]="requirementForm.invalid">Publicar</button>
 </div>
 </section>
 </app-nav-bar>
