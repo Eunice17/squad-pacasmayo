@@ -17,7 +17,7 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
-import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component'; 
+import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 
@@ -35,8 +35,8 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import {MatRadioModule} from '@angular/material/radio';
-
-
+import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
+import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 
 @NgModule({
   declarations: [
@@ -50,11 +50,15 @@ import {MatRadioModule} from '@angular/material/radio';
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
     HomeComponent,
+    SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent
+    MenuDriverComponent,
+    SelectShipmentComponent,
+    ConfirmationRegisterComponent
   ],
   imports: [
     BrowserModule,
