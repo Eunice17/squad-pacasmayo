@@ -32,6 +32,7 @@ import { MatListModule} from '@angular/material/list';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 
 
 
@@ -49,7 +50,8 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     HomeComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
-    ConfirmationRegisterComponent
+    ConfirmationRegisterComponent,
+    ShipmentDetailComponent
   ],
   imports: [
     BrowserModule,
