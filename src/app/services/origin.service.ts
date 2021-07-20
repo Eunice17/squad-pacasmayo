@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { OriginI, DestinationI } from '../models/dinoex';
+import { OriginI, DestinationI, BulkI } from '../models/dinoex';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class OriginService {
     }
   ]
 
-  private destiny: DestinationI[] = [
+  private destination: DestinationI[] = [
     {
       id: 'D01',
       originId: 'P01',
@@ -54,12 +54,42 @@ export class OriginService {
     }
   ]
 
+  private bulk: BulkI[] = [
+    {
+      id: 'BCEM01',
+      name: 'Bolsa de cemento'
+    },
+    {
+      id: 'BRAP02',
+      name: 'Bolsa de rapimix'
+    },
+    {
+      id: 'MADOQ03',
+      name: 'M2 de adoquines'
+    },
+    {
+      id: 'VFIE04',
+      name: 'Varillas de fierro 3/4'
+    }
+  ]
+
   constructor() { }
+
+  // setStepInfo(){
+  //   //para Gaby
+  // }
+
+  // getStepInfo(){
+  //   // obtener valor del form registro
+  // }
 
   getOrigin(): OriginI[]{
     return this.origin;
   }
   getDestiny(): DestinationI[]{
-    return this.destiny;
+    return this.destination;
+  }
+  getBulk(): BulkI[]{
+    return this.bulk;
   }
 }
