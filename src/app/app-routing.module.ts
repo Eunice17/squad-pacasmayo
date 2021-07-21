@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent }
+  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
   { path: 'select', component: SelectTruckComponent},  
   { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO

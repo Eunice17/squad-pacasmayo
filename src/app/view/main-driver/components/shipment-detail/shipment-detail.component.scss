@@ -24,7 +24,74 @@
         transform: rotate(180deg);
     }
 
-    
+    .resumen-peso-monto{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        .resumen-peso, .resumen-monto{
+            background-color: #FFF5E1;
+            border: 1.8px solid #BB7D08;
+            padding:10px;
+            margin-bottom: 4px;
+            font-family: $font-text;
+            color: #3D4550;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .origin-destiny{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        .origin, .destiny{
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            font-family: $font-text;
+            font-size: 14px;
+
+            label{
+                text-align: left;
+                margin-left: 20px;
+
+            }
+        }
+    }
+
+    .detalle-carga{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        h3{
+            color: #fff;
+            font-family: $font-text;
+            font-size: 15px;
+        }
+
+        #producto1, #producto2{
+            background-color: #fff;
+            font-family: $font-text;
+            font-size: 14px;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            border: 1.8px solid #BB7D08;
+        }
+
+        #cantidad{
+            width: 100%;
+            text-align: right;
+        }
+    }
 
     button {
         background-color: $button-text;
@@ -35,6 +102,7 @@
         height: 47px;
         color: #fff;
         border: none;
+        margin-top: 20px;
       }
 
     img{
