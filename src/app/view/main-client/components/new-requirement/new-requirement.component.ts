@@ -11,18 +11,16 @@ import { RequirementService } from '../../../../services/requirement.service';
 export class NewRequirementComponent implements OnInit {
 
   public requirementForm: FormGroup;
-  // cantidadLista: string[] = ['Bolsa de cemento', 'Bolsas de rapimix', 'Peso total'];
 
   tipoCargaControl = new FormControl('', [Validators.required]); 
   productoControl = new FormControl(''); 
   itemSeleccionadoControl = new FormControl('', [Validators.required]);
   dataRecojoControl = new FormControl('', [Validators.required]);
   dataDestinoControl = new FormControl('', [Validators.required]);
-  dataOtroControl = new FormControl('');
+  // dataOtroControl = new FormControl('');
 
   cantidadesControl = new FormArray([]);
-  // qtySelecControl = new FormControl('');
-  // qtyInputControl = new FormControl('');
+
 
   public selectedOrigin: OriginI = {id: '0', name: ''};
   public tiposCarga: TypeBulkI[]=[];
@@ -41,7 +39,7 @@ export class NewRequirementComponent implements OnInit {
       itemSeleccionado: this.itemSeleccionadoControl,
       dataRecojo: this.dataRecojoControl,
       dataDestino: this.dataDestinoControl,
-      inputOtro: this.dataOtroControl,
+      // inputOtro: this.dataOtroControl,
       cantidadesControl: this.cantidadesControl
      
     });
@@ -57,11 +55,7 @@ export class NewRequirementComponent implements OnInit {
     this.productoControl.valueChanges.subscribe((value)=>{
       console.log(value);
       this.itemsSeleccionados = value
-      // const a = new Array(this.itemsSeleccionados.length).fill(new FormControl('', [Validators.required]))
-      // console.log(this.cantidadesControl.);
       this.cantidadesControl.push(new FormControl('', [Validators.required]))
-      // this.cantidadesControl = new FormArray(a)
-      
       
       console.log(this.requirementForm);
     }) //este es un observable 
