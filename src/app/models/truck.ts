@@ -1,5 +1,5 @@
 export interface Truck {
-    userId: string,
+    /* userId: string, */
     tarjetaPropiedad: string,
     soat: string,
     licenciaConducir: string,
