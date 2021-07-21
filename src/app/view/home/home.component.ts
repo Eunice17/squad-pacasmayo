@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  isDriver: boolean= false;
   constructor(
     private router: Router,
   ) {  }
@@ -15,7 +16,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goLoginView(){
+  goLoginViewDriver(){
+    let rol= "true"
+    localStorage.setItem('rol', rol );
+    this.router.navigate(['./login'])
+  }
+
+  goLoginViewClient(){
+    let rol="false"
+    localStorage.setItem('rol', rol );
     this.router.navigate(['./login'])
   }
 

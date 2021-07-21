@@ -16,6 +16,7 @@
     margin: auto;
     text-align: left;
     color: $color-text;
+
     h1 {
       font-family: $font-title;
       letter-spacing: 1px;
@@ -30,13 +31,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 5px;
+      row-gap: 7px;
 
       .form {
         width: 100%;
       }
 
       .flex-input{
+        
         display: grid;
         grid-template-columns: 38% 58%;
         column-gap: 15px;
@@ -52,6 +54,8 @@ button {
   font-size: 20px;
   width: 50%;
   height: 47px;
+  border: none;
+  border-radius: 8px;
 }
 
 

@@ -17,7 +17,9 @@ import { NewRequirementComponent } from './view/main-client/components/new-requi
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { ConfirmationRegisterTruckComponent } from './view/main-driver/components/confirmation-register-truck/confirmation-register-truck.component';
-import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component'; 
+import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
+import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
+import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,10 +32,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule} from '@angular/material/list';
 import { MatSidenavModule} from '@angular/material/sidenav';
-import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
+import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
+import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +50,14 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     ConfirmationMessageDriverComponent,
     NewRequirementComponent,
     HomeComponent,
+    SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
+    ConfirmationRegisterComponent,
+    ShipmentDetailComponent,
+    SelectTruckComponent
+    MenuDriverComponent,
+    SelectShipmentComponent,
     ConfirmationRegisterComponent
   ],
   imports: [
@@ -68,6 +77,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSidenavModule,
     MatListModule,
     MatProgressSpinnerModule,
+    MatRadioModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
