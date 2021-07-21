@@ -20,6 +20,7 @@ import { ConfirmationRegisterTruckComponent } from './view/main-driver/component
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
+import { FormLoginComponent } from './view/login/components/form-login/form-login.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -55,7 +56,9 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     WaitingDriverComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
-    SelectTruckComponent
+    SelectTruckComponent,
+    FormLoginComponent,
+    SelectTruckComponent,
     MenuDriverComponent,
     SelectShipmentComponent,
     ConfirmationRegisterComponent

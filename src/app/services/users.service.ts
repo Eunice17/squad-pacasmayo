@@ -14,4 +14,9 @@ export class UsersService {
     return this.firestore.collection('users').add(data);
   }
 
+  public getAuthUser(doc:string){
+    return this.firestore.collection('users', ref => ref.where('document', '==', doc))
+    .snapshotChanges();
+  }
+
 }

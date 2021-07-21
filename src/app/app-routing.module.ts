@@ -16,7 +16,7 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
-import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
