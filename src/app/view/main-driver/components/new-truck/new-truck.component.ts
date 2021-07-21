@@ -8,25 +8,24 @@ import { TruckService } from 'src/app/services/truck.service';
   styleUrls: ['./new-truck.component.scss'],
 })
 export class NewTruckComponent implements OnInit {
-
+  button_adi = false;
+  button_pri = true;
   public requirementFormTruck!: FormGroup;
 
   tolva: string[] = ['Abierta', 'Cerrada'];
   tipo: string[] = ['D.N.I.', 'C.E.'];
   
-  tarjetaPropiedad = new FormControl("", Validators.required); 
-  soat = new FormControl("", Validators.required); 
-  licenciaConducir = new FormControl("", Validators.required); 
-  nameDriver = new FormControl("", Validators.required); 
-  docIdent = new FormControl("", [Validators.required, Validators.minLength(8)]); 
-  tolvaForm = new FormControl("", Validators.required); 
-  capCarga = new FormControl('', [Validators.required, Validators.minLength(1)]); 
+  tarjetaPropiedad = new FormControl( "" , Validators.required); 
+  soat = new FormControl( "" ,Validators.required ); 
+  licenciaConducir = new FormControl( "", Validators.required); 
+  nameDriver = new FormControl( "", Validators.required); 
+  docIdent = new FormControl("" ,[Validators.required, Validators.minLength(8)]); 
+  tolvaForm = new FormControl( "", Validators.required ); 
+  capCarga = new FormControl( '', [Validators.required, Validators.minLength(1)]); 
   placa = new FormControl("", Validators.required); 
-  userId = new FormControl("");
 
   constructor(private truckService: TruckService) {
     this.requirementFormTruck = new FormGroup({
-      userId: this.userId,
       tarjetaPropiedad:this.tarjetaPropiedad,
       soat:this.soat,
       licenciaConducir:this.licenciaConducir,
@@ -36,19 +35,28 @@ export class NewTruckComponent implements OnInit {
       capCarga: this.capCarga,
       placa: this.placa
     });
-    this.userId.setValue(JSON.parse(sessionStorage.getItem('user') || '').id)
-   }
-
+  }
+/*     this.userId.setValue(JSON.parse(sessionStorage.getItem('user') || '').id)
+ */  
   ngOnInit(): void {
-    this.requirementFormTruck;
      }
- 
 
-  sendTruck(form: any){
-      this.truckService.createTruck(form).then(() => {
+  sendTruck(){
+    const controlTruck= this.requirementFormTruck.value;
+    const newObjectTruck = {
+      tarjetaPropiedad:controlTruck.tarjetaPropiedad,
+      soat:controlTruck.soat,
+      licenciaConducir:controlTruck.licenciaConducir,
+      nameDriver: controlTruck.nameDriver,
+      docIdent: controlTruck.docIdent,
+      tolvaForm: controlTruck.tolvaForm,
+      capCarga: controlTruck.capCarga,
+      placa: controlTruck.placa,
+      userId: JSON.parse(sessionStorage.getItem('user') || '').id
+    }
+      this.truckService.createTruck(newObjectTruck).then(() => {
         console.log('Documento creado exitósamente!');
         this.requirementFormTruck.setValue({
-          userId:'', // lo agregue porque salia error
           tarjetaPropiedad: '',
           soat: '',
           licenciaConducir: '',
@@ -58,8 +66,11 @@ export class NewTruckComponent implements OnInit {
           capCarga: '',
           placa:''
         });
+        this.button_pri = false;
+        this.button_adi = true;
+
       }, (error) => {
         console.error(error);
       });   
-  }
+  } 
 }

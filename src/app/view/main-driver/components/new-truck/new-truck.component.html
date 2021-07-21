@@ -1,6 +1,4 @@
-<app-nav-bar>
-<section class="body-reg">
-  <div class="content-reg">
+
     <h1>Hola Paulo,</h1>
     <h3>Ingresa tus documentos para utilizar Dakar.</h3>
     <form [formGroup]="requirementFormTruck" class="example-form">
@@ -79,10 +77,10 @@
       <input matInput autocomplete="off" [formControl]="placa" style="color: #161616;"/>
     </mat-form-field>
 
-      <button (click)="sendTruck(requirementFormTruck.value)" [disabled]="requirementFormTruck.invalid" [routerLink]="['/confirtruck']">Confirmar</button>
+      <button *ngIf="button_pri"(click)="sendTruck()" [disabled]="requirementFormTruck.invalid">Confirmar</button>
+      <div style="display: flex; flex-direction: row;width: 80%; column-gap: 20px;">
+        <button *ngIf="button_adi"(click)="sendTruck()" >Confirmar</button>
+        <button *ngIf="button_adi" [routerLink]="['/driver/confirtruck']">Finalizar</button>
+      </div>
     </form>
-  </div>    
-</section>
-</app-nav-bar>
-
-
+ 

@@ -12,4 +12,5 @@ export class TruckService {
   public createTruck(data: Truck){
     return this.firestore.collection('truck').add(data);
   }
+
 }

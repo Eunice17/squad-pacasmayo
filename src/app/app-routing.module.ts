@@ -31,18 +31,19 @@ const routes: Routes = [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
       { path: 'shipment', component: SelectShipmentComponent },
-      { path: 'newtruck', component: NewTruckComponent }
+      { path: 'newtruck', component: NewTruckComponent },
+      { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
+      { path: 'select', component: SelectTruckComponent},  
+      { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
+      { path: 'shipdetail', component: ShipmentDetailComponent},
     ]
   },
+  { path: 'confirregister', component: ConfirmationRegisterComponent},
   { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
-  
   { path: 'waiting', component: WaitingDriverComponent },
-  { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
-  { path: 'confirregister', component: ConfirmationRegisterComponent},
-  { path: 'select', component: SelectTruckComponent},  
-  { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO
+  
+ //BORRAR LUEGO
   { path: 'detail', component: RequirementDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

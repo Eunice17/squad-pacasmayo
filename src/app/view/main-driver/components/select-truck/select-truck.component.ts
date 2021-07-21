@@ -14,7 +14,7 @@ export class SelectTruckComponent implements OnInit {
   }
 
   goConfirMess(){
-    this.router.navigate(['./confirdriver'])
+    this.router.navigate(['./driver/confirdriver'])
 
   }
 }
