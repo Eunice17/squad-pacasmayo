@@ -50,11 +50,13 @@ export class FormLoginComponent implements OnInit {
           password: elem.payload.doc.data().password,
           isDriver: elem.payload.doc.data().rol
         }
+        
       })
-      console.log(this.user.password);
+/*       console.log(this.user.password);
       console.log(pass);
-      console.log(doc);
+      console.log(doc); */
       if(this.user.documento == doc && this.user.password == pass ){
+        sessionStorage.setItem('user',JSON.stringify(this.user));
         console.log('es usuario');
         if(this.user.isDriver === "true"){
           this.router.navigate(['/driver']);
@@ -73,8 +75,8 @@ export class FormLoginComponent implements OnInit {
   login(){
     const docValue = this.loginForm.value.documentoIdCtrl;
     const passValue = this.loginForm.value.contrasenaCtrl;
-
-    console.log(docValue);
+/* 
+    console.log(docValue); */
     this.probando(docValue, passValue)
     //console.log(this.loginForm.value);
   }

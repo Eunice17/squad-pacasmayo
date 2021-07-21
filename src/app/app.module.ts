@@ -59,7 +59,6 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
     ShipmentDetailComponent,
     SelectTruckComponent,
     FormLoginComponent,
-    SelectTruckComponent,
     MenuDriverComponent,
     SelectShipmentComponent,
     ConfirmationRegisterComponent,
