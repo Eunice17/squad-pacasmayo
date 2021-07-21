@@ -11,7 +11,6 @@ import { ConfirmationRegisterTruckComponent } from './view/main-driver/component
 import { MainClientComponent } from './view/main-client/main-client.component';
 import { ConfirmationMessageDriverComponent } from './view/main-driver/components/confirmation-message-driver/confirmation-message-driver.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
-import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
@@ -36,7 +35,7 @@ const routes: Routes = [
   { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent }
+  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
   { path: 'select', component: SelectTruckComponent},  
   { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO

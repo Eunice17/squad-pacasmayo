@@ -55,7 +55,7 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     WaitingDriverComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
-    SelectTruckComponent
+    SelectTruckComponent,
     MenuDriverComponent,
     SelectShipmentComponent,
     ConfirmationRegisterComponent
