@@ -22,7 +22,7 @@ import { ShipmentDetailComponent } from './view/main-driver/components/shipment-
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'formlogin', component: FormLoginComponent },
   {
