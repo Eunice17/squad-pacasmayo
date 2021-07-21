@@ -8,7 +8,7 @@ import { TruckService } from 'src/app/services/truck.service';
   styleUrls: ['./new-truck.component.scss'],
 })
 export class NewTruckComponent implements OnInit {
-  
+
   public requirementFormTruck!: FormGroup;
 
   tolva: string[] = ['Abierta', 'Cerrada'];
@@ -48,6 +48,7 @@ export class NewTruckComponent implements OnInit {
       this.truckService.createTruck(form).then(() => {
         console.log('Documento creado exitósamente!');
         this.requirementFormTruck.setValue({
+          userId:'', // lo agregue porque salia error
           tarjetaPropiedad: '',
           soat: '',
           licenciaConducir: '',
