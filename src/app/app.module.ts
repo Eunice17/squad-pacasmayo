@@ -35,7 +35,7 @@ import { MatListModule} from '@angular/material/list';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';

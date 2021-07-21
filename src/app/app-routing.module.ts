@@ -30,12 +30,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
-      { path: 'shipment', component: SelectShipmentComponent }
+      { path: 'shipment', component: SelectShipmentComponent },
+      { path: 'newtruck', component: NewTruckComponent }
     ]
   },
   { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
-  { path: 'newtruck', component: NewTruckComponent },
+  
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
   { path: 'confirdriver', component: ConfirmationMessageDriverComponent },

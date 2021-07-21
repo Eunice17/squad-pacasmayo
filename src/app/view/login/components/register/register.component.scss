@@ -1,18 +1,19 @@
 @use '../../../../../styles.scss'as *;
 
 .body-reg{
-    width: 100%;
-    // height: 100vh;
-    background-color: $primary;
-    justify-content: center;
-    margin: auto;
-    // padding: 9px;
-
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: $primary;
     .content-reg{
-        background-color: $primary;
-        max-width: 1250px;
-        // margin-top:2rem;
-        // padding: 10px;
+         width: 100%;
+         max-width: 375px;
+         padding: 15px;
+         margin: auto;
+         text-align: center;
+         color: $color-text;
 
     h2{
         font-family: $font-title;
@@ -41,10 +42,11 @@
         font-family: $font-text;
         font-weight: 600;
         font-size: 20px;
-        width: 50%;
+        width: 70%;
         height: 47px;
         color: #ffff;
         border: none;
+        border-radius: 8px;
     }
 
     .firstForm{
