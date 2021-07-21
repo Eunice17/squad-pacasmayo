@@ -8,6 +8,7 @@ import { TruckService } from 'src/app/services/truck.service';
   styleUrls: ['./new-truck.component.scss'],
 })
 export class NewTruckComponent implements OnInit {
+  
   public requirementFormTruck!: FormGroup;
 
   tolva: string[] = ['Abierta', 'Cerrada'];
@@ -21,9 +22,11 @@ export class NewTruckComponent implements OnInit {
   tolvaForm = new FormControl("", Validators.required); 
   capCarga = new FormControl('', [Validators.required, Validators.minLength(1)]); 
   placa = new FormControl("", Validators.required); 
+  userId = new FormControl("");
 
   constructor(private truckService: TruckService) {
     this.requirementFormTruck = new FormGroup({
+      userId: this.userId,
       tarjetaPropiedad:this.tarjetaPropiedad,
       soat:this.soat,
       licenciaConducir:this.licenciaConducir,
@@ -33,6 +36,7 @@ export class NewTruckComponent implements OnInit {
       capCarga: this.capCarga,
       placa: this.placa
     });
+    this.userId.setValue(JSON.parse(sessionStorage.getItem('user') || '').id)
    }
 
   ngOnInit(): void {
