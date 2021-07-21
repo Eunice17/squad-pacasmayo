@@ -20,6 +20,7 @@ export class NewTruckComponent implements OnInit {
   docIdent = new FormControl("", [Validators.required, Validators.minLength(8)]); 
   tolvaForm = new FormControl("", Validators.required); 
   capCarga = new FormControl('', [Validators.required, Validators.minLength(1)]); 
+  placa = new FormControl("", Validators.required); 
 
   constructor(private truckService: TruckService) {
     this.requirementFormTruck = new FormGroup({
@@ -30,6 +31,7 @@ export class NewTruckComponent implements OnInit {
       docIdent: this.docIdent,
       tolvaForm: this.tolvaForm,
       capCarga: this.capCarga,
+      placa: this.placa
     });
    }
 
@@ -48,7 +50,8 @@ export class NewTruckComponent implements OnInit {
           nameDriver: '',
           docIdent: '',
           tolvaForm: '',
-          capCarga: ''
+          capCarga: '',
+          placa:''
         });
       }, (error) => {
         console.error(error);

@@ -6,4 +6,5 @@ export interface Truck {
     docIdent: string,
     tolvaForm: string,
     capCarga: string
+    placa: string
 }
