@@ -6,19 +6,33 @@
     <div class="div-text">
       <h1>DAKAR</h1>
       <h2>Inicia sesión</h2>
-    
-      <form  (ngSubmit)="login()"><!-- [formGroup]="loginForm" --><!-- (ngSubmit)="login()" -->
-
-           <label for="email"></label>
-            <input name="email" formControlName="email" type="email" autocomplete="off" placeholder="Ingresar mail" class="form-control" aria-describedby="emailHelp">
+   
+      <form [formGroup]="loginForm">
+           <label for="documentId"></label>
+            <input name="documentId" formControlName="documentoIdCtrl" autocomplete="off" placeholder="Ingrese documento de identidad" class="form-control">
   
             <label for="password"></label>
-            <input name="password" formControlName="password" type="password" placeholder="Ingresar contraseña" class="form-control">
+            <input name="password" formControlName="contrasenaCtrl" type="password" placeholder="Ingresar contraseña" class="form-control">
             <br>
             <a routerLink="/**">¿Olvidaste contraseña?</a>
   
-            <button mat-button type="submit" (click)="goFormRegister()">Continuar</button>    <!-- [disabled]="loginForm.invalid" -->   
-          </form>
+            <button mat-button (click)="login()">Continuar</button>   
+      </form> 
+
+     <!-- <form [formGroup]="loginForm" class="loginForm">
+      <mat-form-field appearance="fill">
+        <mat-label>Ingresa tu documento de identidad</mat-label>
+        <input matInput formControlName="documentoIdCtrl" required class="form-control">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+          <mat-label>Ingresa tu contraseña</mat-label>
+          <input matInput formControlName="contrasenaCtrl" type="password" required class="form-control">
+      </mat-form-field>
+      <div>
+        <button mat-button (click)="login()">Continuar</button>
+      </div>
+    </form> -->
+
     </div>
   </div>  
 </section>

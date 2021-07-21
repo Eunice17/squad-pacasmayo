@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
         documentCtrl: ['', Validators.required, Validators.maxLength(8), Validators.minLength(8)],
-        emailCtrl: ['', Validators.required, Validators.email],
+        emailCtrl: ['', Validators.email],
         phoneCtrl: ['', Validators.required],
         rucCtrl: ['', Validators.required, Validators.maxLength(10)],
         direccionCtrl: ['', Validators.required],
