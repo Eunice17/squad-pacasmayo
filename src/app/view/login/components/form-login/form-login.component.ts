@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
+import { AuthI}from '../../../../models/auth'
+
 @Component({
   selector: 'app-form-login',
   templateUrl: './form-login.component.html',
@@ -8,55 +11,76 @@ import { Router } from '@angular/router';
 })
 export class FormLoginComponent implements OnInit {
 
-  // loginForm= new FormGroup({
-  //   email: new FormControl('', [Validators.required]),
-  //   password: new FormControl('', [Validators.required]),
-  // })
-  // minPassLength: number = 6;
-  loginForm!: FormGroup;
+  // docValue="";
   minPassLength = 6;
-  
-  // this.loginForm = this.formBuilder.group({
-  //   email: ['', [Validators.required, Validators.email]],
-  //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
-  // })
+  user:any
 
-  
-  // loginForm = this.formBuilder.group({
-  //   email: ['', [Validators.required, Validators.email]],
-  //   password: ['', [Validators.required, Validators.minLength(this.minPassLength)]],
-  // })
+  public loginForm!: FormGroup;
   public buildForm(){    
   } 
 
   constructor(
-    public formBuilder: FormBuilder,
+    private _formBuilder: FormBuilder,
+    private userservice: UsersService,
     private router: Router
-  ) { }
+  ) {
+    this.loginForm = this._formBuilder.group({
+      documentoIdCtrl: ['', Validators.required],
+      contrasenaCtrl: ['', Validators.required]
+    })
 
-
-  ngOnInit(): void {
-    this.loginForm=this.formBuilder.group({
-      email: new FormControl ('', Validators.compose([Validators.required, Validators.email])),
-      password: new FormControl ('', Validators.compose([Validators.required, Validators.minLength(this.minPassLength)])),
-    });
+    // this.docValue = 
   }
   
+
+  ngOnInit(): void {
+    
+  }
+
+  probando(doc: string, pass: string){
+    this.userservice.getAuthUser(doc).subscribe((userSnapshot)=>{
+      //console.log(userSnapshot);
+      this.user={};
+      userSnapshot.forEach((elem: any) =>{
+        //console.log(elem.payload.doc.id);
+        //console.log(elem.payload.doc.data());
+        this.user= {
+          id: elem.payload.doc.id,
+          documento: elem.payload.doc.data().document,
+          password: elem.payload.doc.data().password,
+          isDriver: elem.payload.doc.data().rol
+        }
+        
+      })
+/*       console.log(this.user.password);
+      console.log(pass);
+      console.log(doc); */
+      if(this.user.documento == doc && this.user.password == pass ){
+        sessionStorage.setItem('user',JSON.stringify(this.user));
+        console.log('es usuario');
+        if(this.user.isDriver === "true"){
+          this.router.navigate(['/driver']);
+        } else {
+          this.router.navigate(['/client']);
+        } 
+      } else{
+        alert('Registrate');
+        this.router.navigate(['/register']);
+      }
+    })
+  }
+
+  
+
   login(){
-    console.log('hace login');
-    // console.warn(this.loginForm.value);
-    // if (this.formGroup.valid) {
-    //   const value = this.formGroup.value;
-    //   this.authService.login(value.email, value.password)
-    //   .then(()=>{
-    //     this.router.navigate(['/products'])
-    //   })
-    //   .catch(()=>{
-    //     alert('Verifica el email y password, por favor.')
-    //   })
-    // }
+    const docValue = this.loginForm.value.documentoIdCtrl;
+    const passValue = this.loginForm.value.contrasenaCtrl;
+/* 
+    console.log(docValue); */
+    this.probando(docValue, passValue)
+    //console.log(this.loginForm.value);
   }
-  goFormRegister(){
-    this.router.navigate(['register'])
-  }
+  
+ 
 }
+

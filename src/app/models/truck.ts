@@ -1,4 +1,5 @@
 export interface Truck {
+    /* userId: string, */
     tarjetaPropiedad: string,
     soat: string,
     licenciaConducir: string,
@@ -6,4 +7,5 @@ export interface Truck {
     docIdent: string,
     tolvaForm: string,
     capCarga: string
+    placa: string
 }

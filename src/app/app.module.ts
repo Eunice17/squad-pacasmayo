@@ -20,6 +20,7 @@ import { ConfirmationRegisterTruckComponent } from './view/main-driver/component
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
+import { FormLoginComponent } from './view/login/components/form-login/form-login.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -37,6 +38,7 @@ import { ShipmentDetailComponent } from './view/main-driver/components/shipment-
 import {MatRadioModule} from '@angular/material/radio';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
+import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 
 @NgModule({
   declarations: [
@@ -56,9 +58,13 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
+
+    FormLoginComponent,
+
     MenuDriverComponent,
     SelectShipmentComponent,
-    ConfirmationRegisterComponent
+    ConfirmationRegisterComponent,
+    RequirementDetailComponent
   ],
   imports: [
     BrowserModule,
