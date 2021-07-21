@@ -33,3 +33,21 @@
        
     }
 }
+
+button{
+    background-color: #FC505C;
+    color: $color-text;
+}
+
+.input-color-text{
+    color: black;
+}
+.table-header {
+    background-color: #FC505C;
+    color: white;
+}
+table{
+    border: 1px solid white;
+    border-radius: 8px;
+    margin: 0 0.8rem 1rem 0.8rem;
+}

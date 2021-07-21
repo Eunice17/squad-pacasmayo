@@ -5,7 +5,8 @@ export interface TypeBulkI {
 export interface ProductI {
     id: string;
     name: string;
-    weight: number
+    weight: number;
+    measure: string
 }
 export interface OriginI {
     id: string;

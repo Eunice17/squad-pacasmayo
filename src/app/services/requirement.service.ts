@@ -27,22 +27,26 @@ export class RequirementService {
     {
       id: 'BCEM01',
       name: 'Bolsa de cemento',
-      weight: 42.5
+      weight: 42.5,
+      measure: 'kg'
     },
     {
       id: 'BRAP02',
       name: 'Bolsa de rapimix',
-      weight: 23
+      weight: 23,
+      measure: 'kg'
     },
     {
       id: 'MADOQ03',
       name: 'M2 de adoquines',
-      weight: 48
+      weight: 48,
+      measure: 'kg'
     },
     {
       id: 'VFIE04',
       name: 'Varillas de fierro 3/4',
-      weight: 49
+      weight: 49,
+      measure: 'kg'
     }
   ]
   private origin: OriginI[] = [
@@ -106,12 +110,5 @@ export class RequirementService {
   getDestiny(): DestinationI[]{
     return this.destination;
   }
-  
+  // crear un servicio para el nuevo requerimiento
 }
-// setStepInfo(){
-  //   //para Gaby
-  // }
-
-  // getStepInfo(){
-  //   // obtener valor del form registro
-  // }

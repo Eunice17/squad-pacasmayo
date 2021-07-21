@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OriginI, DestinationI, ProductI, TypeBulkI } from '../../../../models/dinoex';
 import { RequirementService } from '../../../../services/requirement.service';
 
@@ -19,8 +19,10 @@ export class NewRequirementComponent implements OnInit {
   dataRecojoControl = new FormControl('', [Validators.required]);
   dataDestinoControl = new FormControl('', [Validators.required]);
   dataOtroControl = new FormControl('');
-  qtySelecControl = new FormControl('');
-  qtyInputControl = new FormControl('');
+
+  cantidadesControl = new FormArray([]);
+  // qtySelecControl = new FormControl('');
+  // qtyInputControl = new FormControl('');
 
   public selectedOrigin: OriginI = {id: '0', name: ''};
   public tiposCarga: TypeBulkI[]=[];
@@ -29,8 +31,6 @@ export class NewRequirementComponent implements OnInit {
   public destinos: DestinationI[]=[];
   public itemsSeleccionados: ProductI[]=[];
   public inputsOtro: any;
-  public qtySelec: number=0;
-  public qtyInput: number=0;
 
   constructor(
     private requirementService: RequirementService
@@ -42,8 +42,8 @@ export class NewRequirementComponent implements OnInit {
       dataRecojo: this.dataRecojoControl,
       dataDestino: this.dataDestinoControl,
       inputOtro: this.dataOtroControl,
-      qtySelec: this.qtySelecControl,
-      qtyInput: this.qtyInputControl
+      cantidadesControl: this.cantidadesControl
+     
     });
   }
 
@@ -55,8 +55,15 @@ export class NewRequirementComponent implements OnInit {
     this.destinos = this.requirementService.getDestiny();
     
     this.productoControl.valueChanges.subscribe((value)=>{
-      // console.log(value);
+      console.log(value);
       this.itemsSeleccionados = value
+      // const a = new Array(this.itemsSeleccionados.length).fill(new FormControl('', [Validators.required]))
+      // console.log(this.cantidadesControl.);
+      this.cantidadesControl.push(new FormControl('', [Validators.required]))
+      // this.cantidadesControl = new FormArray(a)
+      
+      
+      console.log(this.requirementForm);
     }) //este es un observable 
 
     this.dataRecojoControl.valueChanges.subscribe((value)=>{
@@ -73,13 +80,20 @@ export class NewRequirementComponent implements OnInit {
     })
   }
 
-  mx(){
-
-  }
-
   publish(){
     console.log(this.requirementForm.value);
-    console.log(this.requirementForm.status)
+    console.log(this.requirementForm.status);
+    const request = {
+      ...this.requirementForm.value,
+      producto: this.productoControl.value.map((value: any, index: any)=>{
+        return {
+          ...value, 
+          qty: this.cantidadesControl.get(`${index}`)?.value
+        }
+      })
+    }
+    console.log(request);
+    
     //extrae objeto json
     //creo un servicio de requestService
     // para publicar en la sgte pantalla
@@ -88,15 +102,3 @@ export class NewRequirementComponent implements OnInit {
 
 }
 //ngOnDestroy como mejora--> desuscribe de todo para evitar la fuga de memoria
-
-  // onSelectOrigin(id: string): void{
-  //   // console.log(id);
-  //   this.destinations = this.originService.getDestiny()
-  //   .filter(item => item.originId === id);
-  // }
-
-  // onSelectBulk(id: string){
-
-  //   // aquí llamo al servicio
-  //   // y ese arreglo filtro
-  // }
