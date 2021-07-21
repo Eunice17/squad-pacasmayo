@@ -17,6 +17,7 @@ import { ConfirmationRegisterComponent } from './view/login/components/confirmat
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
+import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 
 
 const routes: Routes = [
