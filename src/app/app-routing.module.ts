@@ -17,6 +17,8 @@ import { MenuDriverComponent } from './view/main-driver/components/menu-driver/m
 import { ConfirmationRegisterComponent } from './view/login/components/confirmation-register/confirmation-register.component';
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 
+import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,10 +38,11 @@ const routes: Routes = [
   { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
   { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent }
+  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
   { path: 'select', component: SelectTruckComponent},  
   { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO
+  { path: 'detail', component: RequirementDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];
 

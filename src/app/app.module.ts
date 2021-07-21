@@ -38,6 +38,7 @@ import { ShipmentDetailComponent } from './view/main-driver/components/shipment-
 import {MatRadioModule} from '@angular/material/radio';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
+import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 
 @NgModule({
   declarations: [
@@ -57,11 +58,14 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
+
+
     FormLoginComponent,
     SelectTruckComponent,
     MenuDriverComponent,
     SelectShipmentComponent,
-    ConfirmationRegisterComponent
+    ConfirmationRegisterComponent,
+    RequirementDetailComponent
   ],
   imports: [
     BrowserModule,
