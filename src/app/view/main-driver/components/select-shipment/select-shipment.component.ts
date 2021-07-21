@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./select-shipment.component.scss']
 })
 export class SelectShipmentComponent implements OnInit {
+  ciudad = ['All', 'Piura', 'Trujillo'];
   constructor() { }
 
   ngOnInit(): void {

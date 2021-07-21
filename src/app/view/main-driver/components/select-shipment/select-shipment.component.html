@@ -9,12 +9,9 @@
   <div class="body-head">
     <label for="">Filtrar por:</label>
       <mat-form-field class="selectCity" appearance="fill">
-      <mat-label>Select an option</mat-label>
+      <mat-label>Selecciona ciudad...</mat-label>
       <mat-select>
-        <mat-option>None</mat-option>
-        <mat-option>Todas las ciudades</mat-option>
-        <mat-option>Piura</mat-option>
-        <mat-option>Trujillo</mat-option>
+        <mat-option *ngFor="let ciudad of ciudad" [value]='ciudad'>{{ciudad}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
