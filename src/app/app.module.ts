@@ -34,9 +34,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MatListModule} from '@angular/material/list';
-import { MatSidenavModule} from '@angular/material/sidenav';
-import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
@@ -44,6 +44,7 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
+import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
 
 @NgModule({
   declarations: [
@@ -63,15 +64,14 @@ import { Prueba2Component } from './prueba/prueba2/prueba2.component';
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
-
     FormLoginComponent,
-
     MenuDriverComponent,
     SelectShipmentComponent,
     ConfirmationRegisterComponent,
     RequirementDetailComponent,
     Prueba1Component,
     Prueba2Component,
+    FilterShipmentPipe,
     
   ],
   imports: [

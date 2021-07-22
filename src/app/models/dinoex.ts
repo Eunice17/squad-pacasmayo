@@ -33,7 +33,6 @@ export interface RequirementI {
     driver:string,
     status:string,
     truck:string,
-    
 }
 export interface DetailProductI{
     qty: number,

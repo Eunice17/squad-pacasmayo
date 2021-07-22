@@ -93,9 +93,8 @@ export class NewRequirementComponent implements OnInit {
     })
   }
 
-  publishOrder(){      
-    console.log(this.destinos); 
-    
+  publishOrder(){       
+
     const request = {
       ...this.requirementForm.value,
       producto: this.productoControl.value.map((value: any, index: any)=>{
@@ -105,16 +104,16 @@ export class NewRequirementComponent implements OnInit {
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
+
       weightTotal: this.pesoTn,
       driver:"",
       status:"Pending",
       truck:"",
       userId: JSON.parse(sessionStorage.getItem('user') || '').id
     }
-
-    this.requirementService.publishOrder(request);
     
-    this.requirementService.createRequirement(request);
+    this.requirementService.publishOrder(request);
+
     console.log(request);
     this.router.navigate(['./order'])
   }

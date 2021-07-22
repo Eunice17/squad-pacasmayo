@@ -26,7 +26,6 @@ export class RequirementDetailComponent implements OnInit {
       this.itemList=el
       console.log(this.itemList);
       console.log(this.itemList[0].producto);
-      
     });
   }
 

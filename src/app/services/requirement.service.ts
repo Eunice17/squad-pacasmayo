@@ -7,16 +7,23 @@ import { OriginI, DestinationI, ProductI, TypeBulkI, RequirementI } from '../mod
   providedIn: 'root'
 })
 export class RequirementService {
-
-  orders: RequirementI[]=[]
+  
+  orders: RequirementI[] = []
   private cart = new BehaviorSubject<Array<RequirementI>>([]);
   cart$ = this.cart.asObservable();
-  
-  publishOrder(order: RequirementI){
-    console.log(order);
+  publishOrder(order: RequirementI) {
     this.orders = [...this.orders, order]
     this.cart.next(this.orders)
   }
+
+  id: string = ''
+  private box = new BehaviorSubject<string>('');
+  box$ = this.box.asObservable();
+  sendId(id: string) {
+    this.id = id;
+    this.box.next(this.id);
+  }
+
 
   private typeBulk: TypeBulkI[] = [
     {
@@ -85,24 +92,25 @@ export class RequirementService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getTypeBulk(): TypeBulkI[]{
+  getTypeBulk(): TypeBulkI[] {
     return this.typeBulk;
   }
-  public getBulk(): Observable<any>{
+  public getBulk(): Observable<any> {
     return this.firestore.collection('product').snapshotChanges();
   }
-  getOrigin(): OriginI[]{
+  getOrigin(): OriginI[] {
     return this.origin;
   }
-  getDestiny(): DestinationI[]{
+  getDestiny(): DestinationI[] {
     return this.destination;
   }
-  createRequirement(data: any){
+  createRequirement(data: any) {
     return this.firestore.collection('requirement').add(data);
   }
 
-  
+  getRequirement() {
+    return this.firestore.collection('requirement').snapshotChanges();
+  }
 
-  
 
 }
