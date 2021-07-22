@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,

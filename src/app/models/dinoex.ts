@@ -29,6 +29,10 @@ export interface RequirementI {
     celular: number,
     horaDespacho: string,
     montoTotal: number,
+    weightTotal: number,
+    driver:string,
+    status:string,
+    truck:string,
 }
 export interface DetailProductI{
     qty: number,
