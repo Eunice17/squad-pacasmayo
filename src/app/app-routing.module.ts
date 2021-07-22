@@ -25,7 +25,7 @@ import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 const routes: Routes = [
   { path: 'prueba', component: Prueba1Component },
   { path: 'prueba2', component: Prueba2Component },
-
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
