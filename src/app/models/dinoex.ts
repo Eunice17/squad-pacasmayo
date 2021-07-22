@@ -33,10 +33,16 @@ export interface RequirementI {
     driver:string,
     status:string,
     truck:string,
+    
 }
 export interface DetailProductI{
     qty: number,
     name: string
+}
+
+export interface RequirementD{
+    id: string,
+    data: any
 }
 
 
