@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+// import { ResolveData } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,6 +42,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MenuDriverComponent } from './view/main-driver/components/menu-driver/menu-driver.component';
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
+import { Prueba1Component } from './prueba/prueba1/prueba1.component';
+import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 
 @NgModule({
   declarations: [
@@ -62,11 +67,16 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
     MenuDriverComponent,
     SelectShipmentComponent,
     ConfirmationRegisterComponent,
-    RequirementDetailComponent
+    RequirementDetailComponent,
+    Prueba1Component,
+    Prueba2Component,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatToolbarModule,

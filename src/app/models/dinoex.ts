@@ -6,6 +6,8 @@ export interface ProductI {
     id: string;
     name: string;
     weight: number;
+    qty:number;
+    weightTotal:number;
     measure: string
 }
 export interface OriginI {
@@ -18,12 +20,15 @@ export interface DestinationI {
     name: string;
 }
 export interface RequirementI {
-    id: string,
     tipoCarga: string, 
-    detalleProducto: Array<DetailProductI>,
-    dataRecojo: string,
-    dataDestino: string,
-    inputOtro: DetailProductI
+    itemSeleccionado: Array<DetailProductI>,
+    dataRecojo: OriginI,
+    dataDestino: DestinationI,
+    direccion: string,
+    nombre: string,
+    celular: number,
+    horaDespacho: string,
+    montoTotal: number,
 }
 export interface DetailProductI{
     qty: number,

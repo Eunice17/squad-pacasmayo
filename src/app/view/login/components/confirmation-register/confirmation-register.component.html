@@ -1,10 +1,21 @@
-<section class="body-sucess">
+<section *ngIf="show" id="body-sucess-driver">
   <img src="../assets/img/check.png">
         <h3>¡REGISTRO EXITOSO!</h3>
         <p>Ya eres parte de la comunidad Dakar. 
-Para aprovecharla al máximo deberás ingresar tus documentos.</p>
+           Para aprovecharla al máximo deberás ingresar tus documentos.</p>
       <div>
         <button mat-button (click)="goToNewTruck()">Hacerlo ahora</button>
         <span (click)="goToMenuDriver()">Ahora no</span>
+      </div>
+</section>
+
+<section *ngIf="!show" id="body-sucess-client">
+  <img src="../assets/img/check.png">
+        <h3>¡REGISTRO EXITOSO!</h3>
+        <p>Ya eres parte de la comunidad Dakar. 
+           Estás listo para ordenar tu carga.</p>
+      <div>
+        <button mat-button (click)="goToNewRequirement()">Hacerlo ahora</button>
+        <span (click)="goToMenuClient()">Ahora no</span>
       </div>
 </section>

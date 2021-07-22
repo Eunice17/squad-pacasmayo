@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-select-shipment',
   templateUrl: './select-shipment.component.html',
@@ -16,9 +17,12 @@ export class SelectShipmentComponent implements OnInit {
     'Contumazá', 'Cutervo', 'Hualgayoc', 'Jaén', 'San Ignacio',
     'San Miguel', 'Santa Cruz', 'San Marcos', 'San Pablo'];
   city = new FormControl('', [Validators.required]);
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  goBack() {
+    this.router.navigate(['./driver/shipdetail'])
+  }
 }

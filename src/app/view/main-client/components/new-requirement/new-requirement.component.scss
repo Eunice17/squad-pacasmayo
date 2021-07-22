@@ -2,7 +2,7 @@
 
 .content-req{
     width: 100%;
-    height: calc(100vh - 57px);
+    min-height: calc(100vh - 56px);
     display: flex;
     flex-direction: column;
     justify-content: center;
