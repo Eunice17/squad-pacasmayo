@@ -1,12 +1,29 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { OriginI, DestinationI, ProductI, TypeBulkI } from '../models/dinoex';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { OriginI, DestinationI, ProductI, TypeBulkI, RequirementI } from '../models/dinoex';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequirementService {
+
+  orders: RequirementI[] = []
+  private cart = new BehaviorSubject<Array<RequirementI>>([]);
+  cart$ = this.cart.asObservable();
+  id: string = ''
+  private box = new BehaviorSubject<string>('');
+  box$ = this.box.asObservable();
+
+  publishOrder(order: RequirementI) {
+    this.orders = [...this.orders, order]
+    this.cart.next(this.orders)
+  }
+  sendId(id: string) {
+    this.id = id;
+    this.box.next(this.id);
+  }
+
   private typeBulk: TypeBulkI[] = [
     {
       id: 'TC01',
@@ -74,23 +91,26 @@ export class RequirementService {
 
   constructor(private firestore: AngularFirestore) { }
 
-  getTypeBulk(): TypeBulkI[]{
+  getTypeBulk(): TypeBulkI[] {
     return this.typeBulk;
   }
-  public getBulk(): Observable<any>{
+  public getBulk(): Observable<any> {
     return this.firestore.collection('product').snapshotChanges();
   }
-  getOrigin(): OriginI[]{
+  getOrigin(): OriginI[] {
     return this.origin;
   }
-  getDestiny(): DestinationI[]{
+  getDestiny(): DestinationI[] {
     return this.destination;
   }
-  createRequirement(data: any){
+  createRequirement(data: any) {
     return this.firestore.collection('requirement').add(data);
   }
-  getRequirement(id: string){
+  getRequirementId(id: string){
     return this.firestore.collection('requirement').doc(id).snapshotChanges();
+  }
+  getRequirement() {
+    return this.firestore.collection('requirement').snapshotChanges();
   }
 
 }

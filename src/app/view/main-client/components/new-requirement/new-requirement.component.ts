@@ -89,7 +89,7 @@ export class NewRequirementComponent implements OnInit {
     })
   }
 
-  publish(){   
+  publishOrder(){       
     const request = {
       ...this.requirementForm.value,
       ...this.productoControl.value.map((value: any, index: any)=>{
@@ -99,8 +99,12 @@ export class NewRequirementComponent implements OnInit {
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
-      weightTotal: this.pesoTotalPedido
+      weightTotal: this.pesoTotalPedido,
+      driver:"",
+      status:"Pending",
+      truck:"",
     }
+    this.requirementService.publishOrder(request);
     console.log(request);
     this.router.navigate(['./order'])
   }
