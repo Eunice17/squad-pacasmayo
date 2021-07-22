@@ -1,36 +1,39 @@
 @use '../../../../../styles.scss' as *;
 
-.body-reg {
+/* .body-reg {
   width: 100%;
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 58px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: $primary;
-
-  .content-reg {
+ */
+/*   .content-reg {
     width: 100%;
     max-width: 375px;
     padding: 15px;
     margin: auto;
     text-align: left;
     color: $color-text;
-
+ */
     h1 {
-      font-family: $font-title;
+      font-family: $font-title; 
+      color: $color-text;
       letter-spacing: 1px;
       font-size: 20px;
     }
 
     h3 {
       font-family: $font-text;
+      color: $color-text;
+
     }
 
     .example-form {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      /* align-items: center; */
       row-gap: 7px;
 
       .form {
@@ -40,19 +43,19 @@
       .flex-input{
         
         display: grid;
-        grid-template-columns: 38% 58%;
+        grid-template-columns: 48% 48%;
         column-gap: 15px;
       }
     }
-  }
-}
+  
 
 button {
   background-color: $button-text;
   font-family: $font-text;
+  color: $color-text;
   font-weight: 600;
   font-size: 20px;
-  width: 50%;
+  width: 100%;
   height: 47px;
   border: none;
   border-radius: 8px;

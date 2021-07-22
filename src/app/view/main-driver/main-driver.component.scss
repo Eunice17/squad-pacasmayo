@@ -3,17 +3,18 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
     background-color: $primary;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     .row-driver{
         width: 100%;
         align-items: center;
         height: inherit;
-        max-width: 1250px;
+        max-width: 500px;
         margin: 0 auto;
         padding: 0px 40px;
+        box-sizing: border-box;
     }
 }

@@ -18,9 +18,14 @@ import { SelectTruckComponent } from './view/main-driver/components/select-truck
 
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
+import { Prueba1Component } from './prueba/prueba1/prueba1.component';
+import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 
 
 const routes: Routes = [
+  { path: 'prueba', component: Prueba1Component },
+  { path: 'prueba2', component: Prueba2Component },
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -30,18 +35,20 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
-      { path: 'shipment', component: SelectShipmentComponent }
+      { path: 'shipment', component: SelectShipmentComponent },
+      { path: 'newtruck', component: NewTruckComponent },
+      { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
+      { path: 'select', component: SelectTruckComponent},  
+      { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
+      { path: 'shipdetail', component: ShipmentDetailComponent},
     ]
   },
+  { path: 'confirregister', component: ConfirmationRegisterComponent},
   { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
-  { path: 'newtruck', component: NewTruckComponent },
   { path: 'waiting', component: WaitingDriverComponent },
-  { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-  { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
-  { path: 'confirregister', component: ConfirmationRegisterComponent},
-  { path: 'select', component: SelectTruckComponent},  
-  { path: 'shipdetail', component: ShipmentDetailComponent}, //BORRAR LUEGO
+  
+ //BORRAR LUEGO
   { path: 'detail', component: RequirementDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

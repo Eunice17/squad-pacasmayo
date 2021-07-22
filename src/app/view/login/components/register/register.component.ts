@@ -81,9 +81,8 @@ export class RegisterComponent implements OnInit {
   }
 
   goToMenuDriver(){
-    console.log('click en ahora no');
+    console.log('click en ahora no!');
   }
-
   goToLogin(){
     this.router.navigate(['/home']);
     localStorage.removeItem('rol');
