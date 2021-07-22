@@ -25,7 +25,6 @@ export class RequirementService {
       name: 'Carga de agregados'
     }
   ]
- 
   private origin: OriginI[] = [
     {
       id: 'P01',

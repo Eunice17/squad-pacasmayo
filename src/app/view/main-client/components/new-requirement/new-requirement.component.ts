@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OriginI, DestinationI, ProductI, TypeBulkI } from '../../../../models/dinoex';
 import { RequirementService } from '../../../../services/requirement.service';
 
@@ -23,7 +24,6 @@ export class NewRequirementComponent implements OnInit {
 
   tipoCargaControl = new FormControl('', [Validators.required]); 
   productoControl = new FormControl(''); 
-  // itemSeleccionadoControl = new FormControl('', [Validators.required]);
   cantidadesControl = new FormArray([]);
   dataRecojoControl = new FormControl('', [Validators.required]);
   dataDestinoControl = new FormControl('', [Validators.required]);
@@ -34,11 +34,11 @@ export class NewRequirementComponent implements OnInit {
   montoTotalControl = new FormControl('', [Validators.required]);
 
   constructor(
-    private requirementService: RequirementService
+    private requirementService: RequirementService,
+    private router: Router,
   ) {
     this.requirementForm = new FormGroup({
       tipoCarga: this.tipoCargaControl, 
-      // itemSeleccionado: this.itemSeleccionadoControl,
       cantidadesControl: this.cantidadesControl,
       dataRecojo: this.dataRecojoControl,
       dataDestino: this.dataDestinoControl,
@@ -86,7 +86,6 @@ export class NewRequirementComponent implements OnInit {
         this.itemsSeleccionados[i].weightTotal=cantidad*this.itemsSeleccionados[i].weight;
         this.pesoTotalPedido = this.pesoTotalPedido + this.itemsSeleccionados[i].weightTotal;
       }
-
     })
   }
 
@@ -103,9 +102,7 @@ export class NewRequirementComponent implements OnInit {
       weightTotal: this.pesoTotalPedido
     }
     console.log(request);
-    
+    this.router.navigate(['./order'])
   }
-
-
 }
 //ngOnDestroy como mejora--> desuscribe de todo para evitar la fuga de memoria
