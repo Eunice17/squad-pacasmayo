@@ -70,17 +70,15 @@ export class RegisterComponent implements OnInit {
   }
 
   //llamada al servicio
-  createUser(obj: any){
-    console.log('dentro de createUser',obj);
-    
-    this.userService.createUser(obj).then(()=>{
-      this.router.navigate(['/confirregister']);
+  createUser(obj: any){  
+  this.userService.createUser(obj).then(()=>{
+      
     })
   }
 
   goToMenuDriver(){
     console.log('click en ahora no');
-    
+
   }
 
 }

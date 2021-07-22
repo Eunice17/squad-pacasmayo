@@ -1,0 +1,7 @@
+    <form [formGroup]="archivoForm" (ngSubmit)="subirArchivo()">
+      <input class="file-input" type="file" formControlName="archivo" 
+      (change)="cambioArchivo($event)">
+      <input class="file-input" type="file" formControlName="archivo2" 
+      (change)="cambioArchivo($event)">
+      <button type ="submit">Subir archivo</button>
+    </form>
