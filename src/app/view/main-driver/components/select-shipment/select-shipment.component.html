@@ -16,9 +16,9 @@
     </mat-form-field>
   </div>
   <div class="orders">
-    <div class="block-order" *ngFor="let item of shipments; index as i">
+    <div class="block-order" *ngFor="let item of shipments | filterShipment: city.value ">
       <div class="description">
-        <h5>{{item.data.dataDestino}}</h5>
+        <h5>Destino: {{item.data.dataDestino}}</h5>
         <span>{{item.data.weightTotal}} kg</span>
       </div>
       <p class="price-order">S/. {{item.data.montoTotal}}</p>
