@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { OriginI, DestinationI, ProductI, TypeBulkI } from '../models/dinoex';
 
 @Injectable({
@@ -23,32 +25,7 @@ export class RequirementService {
       name: 'Carga de agregados'
     }
   ]
-  private bulk: ProductI[] = [
-    {
-      id: 'BCEM01',
-      name: 'Bolsa de cemento',
-      weight: 42.5,
-      measure: 'kg'
-    },
-    {
-      id: 'BRAP02',
-      name: 'Bolsa de rapimix',
-      weight: 23,
-      measure: 'kg'
-    },
-    {
-      id: 'MADOQ03',
-      name: 'M2 de adoquines',
-      weight: 48,
-      measure: 'kg'
-    },
-    {
-      id: 'VFIE04',
-      name: 'Varillas de fierro 3/4',
-      weight: 49,
-      measure: 'kg'
-    }
-  ]
+ 
   private origin: OriginI[] = [
     {
       id: 'P01',
@@ -96,13 +73,13 @@ export class RequirementService {
     }
   ]
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) { }
 
   getTypeBulk(): TypeBulkI[]{
     return this.typeBulk;
   }
-  getBulk(): ProductI[]{
-    return this.bulk;
+  public getBulk(): Observable<any>{
+    return this.firestore.collection('product').snapshotChanges();
   }
   getOrigin(): OriginI[]{
     return this.origin;
@@ -110,5 +87,7 @@ export class RequirementService {
   getDestiny(): DestinationI[]{
     return this.destination;
   }
-  // crear un servicio para el nuevo requerimiento
+  createRequirement(data: any){
+    return this.firestore.collection('requirement').add(data);
+  }
 }

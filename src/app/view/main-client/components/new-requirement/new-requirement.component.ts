@@ -9,88 +9,101 @@ import { RequirementService } from '../../../../services/requirement.service';
   styleUrls: ['./new-requirement.component.scss']
 })
 export class NewRequirementComponent implements OnInit {
-
-  public requirementForm: FormGroup;
-
-  tipoCargaControl = new FormControl('', [Validators.required]); 
-  productoControl = new FormControl(''); 
-  itemSeleccionadoControl = new FormControl('', [Validators.required]);
-  dataRecojoControl = new FormControl('', [Validators.required]);
-  dataDestinoControl = new FormControl('', [Validators.required]);
-  // dataOtroControl = new FormControl('');
-
-  cantidadesControl = new FormArray([]);
-
-
   public selectedOrigin: OriginI = {id: '0', name: ''};
   public tiposCarga: TypeBulkI[]=[];
-  public productos: ProductI[]=[];
   public recojos: OriginI[]=[];
   public destinos: DestinationI[]=[];
   public itemsSeleccionados: ProductI[]=[];
-  public inputsOtro: any;
+  public requirementForm: FormGroup;
+
+  pesoTotalPedido!: any;
+  productos!: any;
+  ctd!: any;
+  array!: any;
+
+  tipoCargaControl = new FormControl('', [Validators.required]); 
+  productoControl = new FormControl(''); 
+  // itemSeleccionadoControl = new FormControl('', [Validators.required]);
+  cantidadesControl = new FormArray([]);
+  dataRecojoControl = new FormControl('', [Validators.required]);
+  dataDestinoControl = new FormControl('', [Validators.required]);
+  direccionControl = new FormControl('', [Validators.required]);
+  nombreControl = new FormControl('', [Validators.required]);
+  celularControl = new FormControl('', [Validators.required]);
+  horaDespachoControl = new FormControl('', [Validators.required]);
+  montoTotalControl = new FormControl('', [Validators.required]);
 
   constructor(
     private requirementService: RequirementService
   ) {
     this.requirementForm = new FormGroup({
       tipoCarga: this.tipoCargaControl, 
-      producto: this.productoControl,
-      itemSeleccionado: this.itemSeleccionadoControl,
+      // itemSeleccionado: this.itemSeleccionadoControl,
+      cantidadesControl: this.cantidadesControl,
       dataRecojo: this.dataRecojoControl,
       dataDestino: this.dataDestinoControl,
-      // inputOtro: this.dataOtroControl,
-      cantidadesControl: this.cantidadesControl
-     
+      direccion: this.direccionControl,
+      nombre: this.nombreControl,
+      celular: this.celularControl,
+      horaDespacho: this.horaDespachoControl,
+      montoTotal: this.montoTotalControl,
     });
   }
 
   ngOnInit(): void {
-    
     this.tiposCarga = this.requirementService.getTypeBulk();
-    this.productos = this.requirementService.getBulk();
+    this.requirementService.getBulk().subscribe((productsSnapshot)=>{
+      this.productos = [];
+      productsSnapshot.forEach((data: any) => {
+        this.productos.push({
+          id: data.payload.doc.id,
+          data: data.payload.doc.data(),
+          name: data.payload.doc.data().name,
+          weight: data.payload.doc.data().weight
+        })
+      });
+    });
+
     this.recojos = this.requirementService.getOrigin();
     this.destinos = this.requirementService.getDestiny();
     
     this.productoControl.valueChanges.subscribe((value)=>{
-      console.log(value);
-      this.itemsSeleccionados = value
+      this.itemsSeleccionados = value;
       this.cantidadesControl.push(new FormControl('', [Validators.required]))
-      
-      console.log(this.requirementForm);
-    }) //este es un observable 
+    })
 
     this.dataRecojoControl.valueChanges.subscribe((value)=>{
-      // console.log(this.detalleCargaControl.status);
       this.destinos = this.requirementService.getDestiny()
       .filter(item => item.originId === value);
-    })//este es un observable
-
-    this.requirementForm.valueChanges.subscribe((value)=>{
-      console.log(value);  
     })
-    this.requirementForm.statusChanges.subscribe((value)=>{
-      console.log(value);
+
+    this.cantidadesControl.valueChanges.subscribe((value)=>{
+      this.ctd=[...value];
+      this.pesoTotalPedido=0;
+      for (let i = 0; i < value.length; i++) {
+        const cantidad = Number(value[i]);
+        this.itemsSeleccionados[i].qty=cantidad;
+        this.itemsSeleccionados[i].weightTotal=cantidad*this.itemsSeleccionados[i].weight;
+        this.pesoTotalPedido = this.pesoTotalPedido + this.itemsSeleccionados[i].weightTotal;
+      }
+
     })
   }
 
-  publish(){
-    console.log(this.requirementForm.value);
-    console.log(this.requirementForm.status);
+  publish(){   
     const request = {
       ...this.requirementForm.value,
       producto: this.productoControl.value.map((value: any, index: any)=>{
+        console.log(value);
         return {
           ...value, 
-          qty: this.cantidadesControl.get(`${index}`)?.value
+          qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
-      })
+      }),
+      weightTotal: this.pesoTotalPedido
     }
     console.log(request);
     
-    //extrae objeto json
-    //creo un servicio de requestService
-    // para publicar en la sgte pantalla
   }
 
 

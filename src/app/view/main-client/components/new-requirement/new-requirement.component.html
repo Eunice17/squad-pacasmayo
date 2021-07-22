@@ -7,7 +7,7 @@
         <!-- Lista de tipo de carga -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Tipo de carga</mat-label>
+          <mat-label>Tipo de carga*</mat-label>
           <mat-select [formControl]="tipoCargaControl" >
             <mat-option *ngFor="let bulk of tiposCarga" [value]="bulk">{{bulk.name}}</mat-option>
           </mat-select>
@@ -16,48 +16,41 @@
         <!-- Lista de productos de carga -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Productos de carga</mat-label>
+          <mat-label>Productos de carga*</mat-label>
           <mat-select [formControl]="productoControl" multiple>
             <mat-option *ngFor="let product of productos" [value]="product">{{product.name}}</mat-option>
-            
-            <mat-form-field appearance="fill">
-              <mat-label>Otro:</mat-label>
-              <input [formControl]="dataOtroControl" autocomplete="off" matInput>
-            </mat-form-field>
-
           </mat-select>
         </mat-form-field>
         
         <!-- Tabla con los productos de carga que se selecciona  -->
 
-        <section *ngIf="dataOtroControl.value || productoControl.value">
+        <section *ngIf="productoControl.value">
 
           <h3 >Lista de productos:</h3>
           <table  class="default">
             <tr class="table-header">
               <th>Producto</th>
-              <td>Cantidad</td>
+              <th>Cantidad</th>
+              <th>Peso Uni</th>
+              <th>Peso Total</th>
             </tr>
             <ng-container formArrayName="cantidadesControl">
               <tr *ngFor="let control of itemsSeleccionados; index as i">
                 
-                  <th  >{{itemsSeleccionados[i].name}}</th>
-                  <td ><input [formControlName]="i"  name="item" ></td> 
-  
+                  <td >{{itemsSeleccionados[i].name}}</td>
+                  <td ><input [formControlName]="i"  name="item"  ></td> 
+                  <td >{{itemsSeleccionados[i].weight}} KG</td>
+                  <td >{{itemsSeleccionados[i].weightTotal}} KG</td> 
               </tr>
+                  <p>Peso total del pedido: {{pesoTotalPedido}} KG</p>
             </ng-container>
-            <!-- <tr *ngIf="dataOtroControl.value">
-              <th  >{{dataOtroControl.value}}</th>
-              <td ><input  name="quantity" /></td> 
-            </tr> -->
           </table>
-        
         </section>
 
         <!-- Datos de recojo -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Datos de recojo</mat-label>
+          <mat-label>Datos de recojo*</mat-label>
           <mat-select [formControl]="dataRecojoControl" name="origin" >
             <mat-option>None</mat-option>
             <mat-option *ngFor="let origin of recojos" [value]="origin.id">
@@ -69,8 +62,8 @@
         <!-- Datos de destino -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Datos de destino</mat-label>
-          <mat-select  name="destination">
+          <mat-label>Datos de destino*</mat-label>
+          <mat-select [formControl]="dataDestinoControl" name="destination">
             <mat-option *ngFor="let destination of destinos" [value]="destination.id">
               {{destination.name}}
             </mat-option>
@@ -80,28 +73,28 @@
         <!-- Datos del contacto -->
 
         <mat-form-field appearance="fill">
-          <mat-label>Dirección destino</mat-label>
-          <input class="input-color-text" autocomplete="off" matInput>
+          <mat-label>Dirección destino*</mat-label>
+          <input [formControl]="direccionControl" class="input-color-text" autocomplete="off" matInput>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-            <mat-label>Nombre completo</mat-label>
-            <input class="input-color-text" autocomplete="off" matInput>
+            <mat-label>Nombre completo*</mat-label>
+            <input [formControl]="nombreControl" class="input-color-text" autocomplete="off" matInput>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Celular</mat-label>
-          <input class="input-color-text" autocomplete="off" matInput>
+          <mat-label>Celular*</mat-label>
+          <input [formControl]="celularControl" class="input-color-text" autocomplete="off" matInput>
         </mat-form-field> 
 
         <mat-form-field appearance="fill">
-          <mat-label>Horario de despacho</mat-label>
-          <input class="input-color-text" autocomplete="off" matInput>
+          <mat-label>Horario de despacho*</mat-label>
+          <input [formControl]="horaDespachoControl" class="input-color-text" autocomplete="off" matInput>
         </mat-form-field> 
 
         <mat-form-field appearance="fill">
-          <mat-label>Monto total</mat-label>
-          <input class="input-color-text" autocomplete="off" matInput>
+          <mat-label>Monto total*</mat-label>
+          <input [formControl]="montoTotalControl" class="input-color-text" autocomplete="off" matInput>
         </mat-form-field> 
 
       </form>
