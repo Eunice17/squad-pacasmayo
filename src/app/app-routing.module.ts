@@ -19,10 +19,13 @@ import { SelectTruckComponent } from './view/main-driver/components/select-truck
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
+import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 
 
 const routes: Routes = [
   { path: 'prueba', component: Prueba1Component },
+  { path: 'prueba2', component: Prueba2Component },
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
