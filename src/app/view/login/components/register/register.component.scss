@@ -45,6 +45,7 @@
         height: 47px;
         color: #ffff;
         border: none;
+        border: 8px;
     }
 
     .firstForm{
@@ -57,13 +58,49 @@
        
         div{
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            margin-top: 30px;
+            align-items: center;
+            // justify-content: center;
+
+            .back{
+                background-color: #ffff;
+                width: 18px;
+                background-color: $primary;
+                
+            }
         }
 
        
     }
 
     .secondForm{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $primary;
+        
+        
+        div{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            align-items: center;
+            // justify-content: center;
+
+            .back{
+                background-color: #ffff;
+                width: 18px;
+                background-color: $primary;
+                
+            }
+        }
+
+       
+    }
+
+    .thirdForm{
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -80,7 +117,18 @@
                 background-color: #ffff;
                 width: 18px;
                 background-color: $primary;
-                
+            }
+            
+            button{
+                background-color: $button-text;
+                font-family: $font-text;
+                font-weight: 600;
+                font-size: 20px;
+                width: 50%;
+                height: 47px;
+                color: #ffff;
+                border: none;
+                border: 8px;
             }
         }
 

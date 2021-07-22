@@ -1,23 +1,23 @@
 <section class="body-reg">
   <div class="content-reg">
     <h2>REGÍSTRATE</h2>
-
-    <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-      </button>  -->
       <mat-stepper [linear]="isLinear" #stepper class="stepper">
+
         <mat-step class="firstStep" [stepControl]="firstFormGroup" >
           <h3>Por favor, ingresa tus datos</h3>
           <form [formGroup]="firstFormGroup" class="firstForm">
-            <!-- <ng-template matStepLabel>Fill out your name</ng-template> -->
+            <ng-template matStepLabel></ng-template>
+
             <mat-form-field appearance="fill">
               <mat-label>Nombre</mat-label>
               <input matInput formControlName="nameCtrl" required>
             </mat-form-field>
+
             <mat-form-field appearance="fill">
                 <mat-label>Apellido</mat-label>
                 <input matInput formControlName="lastnameCtrl" required>
             </mat-form-field>
+
             <mat-form-field appearance="fill">
             <mat-label>Tipo</mat-label>
                 <mat-select>
@@ -33,48 +33,70 @@
                 </mat-select>
                 <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
                 <mat-hint>{{animalControl.value?.sound}}</mat-hint>
-              </mat-form-field> -->
+              </mat-form-field> 
+            [disabled]="firstFormGroup.invalid"-->
             <mat-form-field appearance="fill">
                 <mat-label>Documento de identidad</mat-label>
                 <input matInput formControlName="documentCtrl" required>
             </mat-form-field>
+
             <mat-form-field appearance="fill">
                 <mat-label>Correo</mat-label>
                 <input matInput formControlName="emailCtrl" required>
             </mat-form-field>
+
             <mat-form-field appearance="fill">
                 <mat-label>Celular</mat-label>
                 <input matInput formControlName="phoneCtrl" required>
             </mat-form-field>
+
             <mat-form-field appearance="fill">
                 <mat-label>RUC</mat-label>
                 <input matInput formControlName="rucCtrl" required>
             </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Direccion</mat-label>
-                <input matInput formControlName="direccionCtrl" required >
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Departamento</mat-label>
-                <input matInput formControlName="departmentCtrl" required>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Provincia</mat-label>
-                <input matInput formControlName="provinceCtrl" required>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Distrito</mat-label>
-                <input matInput formControlName="districtCtrl" required>
-            </mat-form-field>
             <div>
-              <button mat-button matStepperNext (click)="getInputUserF1()">Continuar</button>
+              <button mat-button matStepperNext>Continuar</button>
+              <button mat-button (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></button>
             </div>
           </form>
         </mat-step>
+
+          <mat-step class="secondStep" [stepControl]="secondFormGroup">
+            <h3>Por favor, ingresa tus datos de ubicación</h3>
+            <form [formGroup]="secondFormGroup" class="secondForm">
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Direccion</mat-label>
+                  <input matInput formControlName="direccionCtrl" required >
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Departamento</mat-label>
+                  <input matInput formControlName="departmentCtrl" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Provincia</mat-label>
+                  <input matInput formControlName="provinceCtrl" required>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>Distrito</mat-label>
+                  <input matInput formControlName="districtCtrl" required>
+              </mat-form-field>
+
+              <div>
+                <button mat-button matStepperNext>Continuar</button>
+                <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+              </div>
+            </form>
+          </mat-step>
+
         
-        <mat-step [stepControl]="secondFormGroup" class="secondStep">
+        <mat-step  class="thirdStep" [stepControl]="thirdFormGroup">
           <h3>Crea tu contraseña</h3>
-          <form [formGroup]="secondFormGroup" class="secondForm">
+          <form [formGroup]="thirdFormGroup" class="secondForm">
+
             <mat-form-field appearance="fill">
               <mat-label>Crea tu contraseña</mat-label>
               <input matInput formControlName="passwordCtrl" required type="password">
@@ -84,7 +106,8 @@
             <mat-form-field appearance="fill">
                 <mat-label>Confirma tu contraseña</mat-label>
                 <input matInput formControlName="password1Ctrl" required type="password">
-              </mat-form-field>
+            </mat-form-field>
+
             <section class="example-section">
             <mat-checkbox class="example-margin">Acepto los términos y condiciones</mat-checkbox>
             </section>

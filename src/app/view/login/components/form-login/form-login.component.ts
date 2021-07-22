@@ -28,8 +28,6 @@ export class FormLoginComponent implements OnInit {
       documentoIdCtrl: ['', Validators.required],
       contrasenaCtrl: ['', Validators.required]
     })
-
-    // this.docValue = 
   }
   
 
@@ -37,24 +35,19 @@ export class FormLoginComponent implements OnInit {
     
   }
 
-  probando(doc: string, pass: string){
+  sendCredential(doc: string, pass: string){
     this.userservice.getAuthUser(doc).subscribe((userSnapshot)=>{
-      //console.log(userSnapshot);
       this.user={};
       userSnapshot.forEach((elem: any) =>{
-        //console.log(elem.payload.doc.id);
-        //console.log(elem.payload.doc.data());
         this.user= {
           id: elem.payload.doc.id,
+          name: elem.payload.doc.data().name,
           documento: elem.payload.doc.data().document,
           password: elem.payload.doc.data().password,
           isDriver: elem.payload.doc.data().rol
-        }
-        
+        }   
       })
-/*       console.log(this.user.password);
-      console.log(pass);
-      console.log(doc); */
+
       if(this.user.documento == doc && this.user.password == pass ){
         sessionStorage.setItem('user',JSON.stringify(this.user));
         console.log('es usuario');
@@ -75,10 +68,12 @@ export class FormLoginComponent implements OnInit {
   login(){
     const docValue = this.loginForm.value.documentoIdCtrl;
     const passValue = this.loginForm.value.contrasenaCtrl;
-/* 
-    console.log(docValue); */
-    this.probando(docValue, passValue)
-    //console.log(this.loginForm.value);
+    this.sendCredential(docValue, passValue)
+  }
+
+  goToHome(){
+    localStorage.removeItem('rol');
+    this.router.navigate(['/home'])
   }
   
  
