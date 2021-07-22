@@ -10,7 +10,7 @@
     <label for="">Filtrar por:</label>
       <mat-form-field class="selectCity" appearance="fill">
       <mat-label>Selecciona ciudad...</mat-label>
-      <mat-select>
+      <mat-select [formControl]='city'>
         <mat-option *ngFor="let ciudad of ciudad" [value]='ciudad'>{{ciudad}}</mat-option>
       </mat-select>
     </mat-form-field>
