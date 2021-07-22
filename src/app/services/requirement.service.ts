@@ -7,22 +7,23 @@ import { OriginI, DestinationI, ProductI, TypeBulkI, RequirementI } from '../mod
   providedIn: 'root'
 })
 export class RequirementService {
-
+  
   orders: RequirementI[] = []
   private cart = new BehaviorSubject<Array<RequirementI>>([]);
   cart$ = this.cart.asObservable();
-  id: string = ''
-  private box = new BehaviorSubject<string>('');
-  box$ = this.box.asObservable();
-
   publishOrder(order: RequirementI) {
     this.orders = [...this.orders, order]
     this.cart.next(this.orders)
   }
+
+  id: string = ''
+  private box = new BehaviorSubject<string>('');
+  box$ = this.box.asObservable();
   sendId(id: string) {
     this.id = id;
     this.box.next(this.id);
   }
+
 
   private typeBulk: TypeBulkI[] = [
     {
@@ -106,8 +107,14 @@ export class RequirementService {
   createRequirement(data: any) {
     return this.firestore.collection('requirement').add(data);
   }
+
+  getRequirementId(id: string){
+    return this.firestore.collection('requirement').doc(id).snapshotChanges();
+  }
+
   getRequirement() {
     return this.firestore.collection('requirement').snapshotChanges();
   }
+
 
 }
