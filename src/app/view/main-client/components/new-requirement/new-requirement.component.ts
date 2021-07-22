@@ -18,6 +18,7 @@ export class NewRequirementComponent implements OnInit {
   public requirementForm: FormGroup;
 
   pesoTotalPedido!: any;
+  pesoTn!: number;
   productos!: any;
   ctd!: any;
   array!: any;
@@ -74,7 +75,9 @@ export class NewRequirementComponent implements OnInit {
 
     this.dataRecojoControl.valueChanges.subscribe((value)=>{
       this.destinos = this.requirementService.getDestiny()
-      .filter(item => item.originId === value);
+      .filter(item => item.originId === value.id);
+      
+      
     })
 
     this.cantidadesControl.valueChanges.subscribe((value)=>{
@@ -86,10 +89,12 @@ export class NewRequirementComponent implements OnInit {
         this.itemsSeleccionados[i].weightTotal=cantidad*this.itemsSeleccionados[i].weight;
         this.pesoTotalPedido = this.pesoTotalPedido + this.itemsSeleccionados[i].weightTotal;
       }
+      this.pesoTn=this.pesoTotalPedido/1000;
     })
   }
 
   publishOrder(){       
+
     const request = {
       ...this.requirementForm.value,
       producto: this.productoControl.value.map((value: any, index: any)=>{
@@ -99,12 +104,16 @@ export class NewRequirementComponent implements OnInit {
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
-      weightTotal: this.pesoTotalPedido,
+
+      weightTotal: this.pesoTn,
       driver:"",
       status:"Pending",
       truck:"",
+      userId: JSON.parse(sessionStorage.getItem('user') || '').id
     }
+    
     this.requirementService.publishOrder(request);
+
     console.log(request);
     this.router.navigate(['./order'])
   }
