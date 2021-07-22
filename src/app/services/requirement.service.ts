@@ -1,12 +1,23 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { OriginI, DestinationI, ProductI, TypeBulkI } from '../models/dinoex';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { OriginI, DestinationI, ProductI, TypeBulkI, RequirementI } from '../models/dinoex';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequirementService {
+
+  orders: RequirementI[]=[]
+  private cart = new BehaviorSubject<Array<RequirementI>>([]);
+  cart$ = this.cart.asObservable();
+  
+  publishOrder(order: RequirementI){
+    console.log(order);
+    this.orders = [...this.orders, order]
+    this.cart.next(this.orders)
+  }
+
   private typeBulk: TypeBulkI[] = [
     {
       id: 'TC01',
@@ -89,4 +100,7 @@ export class RequirementService {
   createRequirement(data: any){
     return this.firestore.collection('requirement').add(data);
   }
+
+  
+
 }

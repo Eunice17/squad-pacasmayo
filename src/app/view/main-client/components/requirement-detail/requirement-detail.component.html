@@ -1,13 +1,13 @@
 
 <app-nav-bar>
-    <section class="body">
+    <section *ngIf="(orders$ | async) as products" class="body">
         <div>
             <h2>Detalle de la carga<hr></h2>
         </div>
         <br>
         <section class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total: 8.50 tn</label>
+                <label>Peso total: {{itemList[0].pesoTotal}}</label>
             </div>
             <div class="resumen-monto">
                 <label>Monto a pagar: S/. 340.56</label>
