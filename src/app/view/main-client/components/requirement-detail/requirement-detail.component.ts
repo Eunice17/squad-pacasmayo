@@ -11,5 +11,7 @@ export class RequirementDetailComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  goBack(){
+    console.log('back to select shipment')
+  }
 }

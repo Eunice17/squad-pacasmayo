@@ -1,1 +1,42 @@
-<p>requirement-detail works!</p>
+
+<app-nav-bar>
+    <section class="body">
+        <div>
+            <h2>Detalle de la carga<hr></h2>
+        </div>
+        <br>
+        <section class="resumen-peso-monto">
+            <div class="resumen-peso">
+                <label>Peso total: 8.50 tn</label>
+            </div>
+            <div class="resumen-monto">
+                <label>Monto a pagar: S/. 340.56</label>
+            </div>
+        </section>
+        <br>
+        <section class="origin-destiny">
+            <div class="origin">
+                <label>Origen</label>
+                <label>Dino Experto - Chiclayo</label>
+            </div>
+            <div class="destiny">
+                <label>Destino</label>
+                <label>Psje. Enrique Febres 391, Chiclayo</label>
+            </div>
+        </section>
+        <section class="detalle-carga">
+            <h3>Detalle de carga</h3>
+            <div id="producto1">
+                <label id="nombre-producto">Cemento</label>
+                <label id="cantidad">100 bolsas</label>
+            </div>
+            <div id="producto2">
+                <label id="nombre-producto">Rapimix</label>
+                <label id="cantidad">50 bolsas</label>
+            </div>
+        </section>
+        <button>Aceptar pedido</button>
+        <br>
+        <img src="../assets/back-arrow.png" (click)="goBack()">
+    </section>
+</app-nav-bar>
