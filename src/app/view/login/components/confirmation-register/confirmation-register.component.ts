@@ -32,7 +32,7 @@ export class ConfirmationRegisterComponent implements OnInit {
 
 
   goToNewTruck(){
-    this.router.navigate(['/newtruck']);
+    this.router.navigate(['/driver/newtruck']);
   }
 
   goToMenuDriver(){

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatStepperModule} from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { UsersService } from '../../../../services/users.service';
-import { UbigeoService } from 'src/app/services/ubigeo.service';
-import  * as departamentos from  '../../../../services/data/departamentos.json';
+
 
 @Component({
   selector: 'app-register',
@@ -19,15 +17,14 @@ export class RegisterComponent implements OnInit {
   public thirdFormGroup!: FormGroup;
 
   constructor(private _formBuilder: FormBuilder,
-    private router: Router, private userService: UsersService, 
-    private ubigeoService: UbigeoService) { 
+    private router: Router, private userService: UsersService) { 
       this.firstFormGroup = this._formBuilder.group({
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
-        documentCtrl: ['', Validators.required, Validators.minLength(8)],
+        documentCtrl: ['', Validators.required],
         emailCtrl: ['', Validators.email],
         phoneCtrl: ['', Validators.required],
-        rucCtrl: ['', Validators.required, Validators.maxLength(10)],
+        rucCtrl: ['', Validators.required]
         });
       this.secondFormGroup = this._formBuilder.group({
         direccionCtrl: ['', Validators.required],
@@ -44,15 +41,15 @@ export class RegisterComponent implements OnInit {
   
   ngOnInit() {
    
-    this.ubigeoService.getDepartamentos().subscribe((o)=>{
-      console.log(o);
-    })
+    // this.ubigeoService.getDepartamentos().subscribe((o)=>{
+    //   console.log(o);
+    // })
   }
 
   sendUser(){ //enviar todos los datos de registro a friebase
     const firstForm= this.firstFormGroup.value;
     const secondForm= this.secondFormGroup.value;
-    const thirdForm= this.secondFormGroup.value;
+    const thirdForm= this.thirdFormGroup.value;
     const newObject = {
       name: firstForm.nameCtrl,
       lastname: firstForm.lastnameCtrl,
@@ -80,9 +77,10 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  goToMenuDriver(){
-    console.log('click en ahora no!');
-  }
+  // goToMenuDriver(){
+  //   console.log('click en ahora no!');
+  // }
+
   goToLogin(){
     this.router.navigate(['/home']);
     localStorage.removeItem('rol');
