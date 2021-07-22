@@ -70,6 +70,7 @@ export class RegisterComponent implements OnInit {
     
     console.log(newObject)
     this.createUser(newObject);
+    this.goToLogin()
   }
 
   //llamada al servicio
