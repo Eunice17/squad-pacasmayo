@@ -1,41 +1,41 @@
 
 
-    <section class="body">
+    <section class="body" >
         <div>
             <h2>Detalle de la carga<hr></h2>
         </div>
         <br>
         <section class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total: 8.50 tn</label>
+                <label>Peso total: {{requirementD.data.weightTotal}} tn</label>
             </div>
             <div class="resumen-monto">
-                <label>Monto a pagar: S/. 340.56</label>
+                <label>Monto : {{requirementD.data.montoTotal}}</label>
             </div>
         </section>
         <br>
         <section class="origin-destiny">
             <div class="origin">
                 <label>Origen</label>
-                <label>Dino Experto - Chiclayo</label>
+                <label>{{requirementD.data.dataRecojo}}</label>
             </div>
             <div class="destiny">
                 <label>Destino</label>
-                <label>Psje. Enrique Febres 391, Chiclayo</label>
+                <label>{{requirementD.data.dataDestino}}</label>
             </div>
         </section>
-        <section class="detalle-carga">
+        <section class="detalle-carga" >
             <h3>Detalle de carga</h3>
-            <div id="producto1">
-                <label id="nombre-producto">Cemento</label>
-                <label id="cantidad">100 bolsas</label>
+            <div id="producto1" *ngFor="let producto of requirementD.data.producto">
+                <label id="nombre-producto">{{producto.name}}</label>
+                <label id="cantidad">{{producto.qty}}</label>
             </div>
-            <div id="producto2">
+            <!-- <div id="producto2">
                 <label id="nombre-producto">Rapimix</label>
                 <label id="cantidad">50 bolsas</label>
-            </div>
+            </div> -->
         </section>
-        <button (click)="goBack()" >Aceptar pedido</button>
+        <button (click)="goBack()">Aceptar pedido</button>
         <br>
         <img src="../assets/back-arrow.png" >
     </section>

@@ -92,7 +92,7 @@ export class NewRequirementComponent implements OnInit {
   publish(){   
     const request = {
       ...this.requirementForm.value,
-      producto: this.productoControl.value.map((value: any, index: any)=>{
+      ...this.productoControl.value.map((value: any, index: any)=>{
         console.log(value);
         return {
           ...value, 

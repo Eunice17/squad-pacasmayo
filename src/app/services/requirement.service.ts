@@ -89,4 +89,8 @@ export class RequirementService {
   createRequirement(data: any){
     return this.firestore.collection('requirement').add(data);
   }
+  getRequirement(id: string){
+    return this.firestore.collection('requirement').doc(id).snapshotChanges();
+  }
+
 }
