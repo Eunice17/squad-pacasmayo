@@ -41,6 +41,7 @@ import { MenuDriverComponent } from './view/main-driver/components/menu-driver/m
 import { SelectShipmentComponent } from './view/main-driver/components/select-shipment/select-shipment.component';
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
+import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,9 @@ import { Prueba1Component } from './prueba/prueba1/prueba1.component';
     SelectShipmentComponent,
     ConfirmationRegisterComponent,
     RequirementDetailComponent,
-    Prueba1Component
+    Prueba1Component,
+    Prueba2Component,
+    
   ],
   imports: [
     BrowserModule,

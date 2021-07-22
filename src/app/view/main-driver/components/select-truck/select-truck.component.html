@@ -5,34 +5,13 @@
     <br>
     <div class="radios-content">
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" value="none" class="prueba">
-            <div class="div-imput">
+            <div class="div-imput" *ngFor="let truck of trucks">
                 <mat-radio-button class="example-radio-button" class="content">
-                    <h3>Camión Placa AKU-089</h3>
-                    <h4>Capacidad: 8tn</h4>
-                    <h4>Último despacho: 24/09/2020</h4>
+                    <h3>Camión Placa {{truck.placa}}</h3>
+                    <h4>Capacidad: {{truck.capCarga}}</h4>
+                    <h4>Chofer: {{truck.nameDriver}}</h4>
                 </mat-radio-button>
-            </div>
-            <div class="div-imput">
-                <mat-radio-button class="example-radio-button" class="content">
-                    <h3>Camión Placa AKU-089</h3>
-                    <h4>Capacidad: 8tn</h4>
-                    <h4>Último despacho: 24/09/2020</h4>
-                </mat-radio-button>
-            </div>
-            <div class="div-imput">
-                <mat-radio-button class="example-radio-button" class="content">
-                    <h3>Camión Placa AKU-089</h3>
-                    <h4>Capacidad: 8tn</h4>
-                    <h4>Último despacho: 24/09/2020</h4>
-                </mat-radio-button>
-            </div>
-            <div class="div-imput">
-                <mat-radio-button class="example-radio-button" class="content">
-                    <h3>Camión Placa AKU-089</h3>
-                    <h4>Capacidad: 8tn</h4>
-                    <h4>Último despacho: 24/09/2020</h4>
-                </mat-radio-button>
-            </div>            
+            </div>       
             <button mat-button (click)="goConfirMess()">Confirmar</button>
         </mat-radio-group>
         <br>
