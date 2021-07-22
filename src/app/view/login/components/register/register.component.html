@@ -1,10 +1,6 @@
 <section class="body-reg">
   <div class="content-reg">
     <h2>REGÍSTRATE</h2>
-
-    <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-      </button>  -->
       <mat-stepper [linear]="isLinear" #stepper class="stepper">
         <mat-step class="firstStep" [stepControl]="firstFormGroup" >
           <h3>Por favor, ingresa tus datos</h3>
