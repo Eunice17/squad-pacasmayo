@@ -16,22 +16,9 @@
             <br>
             <a routerLink="/**">¿Olvidaste contraseña?</a>
   
-            <button mat-button (click)="login()">Continuar</button>   
+            <button mat-button (click)="login()">Continuar</button>
+            <button mat-button class="back" (click)="goToHome()"><img  src="../assets/back-arrow.png"></button>  
       </form> 
-
-     <!-- <form [formGroup]="loginForm" class="loginForm">
-      <mat-form-field appearance="fill">
-        <mat-label>Ingresa tu documento de identidad</mat-label>
-        <input matInput formControlName="documentoIdCtrl" required class="form-control">
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-          <mat-label>Ingresa tu contraseña</mat-label>
-          <input matInput formControlName="contrasenaCtrl" type="password" required class="form-control">
-      </mat-form-field>
-      <div>
-        <button mat-button (click)="login()">Continuar</button>
-      </div>
-    </form> -->
 
     </div>
   </div>  

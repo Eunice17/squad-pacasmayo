@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+// import { ResolveData } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -75,6 +77,7 @@ import { Prueba2Component } from './prueba/prueba2/prueba2.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
     MatInputModule,
