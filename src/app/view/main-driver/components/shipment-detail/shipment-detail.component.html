@@ -7,17 +7,17 @@
         <br>
         <section class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total: {{requirementD.data.weightTotal}} tn</label>
+                <label>Peso total:  tn</label>
             </div>
             <div class="resumen-monto">
-                <label>Monto : {{requirementD.data.montoTotal}}</label>
+                <label>Monto: {{requirementD.data.montoTotal}}</label>
             </div>
         </section>
         <br>
         <section class="origin-destiny">
             <div class="origin">
                 <label>Origen</label>
-                <label>{{requirementD.data.dataRecojo}}</label>
+                <label>{{requirementD.data.dataRecojo.name}}</label>
             </div>
             <div class="destiny">
                 <label>Destino</label>
@@ -30,13 +30,10 @@
                 <label id="nombre-producto">{{producto.name}}</label>
                 <label id="cantidad">{{producto.qty}}</label>
             </div>
-            <!-- <div id="producto2">
-                <label id="nombre-producto">Rapimix</label>
-                <label id="cantidad">50 bolsas</label>
-            </div> -->
+    
         </section>
-        <button (click)="goBack()">Aceptar pedido</button>
+        <button (click)="goToSelect()">Aceptar pedido</button>
         <br>
-        <img src="../assets/back-arrow.png" >
+        <img (click)="goBack()" src="../assets/back-arrow.png" >
     </section>
 
