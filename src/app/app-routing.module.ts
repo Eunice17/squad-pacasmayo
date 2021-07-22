@@ -27,8 +27,9 @@ const routes: Routes = [
   { path: 'prueba2', component: Prueba2Component },
 
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,
