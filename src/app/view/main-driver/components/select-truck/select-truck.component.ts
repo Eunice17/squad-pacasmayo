@@ -8,7 +8,6 @@ import { TruckService } from 'src/app/services/truck.service';
   styleUrls: ['./select-truck.component.scss']
 })
 export class SelectTruckComponent implements OnInit {
-
   trucks!: any;
   idUserConectado = JSON.parse(sessionStorage.getItem('user') || '').id;
   constructor( private router: Router, private truckService: TruckService) { }
@@ -19,11 +18,9 @@ export class SelectTruckComponent implements OnInit {
   getTrucks(idUser: string){
     this.truckService.getTruckID(idUser).subscribe((truckSnapshot)=>{
       this.trucks = [];
-      console.log(truckSnapshot);
       truckSnapshot.forEach((elem: any) =>{
-        console.log(elem.payload.doc.id);
-        console.log(elem.payload.doc.data().placa);
-
+/*      console.log(elem.payload.doc.id);
+        console.log(elem.payload.doc.data().placa); */
         this.trucks.push({
           id: elem.payload.doc.id,
           capCarga: elem.payload.doc.data().capCarga,
@@ -32,13 +29,17 @@ export class SelectTruckComponent implements OnInit {
           userId: elem.payload.doc.data().userId,
           nameDriver: elem.payload.doc.data().nameDriver
         });
-
       })
-
     })
   }
 
   goConfirMess(){
     this.router.navigate(['./driver/confirdriver'])
   }
+  
+  obtenerid(idtruck : any){
+    console.log(idtruck)
+   
+  }
+
 }
