@@ -44,6 +44,7 @@ import { SelectShipmentComponent } from './view/main-driver/components/select-sh
 import { RequirementDetailComponent } from './view/main-client/components/requirement-detail/requirement-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
+import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { Prueba2Component } from './prueba/prueba2/prueba2.component';
     RequirementDetailComponent,
     Prueba1Component,
     Prueba2Component,
+    FilterShipmentPipe,
     
   ],
   imports: [

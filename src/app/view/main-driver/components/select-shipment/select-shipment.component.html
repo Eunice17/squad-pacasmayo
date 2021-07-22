@@ -16,28 +16,18 @@
     </mat-form-field>
   </div>
   <div class="orders">
-    <div class="block-order">
+    <div class="block-order" *ngFor="let item of shipments; index as i">
       <div class="description">
-        <h5>Cemento y rapimix</h5>
-        <span>8.5 tn.</span>
+        <h5>{{item.data.dataDestino}}</h5>
+        <span>{{item.data.weightTotal}} kg</span>
       </div>
-      <p class="price-order">S/. {{'250.00'}}</p>
-      <button (click)="goBack()">
-        <i class="fa fas fa-chevron-right" aria-hidden="true"></i>
-      </button>
-    </div>
-    <div class="block-order">
-      <div class="description">
-        <h5>Cemento y rapimix</h5>
-        <span>8.5 tn.</span>
-      </div>
-      <p class="price-order">S/. {{'250.00'}}</p>
-      <button (click)="goBack()">
+      <p class="price-order">S/. {{item.data.montoTotal}}</p>
+      <button (click)="more(item.id)">
         <i class="fa fas fa-chevron-right" aria-hidden="true"></i>
       </button>
     </div>
   </div>
 </div>
 <div class="back">
-  <img src="./../../../../../assets/img/back.png" alt="Back">
+  <img (click)="goBack()" src="./../../../../../assets/img/back.png" alt="Back">
 </div>
