@@ -103,8 +103,11 @@ export class NewRequirementComponent implements OnInit {
       driver:"",
       status:"Pending",
       truck:"",
+      userId: JSON.parse(sessionStorage.getItem('user') || '').id
     }
+
     this.requirementService.publishOrder(request);
+    this.requirementService.createRequirement(request);
     console.log(request);
     this.router.navigate(['./order'])
   }
