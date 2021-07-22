@@ -60,9 +60,9 @@ export class ShipmentDetailComponent implements OnInit {
     })
   }
 
-  goToSelect(){
-    console.log('acepta')
-    
+  goToSelect(id: any){
+    console.log('acepta', id)
+    this.requirementService.sendId(id);
     this.router.navigate(['/driver/select'])
   }
 

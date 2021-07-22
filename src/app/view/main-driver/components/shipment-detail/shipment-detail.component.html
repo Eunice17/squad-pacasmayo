@@ -1,5 +1,4 @@
 
-
     <section class="body" >
         <div>
             <h2>Detalle de la carga<hr></h2>
@@ -18,6 +17,7 @@
             <div class="origin">
                 <label>Origen</label>
                 <label>{{requirementD.data.dataRecojo.name}}</label>
+                <label>{{requirementD.id}}</label>
             </div>
             <div class="destiny">
                 <label>Destino</label>
@@ -32,7 +32,7 @@
             </div>
     
         </section>
-        <button (click)="goToSelect()">Aceptar pedido</button>
+        <button (click)="goToSelect(requirementD.id)">Aceptar pedido</button>
         <br>
         <img (click)="goBack()" src="../assets/back-arrow.png" >
     </section>
