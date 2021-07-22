@@ -3,7 +3,7 @@
     <h3>Ingresa tus documentos para utilizar Dakar.</h3>
     <form [formGroup]="requirementFormTruck" class="example-form">
 
-     <mat-form-field appearance="fill" class="form">
+      <!--  <mat-form-field appearance="fill" class="form">
         <mat-label>Tarjeta de Propiedad</mat-label>
         <div class="prueba">
         <input matInput  value="" name="fichero_tp" style="color: #161616;" />
@@ -12,35 +12,104 @@
           <img src="../../../../../assets/img/upload.png" alt="">
           </label>
         </div>
-      </mat-form-field>
+      </mat-form-field>  -->
+       <div class="flex-input form">
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>T.P. Frontal</mat-label>
+          <div class="prueba">
+            <input matInput  value="" name="fichero_tp1" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-1" onchange="fichero_tp1.value=this.value" [formControl]="tarjetaPropiedad1"  id="file-1" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-1">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field> 
 
-      <mat-form-field appearance="fill" class="form">
-        <mat-label>Soat</mat-label>
-        <div class="prueba">
-        <input matInput value="" name="fichero_soat" style="color: #161616;" />
-          <input type="file" name="file-7" onchange="fichero_soat.value=this.value" [formControl]="soat" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
-          <label for="file-7">
-          <img src="../../../../../assets/img/upload.png" alt="">
-          </label>
-        </div>
-      </mat-form-field>
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>T.P. Reverso</mat-label>
+          <div class="prueba">
+          <input matInput  value="" name="fichero_tp2" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-2" onchange="fichero_tp2.value=this.value"  [formControl]="tarjetaPropiedad2" id="file-2" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-2">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field> 
+      </div>  
+          
+      <!--   <mat-form-field appearance="fill" class="form">
+      <mat-label>Soat</mat-label>
+      <div class="prueba">
+      <input matInput value="" name="fichero_soat" style="color: #161616;" [formControl]="camposvacios" />
+        <input type="file" name="file-7" onchange="fichero_soat.value=this.value" [formControl]="soat" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+        <label for="file-7">
+        <img src="../../../../../assets/img/upload.png" alt="">
+        </label>
+      </div>
+    </mat-form-field> -->
+      <div class="flex-input form">
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>Soat Frontal</mat-label>
+          <div class="prueba">
+            <input matInput  value="" name="fichero_soat" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-3" onchange="fichero_soat.value=this.value" [formControl]="soat1"  id="file-3" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-3">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field> 
 
-      <mat-form-field appearance="fill" class="form">
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>Soat Reverso</mat-label>
+          <div class="prueba">
+          <input matInput  value="" name="fichero_soat2" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-4" onchange="fichero_soat2.value=this.value"  [formControl]="soat2" id="file-4" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-4">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field> 
+      </div>
+
+     <!--  <mat-form-field appearance="fill" class="form">
         <mat-label>Licencia de conducir del chofer</mat-label>
         <div class="prueba">
-        <input matInput value="" name="fichero_ldc" style="color: #161616;" />
+        <input matInput value="" name="fichero_ldc" style="color: #161616;" [formControl]="camposvacios" />
           <input type="file" name="file-8" onchange="fichero_ldc.value=this.value" [formControl]="licenciaConducir" id="file-8" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
           <label for="file-8">
           <img src="../../../../../assets/img/upload.png" alt="">
           </label>
         </div>
-      </mat-form-field>
+      </mat-form-field> -->
+      <div class="flex-input form">
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>Licencia C.Frontal</mat-label>
+          <div class="prueba">
+          <input matInput value="" name="fichero_ldc1" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-5" onchange="fichero_ldc1.value=this.value" [formControl]="licenciaConducir1" id="file-5" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-5">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field>
 
+        <mat-form-field appearance="fill" class="form">
+          <mat-label>Licencia C. Reverso</mat-label>
+          <div class="prueba">
+          <input matInput value="" name="fichero_ldc2" style="color: #161616;" [formControl]="camposvacios" />
+            <input type="file" name="file-6" onchange="fichero_ldc2.value=this.value" [formControl]="licenciaConducir2" id="file-6" class="inputfile inputfile-6" data-multiple-caption="{count} archivos seleccionados" multiple />
+            <label for="file-6">
+            <img src="../../../../../assets/img/upload.png" alt="">
+            </label>
+          </div>
+        </mat-form-field>
+      </div>
+      <div class="divname"> 
       <mat-form-field class="form" appearance="fill">
         <mat-label>Nombre del chofer</mat-label>
-        <input matInput autocomplete="off" [formControl]="nameDriver" style="color: #161616;"/>
+        <input matInput autocomplete="off" [formControl]="nameDriver"  style="color: #161616;"/>
       </mat-form-field>
-
+    </div>
       <div class="flex-input form">
         <mat-form-field appearance="fill">
           <mat-label>Tipo</mat-label>
