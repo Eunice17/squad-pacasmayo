@@ -19,6 +19,7 @@
                 <label>Origen</label>
                 <label>{{product.dataRecojo.name}}</label>
             </div>
+            <img src="../../../../../assets/puntero.svg" alt="...">
             <div class="destiny">
                 <label>Destino</label>
                 <label>{{product.dataDestino}}</label>
@@ -31,7 +32,7 @@
                 <label id="cantidad">{{item.qty}}</label>
             </div>
         </section>
-        <button>Aceptar pedido</button>
+        <button (click)="createOrder(itemList[0])">Publicar requerimiento</button>
         <br>
         <img src="../assets/back-arrow.png" (click)="goBack()">
     </section>

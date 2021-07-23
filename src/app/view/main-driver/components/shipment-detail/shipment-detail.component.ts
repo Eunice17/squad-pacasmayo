@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RequirementService } from 'src/app/services/requirement.service';
-import { RequirementD } from 'src/app/models/dinoex';
+import { RequirementService } from '../../../../services/requirement.service';
+import { RequirementD } from '../../../../models/dinoex';
 
 @Component({
   selector: 'app-shipment-detail',
@@ -70,29 +70,6 @@ export class ShipmentDetailComponent implements OnInit {
     this.router.navigate(['/driver/shipment'])
   }
 
-  // ngOnDestroy() {
-  //   this.id$.unsubscribe();
-  // }
-
- 
 
 }
 
-// @Component({ ... })
-// export class SmartComponent implements OnInit, OnDestroy {
-//   private subscriptions = new Subscription();
-
-//   constructor(private heroService: HeroService) {
-//   }
-
-//   ngOnInit() {
-//     this.subscriptions.add(this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes));
-//     this.subscriptions.add(/* another subscription */);
-//     this.subscriptions.add(/* and another subscription */);
-//     this.subscriptions.add(/* and so on */);
-//   }
-
-//   ngOnDestroy() {
-//     this.subscriptions.unsubscribe();
-//   }
-// }

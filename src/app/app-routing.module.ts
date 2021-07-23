@@ -20,7 +20,12 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
+
 import { P404Component } from './components/p404/p404.component'
+
+import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
+
+
 
 const routes: Routes = [
   { path: 'prueba', component: Prueba1Component },
@@ -46,6 +51,7 @@ const routes: Routes = [
     ]
   },
   { path: 'confirregister', component: ConfirmationRegisterComponent},
+  { path: 'messageclient', component: ConfirmationMessageClientComponent},
   { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
   { path: 'waiting', component: WaitingDriverComponent },

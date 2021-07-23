@@ -44,6 +44,3 @@ export interface RequirementD{
     id: string,
     data: any
 }
-
-
-

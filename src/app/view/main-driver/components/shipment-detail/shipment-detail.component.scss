@@ -112,16 +112,8 @@
 // }
 
 @use '../../../../../styles.scss'as *;
+@use '../../../../../assets/scss/mixin-back' as *;
 
-.body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color: $primary;
-    align-items: center;
-    padding: 15px;
-    margin: auto;
 
     h2{
         font-family: $font-title;
@@ -139,7 +131,7 @@
     .resumen-peso-monto{
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
 
         .resumen-peso, .resumen-monto{
             background-color: #FFF5E1;
@@ -156,7 +148,6 @@
     .origin-destiny{
         display: flex;
         flex-direction: column;
-        width: 90%;
 
         .origin, .destiny{
             background-color: #fff;
@@ -180,7 +171,6 @@
     .detalle-carga{
         display: flex;
         flex-direction: column;
-        width: 90%;
 
         h3{
             color: #fff;
@@ -207,20 +197,28 @@
     }
 
     button {
+        width: 100%;
         background-color: $button-text;
         font-family: $font-text;
         font-weight: 600;
-        font-size: 15px;
-        width: 70%;
-        height: 47px;
-        color: $color-text;
-        border-radius: 8px;
-        margin-top: 20px;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #fff;
         border: none;
+        margin: 20px 0px;
+        padding: 10px;
+
       }
       
     img{
         width: 30px;
         height: 30px;
+    }
+.back{
+    @include back;
+}
+@media screen and (min-width: 1500px){
+    .back{
+        @include query;
     }
 }
