@@ -24,21 +24,18 @@ export class RequirementDetailComponent implements OnInit {
     this.orders$.subscribe((el)=> {
       this.itemList=[]
       this.itemList=el
-      console.log(this.itemList);
-      console.log(this.itemList[0].producto);
     });
   }
 
   createOrder(request: RequirementI){
-    console.log(request);
-    request.status= "publicado";
-    this.requirementService.createRequirement(request);
-    
-    this.router.navigate(['./waiting'])
+    request.status= "Publicado";
+    this.requirementService.createRequirement(request).then((value)=>{
+      this.requirementService.sendId(value.id)
+      this.router.navigate(['./waiting'])
+    }); 
   }
 
   goBack(){
-    this.router.navigate(['./newreq'])
-    
+    this.router.navigate(['./newreq']) 
   }
 }
