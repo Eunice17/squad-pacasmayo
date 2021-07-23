@@ -107,10 +107,9 @@ export class NewRequirementComponent implements OnInit {
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
-
       weightTotal: this.pesoTn,
       driver:"",
-      status:"Pending",
+      status:"",
       truck:"",
       userId: JSON.parse(sessionStorage.getItem('user') || '').id,
       date: this.jstoday
