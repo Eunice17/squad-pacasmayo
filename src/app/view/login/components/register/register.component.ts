@@ -63,7 +63,7 @@ export class RegisterComponent implements OnInit {
       rol: localStorage.getItem('rol')
     }
     this.createUser(newObject);
-    /* this.goToLogin() */
+    sessionStorage.setItem('user', JSON.stringify(newObject));
   }
 
   createUser(obj: any) {

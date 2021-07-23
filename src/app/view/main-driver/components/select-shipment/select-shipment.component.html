@@ -18,7 +18,7 @@
   <div class="orders">
     <div class="block-order" *ngFor="let item of shipments | filterShipment: city.value ">
       <div class="description">
-        <h5 style="font-weight: bold;">{{item.data.direccion}}</h5>
+        <h5 style="font-weight: bold;">{{item.data.direccionDestino}}</h5>
         <span>{{item.data.weightTotal}} Tn</span>
       </div>
       <p class="price-order">S/. {{item.data.montoTotal}}</p>
