@@ -6,10 +6,10 @@
         <br>
         <section class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total:  tn</label>
+                <label>Peso total: {{requirementD.data.weightTotal}} tn</label>
             </div>
             <div class="resumen-monto">
-                <label>Monto: {{requirementD.data.montoTotal}}</label>
+                <label>Monto: S/ {{requirementD.data.montoTotal}}</label>
             </div>
         </section>
         <br>
@@ -17,7 +17,6 @@
             <div class="origin">
                 <label>Origen</label>
                 <label>{{requirementD.data.dataRecojo.name}}</label>
-                <label>{{requirementD.id}}</label>
             </div>
             <div class="destiny">
                 <label>Destino</label>
