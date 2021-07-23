@@ -9,17 +9,19 @@ export class MainClientComponent implements OnInit {
 
 
 
-  constructor(private router: Router ) { }
-
+  constructor(private router: Router) { }
+  name!: any;
   ngOnInit(): void {
+    let json: any = sessionStorage.getItem('user');
+    this.name = JSON.parse(json);
   }
 
 
-  goToNotfound(){
+  goToNotfound() {
     this.router.navigate(['/notfound'])
   }
-  
-  goToCreatRequirement(){
+
+  goToCreatRequirement() {
     this.router.navigate(['./newreq'])
 
   }
