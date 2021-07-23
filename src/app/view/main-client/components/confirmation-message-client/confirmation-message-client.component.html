@@ -4,20 +4,27 @@
         <div class="sms-head">
             <img src="../../../../../assets/img/bodyDriver.png" alt="">
             <h4>Transportista</h4>
-            <span>{{driver[0].driver}}</span>
+            <span>Eunice Fiorella<!-- {{driver[0].driver}} --></span>
         </div>
         <div class="map">
             <div class="origin">
                 <p>Origen</p>
-                <p style="font-weight: bold;" class="address">{{driver[0].dataRecojo.name}}</p>
+                <p style="font-weight: bold;" class="address">Av. Junín 123<!-- {{driver[0].dataRecojo.name}} --></p>
             </div>
             <div class="origin">
                 <p>Destino</p>
-                <p style="font-weight: bold;" class="address">{{driver[0].direccion}}</p>
+                <p style="font-weight: bold;" class="address">Av Lima 456<!-- {{driver[0].direccion}} --></p>
             </div>
             <img class="puntero" src="../../../../../assets/img/puntero.png" alt="">
         </div>
         <div class="footer-msg">
+            <div class="mobile">
+                <i class="fa fas fas fa-mobile-alt" aria-hidden="true"></i>
+                <div class="text">
+                    <p>Contacto:</p>
+                    <p>+51 987123456<!-- {{driver[0].numero}} --></p>
+                </div>
+            </div>
             <button [routerLink]="['/newreq']" class="new-rq">Nuevo requerimiento</button>
             <a href="/client">Ir a menú</a>
         </div>

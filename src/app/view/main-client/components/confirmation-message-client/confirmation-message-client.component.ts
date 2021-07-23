@@ -16,10 +16,10 @@ export class ConfirmationMessageClientComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.end$.subscribe((data) => {
+    /* this.end$.subscribe((data) => {
       this.driver = [...data];
       console.log(this.driver);
-    })
+    }) */
   }
 
 }
