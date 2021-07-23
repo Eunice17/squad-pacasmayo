@@ -20,7 +20,6 @@ export class RegisterComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder,
     private router: Router, private userService: UsersService) { 
       this.firstFormGroup = this._formBuilder.group({
-        
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
         documentCtrl: ['', Validators.required],
@@ -63,6 +62,7 @@ export class RegisterComponent implements OnInit {
       rol: localStorage.getItem('rol')
     }
     this.createUser(newObject);
+    
     this.goToLogin()
   }
 
@@ -71,6 +71,10 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/confirregister']);
     })
   }
+
+
+
+
 
   goToLogin(){
     this.router.navigate(['/home']);
