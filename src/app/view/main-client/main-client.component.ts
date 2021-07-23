@@ -17,7 +17,8 @@ export class MainClientComponent implements OnInit {
 
   goToNotfound(){
     this.router.navigate(['/notfound'])
-
+  }
+  
   goToCreatRequirement(){
     this.router.navigate(['./newreq'])
 
