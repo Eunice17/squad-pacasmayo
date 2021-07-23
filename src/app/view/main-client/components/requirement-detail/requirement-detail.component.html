@@ -7,10 +7,10 @@
         <br>
         <section *ngFor="let product of products, let index as i" class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total: {{product.weightTotal}} TN</label>
+                <label>Peso total: <b>{{product.weightTotal}} TN</b></label>
             </div>
             <div class="resumen-monto">
-                <label>Monto a pagar: S/. {{product.montoTotal}}</label>
+                <label>Monto a pagar: S/. <b>{{product.montoTotal}}</b></label>
             </div>
             <div class="resumen-monto">
                 <label>Hora de recojo: <b>{{product.horaDespacho}}</b></label>
