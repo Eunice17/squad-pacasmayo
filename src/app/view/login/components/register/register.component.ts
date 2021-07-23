@@ -11,8 +11,8 @@ import { UsersService } from '../../../../services/users.service';
 })
 
 export class RegisterComponent implements OnInit {
-  isLinear = false;
-  tipo: string[] = ['D.N.I.', 'C.E.'];
+  isLinear = true;
+  // tipo: string[] = ['D.N.I.', 'C.E.'];
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
   public thirdFormGroup!: FormGroup;
@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder,
     private router: Router, private userService: UsersService) { 
       this.firstFormGroup = this._formBuilder.group({
+        
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
         documentCtrl: ['', Validators.required],

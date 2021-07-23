@@ -18,15 +18,15 @@
                 <input matInput formControlName="lastnameCtrl" required>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <!-- <mat-form-field appearance="fill">
               <mat-label>Tipo</mat-label>
               <mat-select >
                 <mat-option *ngFor="let tipo of tipo" [value]="tipo">{{tipo}}</mat-option>
               </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
               
             <mat-form-field appearance="fill">
-                <mat-label>Documento de identidad</mat-label>
+                <mat-label>Dni o Carnet de extranjería</mat-label>
                 <input matInput formControlName="documentCtrl" required>
             </mat-form-field>
 
@@ -45,7 +45,7 @@
                 <input matInput formControlName="rucCtrl" required>
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext>Continuar</button>
+              <button mat-button matStepperNext [disabled]="!firstFormGroup.invalid">Continuar</button>
               <span (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></span>
             </div>
           </form>
@@ -76,7 +76,7 @@
               </mat-form-field>
 
               <div>
-                <button mat-button matStepperNext>Continuar</button>
+                <button mat-button matStepperNext [disabled]="firstFormGroup.invalid" >Continuar</button>
                 <button mat-button matStepperPrevious class="back" id="second"><img  src="../assets/back-arrow.png"></button>
               </div>
             </form>
