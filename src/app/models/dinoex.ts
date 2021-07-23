@@ -23,6 +23,7 @@ export interface RequirementI {
     tipoCarga: string, 
     itemSeleccionado: Array<DetailProductI>,
     dataRecojo: OriginI,
+    direccionRecojo: string,
     dataDestino: DestinationI,
     direccion: string,
     nombre: string,
