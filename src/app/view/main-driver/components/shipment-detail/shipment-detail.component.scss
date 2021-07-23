@@ -148,7 +148,7 @@
     .origin-destiny{
         display: flex;
         flex-direction: column;
-        // position: relative;
+        position: relative;
 
         .origin, .destiny{
             background-color: #fff;
@@ -165,8 +165,8 @@
         //     z-index: 1;
         // }
         .puntero{
-            top: 20%;
-            left: 15px;
+            top: 12%;
+            left: 1px;
             position: absolute;
         }
     }
@@ -216,7 +216,7 @@
       
     img{
         width: 30px;
-        height: 30px;
+        /* height: 30px; */
     }
 .back{
     @include back;
