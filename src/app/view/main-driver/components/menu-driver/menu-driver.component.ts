@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu-driver.component.scss']
 })
 export class MenuDriverComponent implements OnInit {
-
+  name!: any;
   constructor() { }
 
   ngOnInit(): void {
+    let json: any = sessionStorage.getItem('user');
+    this.name = JSON.parse(json);
   }
 }
