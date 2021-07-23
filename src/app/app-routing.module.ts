@@ -21,7 +21,7 @@ import { ShipmentDetailComponent } from './view/main-driver/components/shipment-
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
-
+import { P404Component } from './components/p404/p404.component'
 
 const routes: Routes = [
   { path: 'prueba', component: Prueba1Component },
@@ -30,7 +30,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'notfound', component: P404Component },
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,
@@ -38,21 +39,20 @@ const routes: Routes = [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
       { path: 'shipment', component: SelectShipmentComponent },
-      // { path: 'shipment/:parametro', component: SelectShipmentComponent },
       { path: 'newtruck', component: NewTruckComponent },
       { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
-      { path: 'select', component: SelectTruckComponent},  
+      { path: 'select', component: SelectTruckComponent },
       { path: 'confirdriver', component: ConfirmationMessageDriverComponent },
-      { path: 'shipdetail', component: ShipmentDetailComponent},
+      { path: 'shipdetail', component: ShipmentDetailComponent },
     ]
   },
-  { path: 'confirregister', component: ConfirmationRegisterComponent},
-  { path: 'messageclient', component: ConfirmationMessageClientComponent},
+  { path: 'confirregister', component: ConfirmationRegisterComponent },
   { path: 'newreq', component: NewRequirementComponent },
   { path: 'client', component: MainClientComponent },
   { path: 'waiting', component: WaitingDriverComponent },
-  
- //BORRAR LUEGO
+  { path: 'messageclient', component: ConfirmationMessageClientComponent },
+
+  //BORRAR LUEGO
   { path: 'detail', component: RequirementDetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ];

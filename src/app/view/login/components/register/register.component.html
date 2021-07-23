@@ -19,11 +19,10 @@
             </mat-form-field>
 
             <mat-form-field appearance="fill">
-            <mat-label>Tipo</mat-label>
-                <mat-select>
-                    <mat-option>DNI</mat-option>
-                    <mat-option>C.E.</mat-option>
-                </mat-select>
+              <mat-label>Tipo</mat-label>
+              <mat-select >
+                <mat-option *ngFor="let tipo of tipo" [value]="tipo">{{tipo}}</mat-option>
+              </mat-select>
             </mat-form-field>
               
             <mat-form-field appearance="fill">
@@ -47,7 +46,7 @@
             </mat-form-field>
             <div>
               <button mat-button matStepperNext>Continuar</button>
-              <button mat-button (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></button>
+              <span (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></span>
             </div>
           </form>
         </mat-step>
@@ -78,7 +77,7 @@
 
               <div>
                 <button mat-button matStepperNext>Continuar</button>
-                <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+                <button mat-button matStepperPrevious class="back" id="second"><img  src="../assets/back-arrow.png"></button>
               </div>
             </form>
           </mat-step>
@@ -105,7 +104,7 @@
 
             <div>
               <button mat-button (click)="sendUser()">Continuar</button>
-              <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+              <button mat-button matStepperPrevious class="back" id="third"><img  src="../assets/back-arrow.png"></button>
             </div> 
           </form>
         </mat-step>
