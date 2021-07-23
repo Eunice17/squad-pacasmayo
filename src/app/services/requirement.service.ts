@@ -44,50 +44,37 @@ export class RequirementService {
     }
   ]
   private origin: OriginI[] = [
-    {
-      id: 'P01',
-      name: 'DinoEX-Piura'
-    },
-    {
-      id: 'P02',
-      name: 'DinoEX-Chiclayo'
-    },
-    {
-      id: 'P03',
-      name: 'DinoEX-Trujillo'
-    }
+    {id: 'P01',name: 'DinoEX-Piura'},
+    {id: 'P02',name: 'DinoEX-Chiclayo'},
+    {id: 'P03',name: 'DinoEX-Trujillo'},
+    {id: 'PC01', name: "Amazonas"},
+    {id: '2625', name: "Ancash"},
+    {id: 'PC03', name: "Apurimac"},
+    {id: '2450', name:"Arequipa"},
+    {id:"3020",name:"Ayacucho"},
+    {id:"3143",name:"Cajamarca"},
+    {id: "453", name:"Cusco"},
+    {id:"3414",name:"Huancavelica"},
+    {id:"3518",name:"Huanuco",},{id:"3606",name:"Ica"},
+    {id:"3655",name:"Junin"},
+    {id:"3788",name:"La Libertad"},
+    {id:"3884",name:"Lambayeque"},
+    {id:"3926",name:"Lima"},{id:"4108",name:"Loreto"},
+    {id:"4165",name:"Madre de Dios"},
+    {id:"4180",name:"Moquegua"},
+    {id:"4204",name:"Pasco"},
+    {id:"4236",name:"Piura"},{id:"4309",name:"Puno"},
+    {id:"4431",name:"San Martin"},
+    {id:"4519",name:"Tacna"},
+    {id:"4551",name:"Tumbes"},
+    {id:"4567",name:"Ucayali"}
   ]
   private destination: DestinationI[] = [
-    {
-      id: 'D01',
-      originId: 'P01',
-      name: 'Piura'
-    },
-    {
-      id: 'D02',
-      originId: 'P01',
-      name: 'Sullana'
-    },
-    {
-      id: 'D03',
-      originId: 'P02',
-      name: 'Chiclayo'
-    },
-    {
-      id: 'D04',
-      originId: 'P02',
-      name: 'Ferreñafe'
-    },
-    {
-      id: 'D05',
-      originId: 'P03',
-      name: 'Trujillo'
-    },
-    {
-      id: 'D06',
-      originId: 'P03',
-      name: 'Huanchaco'
-    }
+    { id: 'D01', originId: 'P01',name: 'Piura'},
+    {id: 'D02',originId: 'P01',name: 'Sullana'},
+    {id: 'D03',originId: 'P02',name: 'Chiclayo'},
+    {id: 'D04',originId: 'P02',name: 'Ferreñafe'},
+    {id: 'D05',originId: 'P03',name: 'Trujillo'},
   ]
 
   constructor(private firestore: AngularFirestore) { }
