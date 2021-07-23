@@ -152,7 +152,7 @@
 
         .origin, .destiny{
             background-color: #fff;
-            padding: 20px;
+            padding: 20px 20px 20px 40px;;
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
@@ -160,13 +160,10 @@
             font-family: $font-text;
             font-size: 14px;
         }
-        // img{
-        //     height: 8rem;
-        //     z-index: 1;
-        // }
+        
         .puntero{
-            top: 12%;
-            left: 1px;
+            top: 15%;
+            left: 4px;
             position: absolute;
         }
     }
@@ -215,7 +212,7 @@
       }
       
     img{
-        width: 30px;
+        width: 35px;
         /* height: 30px; */
     }
 .back{
