@@ -26,6 +26,7 @@ export class SelectShipmentComponent implements OnInit {
     this.getRequirement();
     console.log(this.shipments);
   }
+  
   getRequirement() {
     this.requirement.getRequirement().subscribe((value) => {
       value.forEach((val) => {

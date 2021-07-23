@@ -108,6 +108,10 @@ export class RequirementService {
     return this.firestore.collection('requirement').add(data);
   }
 
+  getRequirementId(id: string){
+    return this.firestore.collection('requirement').doc(id).snapshotChanges();
+  }
+
   getRequirement() {
     return this.firestore.collection('requirement').snapshotChanges();
   }
