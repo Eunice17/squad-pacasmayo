@@ -60,7 +60,7 @@ export class ShipmentDetailComponent implements OnInit {
   goToSelect(id: any) {
     console.log('acepta', id)
     this.requirementService.sendId(id);
-    this.router.navigate(['/driver/select'])
+    this.router.navigate(['./driver/select'])
   }
 
   goBack() {
