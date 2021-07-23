@@ -47,7 +47,7 @@
             </mat-form-field>
             <div>
               <button mat-button matStepperNext>Continuar</button>
-              <button mat-button (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></button>
+              <span (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></span>
             </div>
           </form>
         </mat-step>
@@ -78,7 +78,8 @@
 
               <div>
                 <button mat-button matStepperNext>Continuar</button>
-                <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+                <button mat-button matStepperPrevious class="back" id="black"><img  src="../assets/back-arrow.png"></button>
+                <!-- <span mat-button matStepperPrevious class="back"><img src="../../../../../assets/img/back.png"></span> -->
               </div>
             </form>
           </mat-step>
@@ -105,7 +106,7 @@
 
             <div>
               <button mat-button (click)="sendUser()">Continuar</button>
-              <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+              <span class="back"><img  src="../assets/back-arrow.png"></span>
             </div> 
           </form>
         </mat-step>
