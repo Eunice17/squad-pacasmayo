@@ -21,16 +21,17 @@ import { ShipmentDetailComponent } from './view/main-driver/components/shipment-
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
-
+import { P404Component } from './components/p404/p404.component'
 
 const routes: Routes = [
   { path: 'prueba', component: Prueba1Component },
   { path: 'prueba2', component: Prueba2Component },
-
+  { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'notfound', component: P404Component },
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,

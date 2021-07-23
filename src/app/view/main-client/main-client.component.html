@@ -2,18 +2,20 @@
 <section class="container-driver">
     <div class="row-driver">
         <div class="header">
-            <span>Hola Paulo,</span> <p>¿Qué quieres hacer hoy?</p>
+            <h2>Hola,</h2> <p>¿Qué quieres hacer hoy?</p>
         </div>
         <div class="body">
-            <button class="card-unidades">
-                <img src="./../../../assets/img/unidades.png" alt="Unidades">
+
+            <button class="card-unidades" (click)="goToNotfound()">
+               <img src="./../../../assets/img/unidades.png" alt="Unidades">
                 <p>Estado de requerimientos</p>
             </button>
-            <button class="card-cargas">
+
+            <button (click)="goToCreatRequirement()" class="card-cargas">
                 <img src="./../../../assets/img/cargas.png" alt="Cargas">
-                <p>Nuevos requerimientos</p>
+                <p>Publicar requerimiento</p>
             </button>
-           
+               
         </div>
     </div>
 </section>

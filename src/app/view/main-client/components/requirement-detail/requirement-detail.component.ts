@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RequirementI } from 'src/app/models/dinoex';
-import { RequirementService } from 'src/app/services/requirement.service';
+import { RequirementI } from '../../../../models/dinoex';
+import { RequirementService } from '../../../../services/requirement.service';
 
 @Component({
   selector: 'app-requirement-detail',
@@ -23,17 +23,19 @@ export class RequirementDetailComponent implements OnInit {
   ngOnInit(): void {
     this.orders$.subscribe((el)=> {
       this.itemList=[]
-      this.itemList.push(
-        {
-          pesoTotal: el[0].weightTotal,
-        }
-      )
-      console.log(this.itemList);
-      
+      this.itemList=el
     });
   }
 
+  createOrder(request: RequirementI){
+    request.status= "Publicado";
+    this.requirementService.createRequirement(request).then((value)=>{
+      this.requirementService.sendId(value.id)
+      this.router.navigate(['./waiting'])
+    }); 
+  }
+
   goBack(){
-    this.router.navigate(['./newreq'])
+    this.router.navigate(['./newreq']) 
   }
 }

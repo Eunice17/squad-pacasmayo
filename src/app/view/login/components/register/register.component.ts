@@ -12,6 +12,7 @@ import { UsersService } from '../../../../services/users.service';
 
 export class RegisterComponent implements OnInit {
   isLinear = false;
+  tipo: string[] = ['D.N.I.', 'C.E.'];
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
   public thirdFormGroup!: FormGroup;
@@ -67,6 +68,7 @@ export class RegisterComponent implements OnInit {
     
     console.log(newObject)
     this.createUser(newObject);
+    this.goToLogin()
   }
 
   //llamada al servicio

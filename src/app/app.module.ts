@@ -24,6 +24,8 @@ import { ConfirmationRegisterComponent } from './view/login/components/confirmat
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { FormLoginComponent } from './view/login/components/form-login/form-login.component';
+import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
+import { P404Component } from './components/p404/p404.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -45,7 +47,6 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
-import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ConfirmationMessageClientComponent } from './view/main-client/component
     SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
+    ConfirmationMessageClientComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
@@ -73,7 +75,7 @@ import { ConfirmationMessageClientComponent } from './view/main-client/component
     Prueba1Component,
     Prueba2Component,
     FilterShipmentPipe,
-    ConfirmationMessageClientComponent,
+    P404Component
   ],
   imports: [
     BrowserModule,
