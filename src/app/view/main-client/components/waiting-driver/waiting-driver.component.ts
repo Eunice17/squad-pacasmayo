@@ -14,15 +14,11 @@ export class WaitingDriverComponent implements OnInit {
 
   ngOnInit(): void {
     this.requirementService.box$.subscribe((id)=>{
-      console.log(id);
       this.requirementService.getRequirementId(id).subscribe((el)=>{
-          console.log(el);
           if (el.type==="modified") {
             this.router.navigate(['./messageclient'])
-          }
-          
+          } 
       })  
     })
-
   }
 }
