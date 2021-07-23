@@ -6,7 +6,7 @@
     <div class="radios-content">
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" value="none" class="prueba">
             <div class="div-imput" *ngFor="let truck of trucks">
-                <mat-radio-button class="example-radio-button" class="content" (click)="obtenerid(truck.id)">
+                <mat-radio-button class="example-radio-button" class="content" (click)="obtenerid(truck.id)"  (click)="obtenernameDriver(truck.nameDriver)" > <!--  (click)="obtenerid(truck.id)" -->
                     <h3>Camión Placa {{truck.placa}}</h3>
                     <h4>Capacidad: {{truck.capCarga}}</h4>
                     <h4>Chofer: {{truck.nameDriver}}</h4>

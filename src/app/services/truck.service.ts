@@ -32,7 +32,5 @@ export class TruckService {
     return this.firestore.collection('truck').doc(id).snapshotChanges();
 }
 
-  public updateT(id: string, data: any) {
-    return this.firestore.collection('truck').doc(id).set(data);
-  }
+
 }
