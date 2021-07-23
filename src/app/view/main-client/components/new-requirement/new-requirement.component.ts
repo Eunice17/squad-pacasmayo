@@ -97,17 +97,17 @@ export class NewRequirementComponent implements OnInit {
     })
   }
 
-  publishOrder(){      
-    console.log(this.destinos);   
+  publishOrder(){    
     const request = {
       ...this.requirementForm.value,
-      producto: this.productoControl.value.map((value: any, index: any)=>{
+      ...this.productoControl.value.map((value: any, index: any)=>{
         console.log(value);
         return {
           ...value, 
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
+
       weightTotal: this.pesoTn,
       driver:"",
       status:"Pending",

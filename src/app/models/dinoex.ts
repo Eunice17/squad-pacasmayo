@@ -40,5 +40,7 @@ export interface DetailProductI{
     name: string
 }
 
-
-
+export interface RequirementD{
+    id: string,
+    data: any
+}

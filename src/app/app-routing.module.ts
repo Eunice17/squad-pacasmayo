@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent},
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,
@@ -36,6 +37,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
       { path: 'shipment', component: SelectShipmentComponent },
+      // { path: 'shipment/:parametro', component: SelectShipmentComponent },
       { path: 'newtruck', component: NewTruckComponent },
       { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
       { path: 'select', component: SelectTruckComponent},  
