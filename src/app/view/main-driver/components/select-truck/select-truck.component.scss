@@ -1,31 +1,19 @@
 @use '../../../../../styles.scss'as *;
+@use '../../../../../assets/scss/mixin-back' as *;
 
-.body {
-    width: 100%;
-    height: 1000px;
-    display: flex;
-    flex-direction: column;
-    background-color: $primary;
-    align-items: center;
-    padding: 15px;
-    margin: auto;
-    
-    h2{
+.head-truck{
+    border-bottom: 0.5px solid #BB7D08;
+    margin-bottom: 20px;
+} 
+h2{
         font-family: $font-title;
         font-weight: bold;
         font-size: 16px;
         color: $color-text;
-        letter-spacing: 0.06em;
-    }
-    hr{
-        width: 320px;
-        left: 342px;
-        border: 0.5px solid #BB7D08;
-        transform: rotate(180deg);
     }
   .radios-content{
     width: 100%;
-    max-width: 375px;
+    /* max-width: 375px; */
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -39,9 +27,11 @@
         button {
             background-color: $button-text;
             font-family: $font-text;
+            border-radius: 10px;
             font-weight: 600;
             font-size: 20px;
-            width: 70%;
+            width: 100%;
+            color: white;
             height: 47px;
           }
         .div-imput{
@@ -72,10 +62,14 @@
                     }
                 }
             }
-        }
+        }   
        
-           
-        
-       
+    }
+.back{
+    @include back;
+}
+@media screen and (min-width: 1500px){
+    .back{
+        @include query;
     }
 }
