@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { RequirementService } from 'src/app/services/requirement.service';
-import { RequirementD } from 'src/app/models/dinoex';
+import { RequirementService } from '../../../../services/requirement.service';
+import { RequirementD } from '../../../../models/dinoex';
 
 @Component({
   selector: 'app-shipment-detail',
