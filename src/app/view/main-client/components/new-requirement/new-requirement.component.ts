@@ -3,6 +3,8 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OriginI, DestinationI, ProductI, TypeBulkI } from '../../../../models/dinoex';
 import { RequirementService } from '../../../../services/requirement.service';
+import { formatDate } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
 
 @Component({
   selector: 'app-new-requirement',
@@ -22,6 +24,9 @@ export class NewRequirementComponent implements OnInit {
   productos!: any;
   ctd!: any;
   array!: any;
+  today= new Date();
+  jstoday = '';
+
 
   tipoCargaControl = new FormControl('', [Validators.required]); 
   productoControl = new FormControl(''); 
@@ -49,6 +54,7 @@ export class NewRequirementComponent implements OnInit {
       horaDespacho: this.horaDespachoControl,
       montoTotal: this.montoTotalControl,
     });
+    this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US');
   }
 
   ngOnInit(): void {
@@ -62,7 +68,7 @@ export class NewRequirementComponent implements OnInit {
           name: data.payload.doc.data().name,
           weight: data.payload.doc.data().weight
         })
-      });
+      });      
     });
 
     this.recojos = this.requirementService.getOrigin();
@@ -76,8 +82,6 @@ export class NewRequirementComponent implements OnInit {
     this.dataRecojoControl.valueChanges.subscribe((value)=>{
       this.destinos = this.requirementService.getDestiny()
       .filter(item => item.originId === value.id);
-      
-      
     })
 
     this.cantidadesControl.valueChanges.subscribe((value)=>{
@@ -93,8 +97,7 @@ export class NewRequirementComponent implements OnInit {
     })
   }
 
-  publishOrder(){       
-
+  publishOrder(){    
     const request = {
       ...this.requirementForm.value,
       ...this.productoControl.value.map((value: any, index: any)=>{
@@ -104,18 +107,14 @@ export class NewRequirementComponent implements OnInit {
           qty: Number(this.cantidadesControl.get(`${index}`)?.value)
         }
       }),
-
       weightTotal: this.pesoTn,
       driver:"",
-      status:"Pending",
+      status:"",
       truck:"",
-      userId: JSON.parse(sessionStorage.getItem('user') || '').id
+      userId: JSON.parse(sessionStorage.getItem('user') || '').id,
+      date: this.jstoday
     }
-    
     this.requirementService.publishOrder(request);
-
-    console.log(request);
     this.router.navigate(['./order'])
   }
 }
-//ngOnDestroy como mejora--> desuscribe de todo para evitar la fuga de memoria

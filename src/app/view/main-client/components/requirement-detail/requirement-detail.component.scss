@@ -55,12 +55,14 @@
             border-radius: 10px;
             font-family: $font-text;
             font-size: 14px;
-
             label{
                 text-align: left;
                 margin-left: 20px;
-
             }
+        }
+        img{
+            height: 8rem;
+            z-index: 1;
         }
     }
 
@@ -97,14 +99,15 @@
         background-color: $button-text;
         font-family: $font-text;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 15px;
         width: 70%;
         height: 47px;
-        color: #fff;
-        border: none;
+        color: $color-text;
+        border-radius: 8px;
         margin-top: 20px;
+        border: none;
       }
-
+      
     img{
         width: 30px;
         height: 30px;
