@@ -11,8 +11,8 @@ import { UsersService } from '../../../../services/users.service';
 })
 
 export class RegisterComponent implements OnInit {
-  isLinear = false;
-  tipo: string[] = ['D.N.I.', 'C.E.'];
+  isLinear = true;
+  // tipo: string[] = ['D.N.I.', 'C.E.'];
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
   public thirdFormGroup!: FormGroup;
@@ -20,12 +20,13 @@ export class RegisterComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder,
     private router: Router, private userService: UsersService) { 
       this.firstFormGroup = this._formBuilder.group({
+        
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
         documentCtrl: ['', Validators.required],
-        emailCtrl: ['', Validators.email],
-        phoneCtrl: ['', Validators.required],
-        rucCtrl: ['', Validators.required]
+        emailCtrl: ['', Validators.email, Validators.email],
+        phoneCtrl: ['', Validators.required, Validators.max(9)],
+        rucCtrl: ['', Validators.required,Validators.max(11) ]
         });
       this.secondFormGroup = this._formBuilder.group({
         direccionCtrl: ['', Validators.required],
@@ -34,20 +35,16 @@ export class RegisterComponent implements OnInit {
         districtCtrl: ['', Validators.required]
       });
       this.thirdFormGroup = this._formBuilder.group({
-        passwordCtrl: ['', Validators.required],
-        password1Ctrl: ['', Validators.required]
+        passwordCtrl: ['', Validators.required, Validators.min(8)],
+        password1Ctrl: ['', Validators.required, Validators.min(8)]
       });
   }
    
   
   ngOnInit() {
-   
-    // this.ubigeoService.getDepartamentos().subscribe((o)=>{
-    //   console.log(o);
-    // })
   }
 
-  sendUser(){ //enviar todos los datos de registro a friebase
+  sendUser(){
     const firstForm= this.firstFormGroup.value;
     const secondForm= this.secondFormGroup.value;
     const thirdForm= this.thirdFormGroup.value;
@@ -65,23 +62,15 @@ export class RegisterComponent implements OnInit {
       password: thirdForm.passwordCtrl,
       rol: localStorage.getItem('rol')
     }
-    
-    console.log(newObject)
     this.createUser(newObject);
     this.goToLogin()
   }
 
-  //llamada al servicio
   createUser(obj: any){
-    console.log('dentro de createUser',obj);
     this.userService.createUser(obj).then(()=>{
       this.router.navigate(['/confirregister']);
     })
   }
-
-  // goToMenuDriver(){
-  //   console.log('click en ahora no!');
-  // }
 
   goToLogin(){
     this.router.navigate(['/home']);
