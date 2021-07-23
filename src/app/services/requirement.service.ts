@@ -16,10 +16,6 @@ export class RequirementService {
     this.cart.next(this.orders)
   }
 
-  updateStatus(){
-    
-  }
-
   id: string = ''
   private box = new BehaviorSubject<string>('');
   box$ = this.box.asObservable();
