@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationMessageClientComponent } from '../../src/app/view/main-client/components/confirmation-message-client/confirmation-message-client.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './view/login/login.component';
 import { RegisterComponent } from './view/login/components/register/register.component';
@@ -61,6 +62,7 @@ import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
     SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
+    ConfirmationMessageClientComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
