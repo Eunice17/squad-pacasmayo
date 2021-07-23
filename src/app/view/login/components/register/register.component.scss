@@ -1,7 +1,9 @@
 @use '../../../../../styles.scss'as *;
+@use '../../../../../assets/scss/mixin-back' as *;
 
 .body-reg{
      width: 100%;
+     min-height: 100vh;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -13,8 +15,6 @@
          padding: 15px;
          margin: auto;
          text-align: center;
-         
-
     h2{
         font-family: $font-title;
         color: #ffff;
@@ -52,8 +52,6 @@
     .firstForm{
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         width: 100%;
         background-color: $primary;
        
@@ -62,47 +60,25 @@
             flex-direction: column;
             margin-top: 30px;
             align-items: center;
-            // justify-content: center;
-
-            .back{
-                background-color: #ffff;
-                width: 18px;
-                background-color: $primary;
-                
-            }
         }
 
        
     }
 
     .secondForm{
-        height: 100vh;
         display: flex;
         flex-direction: column;
         width: 100%;
         background-color: $primary;
-        
-        
         div{
             display: flex;
             flex-direction: column;
             margin-top: 30px;
             align-items: center;
-            // justify-content: center;
-
-            .back{
-                background-color: #ffff;
-                width: 18px;
-                background-color: $primary;
-                
-            }
         }
-
-       
     }
 
     .thirdForm{
-        height: 100vh;
         display: flex;
         flex-direction: column;
         
@@ -112,14 +88,6 @@
             flex-direction: column;
             margin-top: 30px;
             align-items: center;
-            // justify-content: center;
-
-            .back{
-                background-color: #ffff;
-                width: 18px;
-                background-color: $primary;
-            }
-
             button{
                 background-color: $button-text;
                 font-family: $font-text;
@@ -135,6 +103,14 @@
 
        
     }
-
+ }
 }
+.back, #second, #third{
+    @include back;
+    background: none;
+}
+@media screen and (min-width: 1500px){
+    .back, #second, #third{
+        @include query;
+    }
 }

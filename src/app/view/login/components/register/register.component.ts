@@ -12,6 +12,7 @@ import { UsersService } from '../../../../services/users.service';
 
 export class RegisterComponent implements OnInit {
   isLinear = false;
+  tipo: string[] = ['D.N.I.', 'C.E.'];
   public firstFormGroup!: FormGroup;
   public secondFormGroup!: FormGroup;
   public thirdFormGroup!: FormGroup;

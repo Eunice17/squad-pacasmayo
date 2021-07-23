@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RequirementService } from 'src/app/services/requirement.service';
 
 @Component({
   selector: 'app-confirmation-message-client',
@@ -7,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmationMessageClientComponent implements OnInit {
 
-
-
-  constructor() { }
+  end$: Observable<any>;
+  driver: any = [];
+  constructor(private requirementService: RequirementService) {
+    this.end$ = this.requirementService.cart$;
+  }
 
   ngOnInit(): void {
-
+    this.end$.subscribe((data) => {
+      this.driver = [...data];
+      console.log(this.driver);
+    })
   }
 
 }
