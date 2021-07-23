@@ -63,6 +63,7 @@ export class RegisterComponent implements OnInit {
       rol: localStorage.getItem('rol')
     }
     this.createUser(newObject);
+    sessionStorage.setItem('user',JSON.stringify(newObject));
     /* this.goToLogin() */
   }
 
@@ -71,6 +72,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/confirregister']);
     })
   }
+
 
   goToLogin() {
     this.router.navigate(['/home']);
