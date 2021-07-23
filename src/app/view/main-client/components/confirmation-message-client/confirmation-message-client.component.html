@@ -4,21 +4,21 @@
         <div class="sms-head">
             <img src="../../../../../assets/img/bodyDriver.png" alt="">
             <h4>Transportista</h4>
-            <span>{{'Eunice Fiorella'}}</span>
+            <span>{{driver[0].driver}}</span>
         </div>
         <div class="map">
             <div class="origin">
                 <p>Origen</p>
-                <p style="font-weight: bold;" class="address">Av. cementos</p>
+                <p style="font-weight: bold;" class="address">{{driver[0].dataRecojo.name}}</p>
             </div>
             <div class="origin">
                 <p>Destino</p>
-                <p style="font-weight: bold;" class="address">Perú</p>
+                <p style="font-weight: bold;" class="address">{{driver[0].direccion}}</p>
             </div>
             <img class="puntero" src="../../../../../assets/img/puntero.png" alt="">
         </div>
         <div class="footer-msg">
-            <button class="new-rq">Nuevo requerimiento</button>
+            <button [routerLink]="['/newreq']" class="new-rq">Nuevo requerimiento</button>
             <a href="/client">Ir a menú</a>
         </div>
     </div>
