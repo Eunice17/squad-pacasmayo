@@ -80,9 +80,7 @@
 
     .thirdForm{
         display: flex;
-        flex-direction: column;
-        
-        
+        flex-direction: column;  
         div{
             display: flex;
             flex-direction: column;
@@ -108,6 +106,9 @@
 .back, #second, #third{
     @include back;
     background: none;
+}
+#continuar{
+    margin-bottom: 30px;
 }
 @media screen and (min-width: 1500px){
     .back, #second, #third{

@@ -38,7 +38,7 @@
                 <input matInput formControlName="rucCtrl" required>
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext>Continuar</button>
+              <button mat-button matStepperNext id="continuar">Continuar</button>
               <span (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></span>
             </div>
           </form>
@@ -69,7 +69,7 @@
               </mat-form-field>
 
               <div>
-                <button mat-button matStepperNext [disabled]="firstFormGroup.invalid" >Continuar</button>
+                <button mat-button id="continuar" matStepperNext [disabled]="firstFormGroup.invalid" >Continuar</button>
                 <button mat-button matStepperPrevious class="back" id="second"><img  src="../assets/back-arrow.png"></button>
               </div>
             </form>
@@ -96,7 +96,7 @@
             </section>
 
             <div>
-              <button mat-button (click)="sendUser()">Continuar</button>
+              <button mat-button id="continuar" (click)="sendUser()">Continuar</button>
               <button mat-button matStepperPrevious class="back" id="third"><img  src="../assets/back-arrow.png"></button>
             </div> 
           </form>
