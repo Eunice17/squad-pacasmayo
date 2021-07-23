@@ -4,6 +4,7 @@
     <div class="div-req">
       <form [formGroup]="requirementForm">
 
+
             <!-- Lista de tipo de carga -->
 
             <mat-form-field appearance="fill">
@@ -39,7 +40,7 @@
                     <tr *ngFor="let control of itemsSeleccionados; index as i" style="color:black">
                       
                         <td >{{itemsSeleccionados[i].name}}</td>
-                        <td width="10px" ><input [formControlName]="i"  name="item" ></td> 
+                        <td ><input [formControlName]="i"  name="item" class="cantidadprueba"></td> 
                         <td >{{itemsSeleccionados[i].weightTotal}} KG</td> 
                     </tr>
                   </ng-container>
@@ -104,6 +105,7 @@
               <mat-label>Monto total (S/.)*</mat-label>
               <input type="number" [formControl]="montoTotalControl" class="input-color-text" autocomplete="off" matInput>
             </mat-form-field> 
+
         </section>
       </form>
 

@@ -55,6 +55,10 @@ table{
 th, td {
     width: 100%;
     padding: 0.5rem;
+
+    .cantidadprueba{
+        width: 50px;
+    }
 }
 
 tbody tr:nth-child(odd) {
