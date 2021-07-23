@@ -58,12 +58,24 @@
             justify-content: center;
             align-items: center;
             row-gap: 10px;
+            margin-bottom: 20px;
             .new-rq{
                 @include red-btn;
                 align-items: center;
                 font-size: 18px;
                 border: none;
                 color: white;
+            }
+            .mobile{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                background-color: peru;
+                i{
+                    color: white;
+                    
+                }
             }
         }
     }

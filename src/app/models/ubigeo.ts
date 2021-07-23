@@ -6,12 +6,12 @@ export interface DepartamentoI {
 export interface ProvinciaI{
     id:string,
     name:string,
-    department_id:string
+    originid:string
 }
 
 export interface DistritoI{
     id:string,
     name:string,
     province_id:string,
-    department_id:string
+    originid:string
 }
