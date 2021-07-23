@@ -115,6 +115,9 @@ export class RequirementService {
   getRequirement() {
     return this.firestore.collection('requirement').snapshotChanges();
   }
-
+  
+  public requirementUpdate(id: string, prueba: any) {
+    return this.firestore.collection('requirement').doc(id).update(prueba);
+  }
 
 }

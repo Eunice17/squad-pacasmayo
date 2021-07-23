@@ -70,29 +70,6 @@ export class ShipmentDetailComponent implements OnInit {
     this.router.navigate(['/driver/shipment'])
   }
 
-  // ngOnDestroy() {
-  //   this.id$.unsubscribe();
-  // }
-
- 
 
 }
 
-// @Component({ ... })
-// export class SmartComponent implements OnInit, OnDestroy {
-//   private subscriptions = new Subscription();
-
-//   constructor(private heroService: HeroService) {
-//   }
-
-//   ngOnInit() {
-//     this.subscriptions.add(this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes));
-//     this.subscriptions.add(/* another subscription */);
-//     this.subscriptions.add(/* and another subscription */);
-//     this.subscriptions.add(/* and so on */);
-//   }
-
-//   ngOnDestroy() {
-//     this.subscriptions.unsubscribe();
-//   }
-// }

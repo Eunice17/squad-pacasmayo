@@ -23,4 +23,14 @@ export class TruckService {
     return this.firestore.collection('truck', ref => ref.where('userId', '==', userid))
     .snapshotChanges();
   }
+
+  public getTruckIDTruck(id:string){
+    return this.firestore.collection('truck', ref => ref.where('id', '==', id))
+    .snapshotChanges();
+  }
+  public getTruckId(id: string) {
+    return this.firestore.collection('truck').doc(id).snapshotChanges();
+}
+
+
 }
