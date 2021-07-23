@@ -5,32 +5,35 @@
         <section class="resumen-peso-monto">
             <div class="resumen-peso">
 
-                <label>Peso total: {{requirementD.data.weightTotal}}tn</label>
+                <label>Peso total: <b>{{requirementD.data.weightTotal}}tn</b></label>
 
             </div>
             <div class="resumen-monto">
-                <label>Monto: S/ {{requirementD.data.montoTotal}}</label>
+                <label>Monto: <b>S/ {{requirementD.data.montoTotal}}</b></label>
+            </div>
+
+            <div class="resumen-monto">
+                <label>Hora de despacho: <b>{{requirementD.data.horaDespacho}}</b></label>
             </div>
         </section>
         <br>
         <section class="origin-destiny">
             <div class="origin">
                 <label>Origen</label>
-                <label>{{requirementD.data.dataRecojo.name}}</label>
+                <label>{{requirementD.data.direccionOrigen}}</label>
             </div>
             <div class="destiny">
                 <label>Destino</label>
-                <label>{{requirementD.data.dataDestino}}</label>
-                <label>{{requirementD.data.cantidadesControl}}</label>
+                <label>{{requirementD.data.direccionDestino}}</label>
             </div>
+            <img class="puntero" src="../../../../../assets/img/puntero.png" alt="">
         </section>
         <section class="detalle-carga" >
             <h3>Detalle de carga</h3>
             <div id="producto1" *ngFor="let producto of requirementD.data.producto">
-                <label id="nombre-producto">{{producto.name}}</label>
+                <label id="nombre-producto">{{producto.data.name}}</label>
                 <label id="cantidad">{{producto.qty}}</label>
             </div>
-    
         </section>
         <button (click)="goToSelect(requirementD.id)" >Aceptar pedido</button>
         <div class="back" (click)="goBack()"><img src="../assets/back-arrow.png" ></div>
