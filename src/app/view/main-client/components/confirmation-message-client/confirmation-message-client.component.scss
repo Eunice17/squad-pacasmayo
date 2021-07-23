@@ -70,11 +70,12 @@
                 width: 100%;
                 display: flex;
                 justify-content: center;
-                align-items: flex-start;
-                background-color: peru;
+                column-gap: 20px;
+                align-items: center;
+                color: rgb(61, 59, 59);
                 i{
                     color: white;
-                    font-size: 18px;
+                    font-size: 3em;
                 }
             }
         }
