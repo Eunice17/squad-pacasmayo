@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
         nameCtrl: ['', Validators.required],
         lastnameCtrl: ['', Validators.required],
         documentCtrl: ['', Validators.required],
-        emailCtrl: ['', Validators.email,Validators.email],
+        emailCtrl: ['', Validators.email, Validators.email],
         phoneCtrl: ['', Validators.required, Validators.max(9)],
         rucCtrl: ['', Validators.required,Validators.max(11) ]
         });
