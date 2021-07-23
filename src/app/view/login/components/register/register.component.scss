@@ -105,12 +105,12 @@
     }
  }
 }
-.back, #black{
+.back, #second, #third{
     @include back;
     background: none;
 }
 @media screen and (min-width: 1500px){
-    .back{
+    .back, #second, #third{
         @include query;
     }
 }

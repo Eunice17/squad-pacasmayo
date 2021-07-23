@@ -78,8 +78,7 @@
 
               <div>
                 <button mat-button matStepperNext>Continuar</button>
-                <button mat-button matStepperPrevious class="back" id="black"><img  src="../assets/back-arrow.png"></button>
-                <!-- <span mat-button matStepperPrevious class="back"><img src="../../../../../assets/img/back.png"></span> -->
+                <button mat-button matStepperPrevious class="back" id="second"><img  src="../assets/back-arrow.png"></button>
               </div>
             </form>
           </mat-step>
@@ -106,7 +105,7 @@
 
             <div>
               <button mat-button (click)="sendUser()">Continuar</button>
-              <span class="back"><img  src="../assets/back-arrow.png"></span>
+              <button mat-button matStepperPrevious class="back" id="third"><img  src="../assets/back-arrow.png"></button>
             </div> 
           </form>
         </mat-step>
