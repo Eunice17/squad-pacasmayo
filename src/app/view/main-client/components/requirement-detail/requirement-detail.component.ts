@@ -26,11 +26,19 @@ export class RequirementDetailComponent implements OnInit {
       this.itemList=el
       console.log(this.itemList);
       console.log(this.itemList[0].producto);
-      
     });
+  }
+
+  createOrder(request: RequirementI){
+    console.log(request);
+    request.status= "publicado";
+    this.requirementService.createRequirement(request);
+    
+    this.router.navigate(['./waiting'])
   }
 
   goBack(){
     this.router.navigate(['./newreq'])
+    
   }
 }

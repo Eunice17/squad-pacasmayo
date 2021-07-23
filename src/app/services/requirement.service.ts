@@ -18,6 +18,10 @@ export class RequirementService {
     this.cart.next(this.orders)
   }
 
+  updateStatus(){
+    
+  }
+
   private typeBulk: TypeBulkI[] = [
     {
       id: 'TC01',
