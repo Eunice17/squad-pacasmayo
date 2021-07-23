@@ -45,6 +45,7 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
 import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
+import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,7 @@ import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
     Prueba1Component,
     Prueba2Component,
     FilterShipmentPipe,
-    
+    ConfirmationMessageClientComponent,
   ],
   imports: [
     BrowserModule,
