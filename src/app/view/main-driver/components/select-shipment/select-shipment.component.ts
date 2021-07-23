@@ -19,15 +19,17 @@ export class SelectShipmentComponent implements OnInit {
     'Contumazá', 'Cutervo', 'Hualgayoc', 'Jaén', 'San Ignacio',
     'San Miguel', 'Santa Cruz', 'San Marcos', 'San Pablo'];
   city = new FormControl('', [Validators.required]);
-
+  publicado: any = [];
   constructor(private router: Router, private requirement: RequirementService) { }
 
   ngOnInit(): void {
     this.getRequirement();
     console.log(this.shipments);
+
   }
-  
+
   getRequirement() {
+    this.shipments = [];
     this.requirement.getRequirement().subscribe((value) => {
       value.forEach((val) => {
         this.shipments.push({
@@ -35,6 +37,7 @@ export class SelectShipmentComponent implements OnInit {
           data: val.payload.doc.data(),
         });
       })
+      this.shipments = this.shipments.filter((val: any) => val.data.status == 'Publicado')
     });
   }
   more(id: string) {
