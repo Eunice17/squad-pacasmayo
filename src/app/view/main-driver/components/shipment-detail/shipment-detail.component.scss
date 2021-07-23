@@ -1,3 +1,116 @@
+// @use '../../../../../styles.scss'as *;
+
+// .body{
+//     display: flex;
+//     flex-direction: column;
+//     height: 100vh;
+//     width: 100%;
+//     background-color: $primary;
+//     align-items: center;
+//     padding: 15px;
+//     margin: auto;
+
+//     h2{
+//         font-family: $font-title;
+//         font-weight: bold;
+//         font-size: 16px;
+//         color: $color-text;
+//         letter-spacing: 0.06em;
+//     }
+//     hr{
+//         width: 320px;
+//         left: 342px;
+//         border: 0.5px solid #BB7D08;
+//         transform: rotate(180deg);
+//     }
+
+//     .resumen-peso-monto{
+//         display: flex;
+//         flex-direction: column;
+//         width: 90%;
+
+//         .resumen-peso, .resumen-monto{
+//             background-color: #FFF5E1;
+//             border: 1.8px solid #BB7D08;
+//             padding:10px;
+//             margin-bottom: 4px;
+//             font-family: $font-text;
+//             color: #3D4550;
+//             font-size: 18px;
+//             text-align: center;
+//         }
+//     }
+
+//     .origin-destiny{
+//         display: flex;
+//         flex-direction: column;
+//         width: 90%;
+
+//         .origin, .destiny{
+//             background-color: #fff;
+//             padding: 20px;
+//             margin-bottom: 10px;
+//             display: flex;
+//             flex-direction: column;
+//             border-radius: 10px;
+//             font-family: $font-text;
+//             font-size: 14px;
+
+//             label{
+//                 text-align: left;
+//                 margin-left: 20px;
+
+//             }
+//         }
+//     }
+
+//     .detalle-carga{
+//         display: flex;
+//         flex-direction: column;
+//         width: 90%;
+
+//         h3{
+//             color: #fff;
+//             font-family: $font-text;
+//             font-size: 15px;
+//         }
+
+//         #producto1, #producto2{
+//             background-color: #fff;
+//             font-family: $font-text;
+//             font-size: 14px;
+//             padding: 15px;
+//             border-radius: 6px;
+//             margin-bottom: 10px;
+//             display: flex;
+//             justify-content: space-between;
+//             border: 1.8px solid #BB7D08;
+//         }
+
+//         #cantidad{
+//             width: 100%;
+//             text-align: right;
+//         }
+//     }
+
+//     button {
+//         background-color: $button-text;
+//         font-family: $font-text;
+//         font-weight: 600;
+//         font-size: 20px;
+//         width: 70%;
+//         height: 47px;
+//         color: #fff;
+//         border: none;
+//         margin-top: 20px;
+//       }
+
+//     img{
+//         width: 30px;
+//         height: 30px;
+//     }
+// }
+
 @use '../../../../../styles.scss'as *;
 @use '../../../../../assets/scss/mixin-back' as *;
 
@@ -45,15 +158,16 @@
             border-radius: 10px;
             font-family: $font-text;
             font-size: 14px;
-
             label{
                 text-align: left;
                 margin-left: 20px;
-
             }
         }
+        img{
+            height: 8rem;
+            z-index: 1;
+        }
     }
-
     .detalle-carga{
         display: flex;
         flex-direction: column;
@@ -93,8 +207,9 @@
         border: none;
         margin: 20px 0px;
         padding: 10px;
-      }
 
+      }
+      
     img{
         width: 30px;
         height: 30px;

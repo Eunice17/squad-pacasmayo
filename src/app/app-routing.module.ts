@@ -20,7 +20,11 @@ import { RequirementDetailComponent } from './view/main-client/components/requir
 import { ShipmentDetailComponent } from './view/main-driver/components/shipment-detail/shipment-detail.component';
 import { Prueba1Component } from './prueba/prueba1/prueba1.component';
 import { Prueba2Component } from './prueba/prueba2/prueba2.component';
+
+import { P404Component } from './components/p404/p404.component'
+
 import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
+
 
 
 const routes: Routes = [
@@ -31,6 +35,7 @@ const routes: Routes = [
   { path: 'order', component: RequirementDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'notfound', component: P404Component},
   { path: 'formlogin', component: FormLoginComponent },
   {
     path: 'driver', component: MainDriverComponent,
@@ -38,7 +43,6 @@ const routes: Routes = [
       { path: '', redirectTo: 'menu-driver', pathMatch: 'full' },
       { path: 'menu-driver', component: MenuDriverComponent },
       { path: 'shipment', component: SelectShipmentComponent },
-      // { path: 'shipment/:parametro', component: SelectShipmentComponent },
       { path: 'newtruck', component: NewTruckComponent },
       { path: 'confirtruck', component: ConfirmationRegisterTruckComponent },
       { path: 'select', component: SelectTruckComponent},  
