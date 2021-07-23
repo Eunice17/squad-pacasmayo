@@ -57,15 +57,25 @@ th, td {
     padding: 0.5rem;
 
     .cantidadprueba{
+        background: rgb(235, 235, 235);
         width: 50px;
+        text-align: center;
+        border: 0.5px solid rgb(0, 0, 0,0.3);
     }
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #D2CACB;
+    background-color: #f7f1f2;
 }
 tbody tr:nth-child(even) {
     background-color: #F0F0F0;
+}
+.txt-peso{
+    padding: 10px 0px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .table-product{

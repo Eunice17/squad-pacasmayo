@@ -3,10 +3,7 @@
 
     <div class="div-req">
       <form [formGroup]="requirementForm">
-
-
             <!-- Lista de tipo de carga -->
-
             <mat-form-field appearance="fill">
               <mat-label>Tipo de carga*</mat-label>
               <mat-select [formControl]="tipoCargaControl" >
@@ -46,9 +43,10 @@
                   </ng-container>
                 </tbody>
               </table>
-
-              <h3 class="text-weight">Peso total del pedido:</h3>
-              <h3 style="font-weight: bolder;">{{pesoTn}} TN</h3>
+              <div class="txt-peso">
+                <h3 class="text-weight">Peso total del pedido:</h3>
+                <h3 style="color: #FC505C; font-weight: bolder;">{{pesoTn}} TN</h3>
+              </div>
             </section>
             
             <!-- Datos de recojo -->
