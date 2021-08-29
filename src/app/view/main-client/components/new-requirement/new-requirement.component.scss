@@ -26,17 +26,16 @@
         .input{
             font-family: $font-text;
             font-weight: 600;
-             font-size: 14px;
+            font-size: 20px;
             color:$color-text;
-        }
-        
-       
+        } 
     }
 }
 
 button{
     background-color: #FC505C;
     color: $color-text;
+    height: 47px;
 }
 
 .input-color-text{
@@ -45,9 +44,52 @@ button{
 .table-header {
     background-color: #FC505C;
     color: white;
+    text-align: center;
 }
 table{
+    width: 100%;
     border: 1px solid white;
     border-radius: 8px;
-    margin: 0 0.8rem 1rem 0.8rem;
+    
+}
+th, td {
+    width: 100%;
+    padding: 0.5rem;
+
+    .cantidadprueba{
+        background: rgb(235, 235, 235);
+        width: 50px;
+        text-align: center;
+        border: 0.5px solid rgb(0, 0, 0,0.3);
+    }
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f7f1f2;
+}
+tbody tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+.txt-peso{
+    padding: 10px 0px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.table-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    h3{
+        font-weight: 450;
+    }
+    .text-weight{
+        margin-top: 0.5rem;
+    }
+}
+.container-hidden .mat-form-field{
+    width: 100%;
 }

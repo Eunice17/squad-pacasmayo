@@ -1,4 +1,5 @@
 @use '../../../../../styles.scss' as *;
+@use '../../../../../assets/scss/mixin-back' as *;
 .header{
     color: white;
     font-size: 12px;
@@ -36,6 +37,7 @@
         flex-wrap: wrap;
         gap: 10px;
         padding: 20px 0px;
+        font-size: 15px;
         .block-order{
             min-width: 280px;
             position: relative;
@@ -71,16 +73,10 @@
     }
 }
 .back{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 2em;
-    z-index: 200;
-    text-align: start;
+    @include back;
 }
 @media screen and (min-width: 1500px){
     .back{
-        display: none;
+        @include query;
     }
 }

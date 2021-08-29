@@ -24,6 +24,8 @@ import { ConfirmationRegisterComponent } from './view/login/components/confirmat
 import { SelectTruckComponent } from './view/main-driver/components/select-truck/select-truck.component';
 import { WaitingDriverComponent } from './view/main-client/components/waiting-driver/waiting-driver.component';
 import { FormLoginComponent } from './view/login/components/form-login/form-login.component';
+import { ConfirmationMessageClientComponent } from './view/main-client/components/confirmation-message-client/confirmation-message-client.component';
+import { P404Component } from './components/p404/p404.component';
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -61,6 +63,7 @@ import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
     SelectTruckComponent,
     ConfirmationRegisterTruckComponent,
     WaitingDriverComponent,
+    ConfirmationMessageClientComponent,
     ConfirmationRegisterComponent,
     ShipmentDetailComponent,
     SelectTruckComponent,
@@ -72,7 +75,7 @@ import { FilterShipmentPipe } from './pipe/filter-shipment.pipe';
     Prueba1Component,
     Prueba2Component,
     FilterShipmentPipe,
-    
+    P404Component
   ],
   imports: [
     BrowserModule,

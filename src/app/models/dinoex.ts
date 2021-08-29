@@ -23,8 +23,9 @@ export interface RequirementI {
     tipoCarga: string, 
     itemSeleccionado: Array<DetailProductI>,
     dataRecojo: OriginI,
+    direccionOrigen: string,
     dataDestino: DestinationI,
-    direccion: string,
+    direccionDestino: string,
     nombre: string,
     celular: number,
     horaDespacho: string,
@@ -44,6 +45,3 @@ export interface RequirementD{
     id: string,
     data: any
 }
-
-
-

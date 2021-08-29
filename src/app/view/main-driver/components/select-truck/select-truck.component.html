@@ -1,22 +1,17 @@
-    <section class="body">
-    <div>
-        <h2>Elige una unidad para despacho<hr></h2>
+    <div class="head-truck">
+        <h2>Elige una unidad para despacho</h2>
     </div>
-    <br>
     <div class="radios-content">
         <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" value="none" class="prueba">
             <div class="div-imput" *ngFor="let truck of trucks">
-                <mat-radio-button class="example-radio-button" class="content">
+                <mat-radio-button class="example-radio-button" class="content" (click)="obtenerid(truck.id)"  (click)="obtenernameDriver(truck.nameDriver)" > <!--  (click)="obtenerid(truck.id)" -->
                     <h3>Camión Placa {{truck.placa}}</h3>
                     <h4>Capacidad: {{truck.capCarga}}</h4>
                     <h4>Chofer: {{truck.nameDriver}}</h4>
                 </mat-radio-button>
             </div>       
-            <button mat-button (click)="goConfirMess()">Confirmar</button>
+            <button mat-button (click)="goConfirMess()" >Confirmar</button>
         </mat-radio-group>
         <br>
-        <div class="flex-b">
-    </div>
+        <div class="back" [routerLink]="['/driver/shipdetail']"><img src="../../../../../assets/img/back.png" alt=""></div>
     </div> 
-</section>
-
