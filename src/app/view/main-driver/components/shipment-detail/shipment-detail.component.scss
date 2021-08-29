@@ -1,14 +1,6 @@
 @use '../../../../../styles.scss'as *;
+@use '../../../../../assets/scss/mixin-back' as *;
 
-.body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-color: $primary;
-    align-items: center;
-    padding: 15px;
-    margin: auto;
 
     h2{
         font-family: $font-title;
@@ -23,11 +15,10 @@
         border: 0.5px solid #BB7D08;
         transform: rotate(180deg);
     }
-
     .resumen-peso-monto{
         display: flex;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
 
         .resumen-peso, .resumen-monto{
             background-color: #FFF5E1;
@@ -44,30 +35,30 @@
     .origin-destiny{
         display: flex;
         flex-direction: column;
-        width: 90%;
+        position: relative;
 
         .origin, .destiny{
             background-color: #fff;
-            padding: 20px;
+            padding: 20px 20px 20px 40px;;
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
             border-radius: 10px;
             font-family: $font-text;
             font-size: 14px;
-
-            label{
-                text-align: left;
-                margin-left: 20px;
-
-            }
+        }
+        
+        .puntero{
+            top: 15%;
+            left: 4px;
+            position: absolute;
         }
     }
+    
 
     .detalle-carga{
         display: flex;
         flex-direction: column;
-        width: 90%;
 
         h3{
             color: #fff;
@@ -94,19 +85,31 @@
     }
 
     button {
+        width: 100%;
         background-color: $button-text;
         font-family: $font-text;
         font-weight: 600;
+        border-radius: 5px;
         font-size: 20px;
-        width: 70%;
-        height: 47px;
         color: #fff;
         border: none;
-        margin-top: 20px;
-      }
+        margin: 20px 0px;
+        padding: 10px;
 
+      }
+      
     img{
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        /* height: 30px; */
+    }
+#aceptar{
+    margin-bottom: 80px;
+}
+.back{
+    @include back;
+}
+@media screen and (min-width: 1500px){
+    .back{
+        @include query;
     }
 }

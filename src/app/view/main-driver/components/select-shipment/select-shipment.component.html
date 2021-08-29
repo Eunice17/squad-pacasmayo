@@ -2,7 +2,7 @@
     <img src="../../../../../assets/img/boxLogo.png" alt="">
     <div class="txt-header">
         <h2>Nuevas cargas</h2>
-        <p>Encuentra aquí todos tus pedidos activos</p>
+        <p>¿Qué quieres transportar hoy?</p>
     </div>
 </div>
 <div class="body">
@@ -18,7 +18,7 @@
   <div class="orders">
     <div class="block-order" *ngFor="let item of shipments | filterShipment: city.value ">
       <div class="description">
-        <h5>Destino: {{item.data.dataDestino}}</h5>
+        <h5 style="font-weight: bold;">{{item.data.direccionDestino}}</h5>
         <span>{{item.data.weightTotal}} Tn</span>
       </div>
       <p class="price-order">S/. {{item.data.montoTotal}}</p>

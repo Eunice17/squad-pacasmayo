@@ -1,1 +1,33 @@
-<p>confirmation-message-client works!</p>
+<app-nav-bar>
+<section class="container-message">
+    <div class="row-message">
+        <div class="sms-head">
+            <img src="../../../../../assets/img/bodyDriver.png" alt="">
+            <h4>Transportista</h4>
+            <span>Josue Romero<!-- {{driver[0].driver}} --></span>
+        </div>
+        <div class="map">
+            <div class="origin">
+                <p>Origen</p>
+                <p style="font-weight: bold;" class="address">{{driver[0].direccionOrigen}}</p>
+            </div>
+            <div class="origin">
+                <p>Destino</p>
+                <p style="font-weight: bold;" class="address">{{driver[0].direccionDestino}}</p>
+            </div>
+            <img class="puntero" src="../../../../../assets/img/puntero.png" alt="">
+        </div>
+        <div class="footer-msg">
+            <div class="mobile">
+                <i class="fa fas fas fa-mobile-alt" aria-hidden="true"></i>
+                <div class="text">
+                    <p style="font-weight: bolder;">Contacto:</p>
+                    <p>+51 <!-- 987123456 -->{{driver[0].celular}}</p>
+                </div>
+            </div>
+            <button [routerLink]="['/newreq']" class="new-rq">Nuevo requerimiento</button>
+            <a href="/client">Ir a menú</a>
+        </div>
+    </div>
+</section>
+</app-nav-bar>

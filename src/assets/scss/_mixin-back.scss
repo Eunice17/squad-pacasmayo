@@ -1,0 +1,20 @@
+@mixin back {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 2em;
+    z-index: 200;
+    text-align: start;
+}
+@mixin query {
+    display: none;
+}
+/* .back{
+    @include back;
+}
+@media screen and (min-width: 1500px){
+    .back{
+        @include query;
+    }
+} */

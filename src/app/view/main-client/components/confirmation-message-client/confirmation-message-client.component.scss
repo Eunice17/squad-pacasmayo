@@ -1,0 +1,88 @@
+@use '../../../../../styles.scss' as *;
+
+@mixin red-btn {
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    background-color: $button-text;
+    width: 90%;
+}
+.container-message{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: calc(100vh - 56px);
+    background-color: $primary;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    .row-message{
+        width: 100%;
+        align-items: center;
+        height: inherit;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0px 40px;
+        box-sizing: border-box;
+        .sms-head{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color:white;
+            font-family: $font-text;
+            font-size: 20px;
+            span{
+                @include red-btn;
+            }
+        }
+        .map{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            padding: 20px 0px; 
+            .origin{
+                padding: 15px 15px 15px 80px;
+                border-radius: 10px;
+                background-color: white;
+            }
+            .puntero{
+                top: 20%;
+                left: 15px;
+                position: absolute;
+            }
+        }
+        .footer-msg{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            margin-bottom: 20px;
+            .new-rq{
+                @include red-btn;
+                align-items: center;
+                font-size: 18px;
+                border: none;
+                color: white;
+            }
+            .mobile{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                column-gap: 20px;
+                align-items: center;
+                color: rgb(61, 59, 59);
+                i{
+                    color: white;
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+}
+a{
+    color: white;
+    font-family: $font-text;
+    font-weight: 500;
+}

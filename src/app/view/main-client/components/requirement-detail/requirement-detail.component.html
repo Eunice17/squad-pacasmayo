@@ -7,31 +7,35 @@
         <br>
         <section *ngFor="let product of products, let index as i" class="resumen-peso-monto">
             <div class="resumen-peso">
-                <label>Peso total: {{product.weightTotal}} TN</label>
+                <label>Peso total: <b>{{product.weightTotal}} TN</b></label>
             </div>
             <div class="resumen-monto">
-                <label>Monto a pagar: S/. {{product.montoTotal}}</label>
+                <label>Monto a pagar: S/. <b>{{product.montoTotal}}</b></label>
+            </div>
+            <div class="resumen-monto">
+                <label>Hora de recojo: <b>{{product.horaDespacho}}</b></label>
             </div>
         </section>
         <br>
         <section *ngFor="let product of products, let index as i" class="origin-destiny">
             <div class="origin">
                 <label>Origen</label>
-                <label>{{product.dataRecojo.name}}</label>
+                <label>{{product.direccionOrigen}}</label>
             </div>
+            <img class="puntero" src="../../../../../assets/img/puntero.png" alt="">
             <div class="destiny">
                 <label>Destino</label>
-                <label>{{product.dataDestino}}</label>
+                <label>{{product.direccionDestino}}</label>
             </div>
         </section>
-        <section class="detalle-carga">
+        <section  class="detalle-carga">
             <h3>Detalle de carga</h3>
             <div *ngFor="let item of  itemList[0].producto" id="producto1">
                 <label id="nombre-producto">{{item.name}}</label>
                 <label id="cantidad">{{item.qty}}</label>
             </div>
         </section>
-        <button>Aceptar pedido</button>
+        <button (click)="createOrder(itemList[0])">Publicar requerimiento</button>
         <br>
         <img src="../assets/back-arrow.png" (click)="goBack()">
     </section>

@@ -3,7 +3,7 @@
 .body{
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: $primary;
     align-items: center;
@@ -45,6 +45,12 @@
         display: flex;
         flex-direction: column;
         width: 90%;
+        position: relative;
+        .puntero{
+    top: 15%;
+    left: 4px;
+    position: absolute;
+        }
 
         .origin, .destiny{
             background-color: #fff;
@@ -55,12 +61,14 @@
             border-radius: 10px;
             font-family: $font-text;
             font-size: 14px;
-
             label{
                 text-align: left;
                 margin-left: 20px;
-
             }
+        }
+        img{
+            height: 8rem;
+            z-index: 1;
         }
     }
 
@@ -97,16 +105,17 @@
         background-color: $button-text;
         font-family: $font-text;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 15px;
         width: 70%;
         height: 47px;
-        color: #fff;
-        border: none;
+        color: $color-text;
+        border-radius: 8px;
         margin-top: 20px;
+        border: none;
       }
-
+      
     img{
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        /* height: 30px; */
     }
 }

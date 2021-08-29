@@ -19,14 +19,13 @@ export class SelectShipmentComponent implements OnInit {
     'Contumazá', 'Cutervo', 'Hualgayoc', 'Jaén', 'San Ignacio',
     'San Miguel', 'Santa Cruz', 'San Marcos', 'San Pablo'];
   city = new FormControl('', [Validators.required]);
-
+  publicado: any = [];
   constructor(private router: Router, private requirement: RequirementService) { }
 
   ngOnInit(): void {
     this.getRequirement();
-    console.log(this.shipments);
   }
-  
+
   getRequirement() {
     this.requirement.getRequirement().subscribe((value) => {
       value.forEach((val) => {

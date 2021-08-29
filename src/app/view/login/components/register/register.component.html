@@ -10,24 +10,16 @@
 
             <mat-form-field appearance="fill">
               <mat-label>Nombre</mat-label>
-              <input matInput formControlName="nameCtrl" required>
+              <input style="text-transform:capitalize" matInput formControlName="nameCtrl" required>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Apellido</mat-label>
-                <input matInput formControlName="lastnameCtrl" required>
-            </mat-form-field>
-
-            <mat-form-field appearance="fill">
-            <mat-label>Tipo</mat-label>
-                <mat-select>
-                    <mat-option>DNI</mat-option>
-                    <mat-option>C.E.</mat-option>
-                </mat-select>
+                <input style="text-transform:capitalize" matInput formControlName="lastnameCtrl" required>
             </mat-form-field>
               
             <mat-form-field appearance="fill">
-                <mat-label>Documento de identidad</mat-label>
+                <mat-label>Dni o Carnet de extranjería</mat-label>
                 <input matInput formControlName="documentCtrl" required>
             </mat-form-field>
 
@@ -46,8 +38,8 @@
                 <input matInput formControlName="rucCtrl" required>
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext>Continuar</button>
-              <button mat-button (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></button>
+              <button mat-button matStepperNext id="continuar">Continuar</button>
+              <span (click)="goToLogin()" class="back"><img  src="../assets/back-arrow.png"></span>
             </div>
           </form>
         </mat-step>
@@ -77,8 +69,8 @@
               </mat-form-field>
 
               <div>
-                <button mat-button matStepperNext>Continuar</button>
-                <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+                <button mat-button id="continuar" matStepperNext [disabled]="firstFormGroup.invalid" >Continuar</button>
+                <button mat-button matStepperPrevious class="back" id="second"><img  src="../assets/back-arrow.png"></button>
               </div>
             </form>
           </mat-step>
@@ -104,8 +96,8 @@
             </section>
 
             <div>
-              <button mat-button (click)="sendUser()">Continuar</button>
-              <button mat-button matStepperPrevious class="back"><img  src="../assets/back-arrow.png"></button>
+              <button mat-button id="continuar" (click)="sendUser()">Continuar</button>
+              <button mat-button matStepperPrevious class="back" id="third"><img  src="../assets/back-arrow.png"></button>
             </div> 
           </form>
         </mat-step>
